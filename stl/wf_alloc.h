@@ -24,7 +24,7 @@ namespace wf
 				{
 					delete[] p;
 				}
-				void construct(pointer p, value_type &v)
+				void construct(pointer p, const value_type &v)
 				{
 					new(p) T(v);
 				}

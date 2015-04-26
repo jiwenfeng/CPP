@@ -66,8 +66,7 @@ namespace wf
 
 				normal_iterator operator++(int)
 				{
-					++_cur;
-					return normal_iterator(_cur);
+					return normal_iterator(_cur++);
 				}
 
 				normal_iterator& operator--()
@@ -78,8 +77,17 @@ namespace wf
 
 				normal_iterator operator--(int)
 				{
-					--_cur;
-					return normal_iterator(_cur);
+					return normal_iterator(_cur++);
+				}
+
+				normal_iterator operator+=(int n)
+				{
+					return normal_iterator(_cur + n);
+				}
+
+				normal_iterator operator-=(int n)
+				{
+					return normal_iterator(_cur - n);
 				}
 
 				reference operator*()
@@ -92,7 +100,23 @@ namespace wf
 					return _cur;
 				}
 
+				reference operator[](size_t n)
+				{
+					return _cur[n];
+				}
+
+				normal_iterator operator+(int n)
+				{
+					return normal_iterator(_cur + n);
+				}
+
+				normal_iterator operator-(int n)
+				{
+					return normal_iterator(_cur - n);
+				}
+
 				_Iterator base() const { return _cur; }
+
 			public:
 				_Iterator _cur;
 		};
