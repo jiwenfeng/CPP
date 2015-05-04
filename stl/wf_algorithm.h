@@ -24,13 +24,21 @@ namespace wf
 			return _T1 < _T2 ? _T1 : _T2;
 		}
 
-	template<calss T, class compare>
+	template<class T, class compare>
 		const T&
 		min(const T &_T1, const T &_T2, compare cmp)
 		{
 			return cmp(_T1, _T2) ? _T1 : _T2;
 		}
+
 #if 0
+
+	template<class ForwardIterator, class Size, class T>
+		inline ForwardIterator uninitialized_fill_n(ForwardIterator first, Size n, const T&x)
+		{
+			return __uninitialize_fill_n(first, n, x, value_type(first));
+		}
+
 	template<class InputIterator, class OutputIterator>
 		inline OutputIterator copy(InputIterator first, InputIterator last, OutputIterator result)
 		{

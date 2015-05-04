@@ -18,11 +18,11 @@ namespace wf
 			public:
 				pointer allocate(size_t n)
 				{
-					return new T[sizeof(T) * n];
+					return static_cast<pointer>(::operator new (n * sizeof(T)));
 				}
 				void deallocate(pointer p)
 				{
-					delete[] p;
+					::operator delete(p);
 				}
 				void construct(pointer p, const value_type &v)
 				{

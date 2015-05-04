@@ -5,6 +5,7 @@
 #include "wf_alloc_traits.h"
 #include "wf_iterator.h"
 #include "wf_algorithm.h"
+#include "wf_construct.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -51,10 +52,14 @@ namespace wf
 
 				value_type& operator[](size_t n)
 				{
-
+					return *(_start + n);
 				}
 
-				~vector() {}
+				~vector()
+				{
+					Destroy(_start, _finish);
+					_Tr::deallocate(_alloc, _start);
+				}
 
 			public:
 				void push_back(const value_type &v)
@@ -69,12 +74,15 @@ namespace wf
 						size_t new_size = calc_new_size(1);
 						pointer new_start = _Tr::allocate(_alloc, new_size);
 						pointer new_finish = new_start;
-						while(_start != _finish)
+						pointer tmp  = _start;
+						while(tmp != _finish)
 						{
-							_Tr::constuct(_alloc, new_finish++, *_start++);
+							_Tr::constuct(_alloc, new_finish++, *tmp++);
 						}
 						_Tr::constuct(_alloc, new_finish, v);
 						++new_finish;
+						Destroy(_start, _finish);
+						_Tr::deallocate(_alloc, _start);
 						_start = new_start;
 						_finish = new_finish;
 						_cap = _start + new_size;
