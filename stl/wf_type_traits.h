@@ -155,5 +155,33 @@ namespace wf
 			typedef true_type has_trivial_destructor;
 			typedef true_type is_POD_type;
 		};
+
+	template<class T1, class T2>
+		struct are_same
+		{
+			enum { value = 0};
+			typedef false_type __type;
+		};
+
+	template<class T>
+		struct are_same<Tp1, Tp2>
+		{
+			enum { value = 1; }
+			typedef true_type __type;
+		};
+
+	template<class T>
+		struct is_pointer
+		{
+			enum { value = 0; }
+			typedef false_type __type;
+		};
+
+	template<class T>
+		struct is_pointer<T *>
+		{
+			enum { value = 1 };
+			typedef true_type __type;
+		};
 }
 #endif
