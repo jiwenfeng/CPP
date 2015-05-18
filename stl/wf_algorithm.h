@@ -1,6 +1,11 @@
 #ifndef __WF_ALGORITHM_H__
 #define __WF_ALGORITHM_H__
 
+#include "wf_type_traits.h"
+#include <stdlib.h>
+#include <string.h>
+#include <wchar.h>
+
 namespace wf
 {
 	template<class T>
@@ -31,65 +36,19 @@ namespace wf
 			return cmp(_T1, _T2) ? _T1 : _T2;
 		}
 
-#if 0
-
-	template<class ForwardIterator, class Size, class T>
-		inline ForwardIterator uninitialized_fill_n(ForwardIterator first, Size n, const T&x)
+	template<class T>
+		T *
+		copy_m(T *first, T *last, T *result, true_type)
 		{
-			return __uninitialize_fill_n(first, n, x, value_type(first));
+			memmove(result, last - first, sizeof(T) * (last - first));
+			return result + sizeof(T) * (last - first);
 		}
 
-	template<class InputIterator, class OutputIterator>
-		inline OutputIterator copy(InputIterator first, InputIterator last, OutputIterator result)
-		{
-			return copy_dispatch<InputIterator, OutputIterator>()(first, last, result);
-		}
-
-	inline char *copy(const char *first, const char *last, char *result)
-	{
-		memmove(result, first, last - first);
-		return result + (last - first);
-	}
-
-	inline wchar_t *copy(const wchar_t *first, const wchar_t *last, wchar_t *result)
-	{
-		memmove(result, first, sizeof(wchar_t) * (last - first));
-		return result + (last - first);
-	}
-
-	template<class InputIterator, class OutputIterator>
-		struct copy_dispatch
-		{
-			OutputIterator operator()(InputIterator first, InputIterator last, OutputIterator result)
-			{
-				return __copy(first, last, result, iterator_category(first));
-			}
-		};
-
 	template<class T>
-		struct copy_dispatch
+		T *
+		copy_m(T *first, T *last, T *result, false_type)
 		{
-			T *operator()(T *first, T *last, T *result)
-			{
-				typedef typename type_traits<T>::has_trivial_assignment_operator t;
-				return copy_t(first, last, result, t());
-			}
-		};
-
-	template<class T>
-		struct copy_dispatch<T *, T *>
-		{
-			T *operator()(const T *first, const T *last, T *result)
-			{
-				typedef typename type_traits<T>::has_trivial_assignment_operator t;
-				return copy_t(first, last, result, t());
-			}
-		};
-
-	template<class InputIterator, class OutputIterator>
-		inline OutputIterator __copy(InputIterator first, InputIterator last, OutputIterator result, input_iterator_tag)
-		{
-			for(; first != last; ++result, ++first)
+			for(size_t i = 0; i < last - first; ++i, ++ first, ++result)
 			{
 				*result = *first;
 			}
@@ -97,34 +56,101 @@ namespace wf
 		}
 
 	template<class RandomAccessIterator, class OutputIterator>
-		inline OutputIterator __copy(RandomAccessIterator first, RandomAccessIterator last, OutputIterator result, random_access_iterator_tag)
+		OutputIterator
+		copy_t(RandomAccessIterator first, RandomAccessIterator last, OutputIterator result, random_access_iterator_tag)
 		{
-			return copy_d(first, last, result, distance_type(first));
-		}
-
-	template<class RandomAccessIterator, class OutputIterator, class Distance>
-		inline OutputIterator copy_d(RandomAccessIterator first, RandomAccessIterator last, OutputIterator result, Distance *)
-		{
-			for(Distance n = last - first; n > 0; --n, ++result, ++first)
+			for(size_t i = 0; i < last - first; ++i, ++first, ++result)
 			{
 				*result = *first;
 			}
 			return result;
 		}
 
-	template<class T>
-		inline T* copy_t(const T* first, const T* last, T *result, __true_type)
+	template<class InputIterator, class OutputIterator>
+		OutputIterator
+		copy_t(InputIterator first, InputIterator last, OutputIterator result, input_iterator_tag)
 		{
-			memmove(result, first, sizeof(T) * (last - first));
+			for(; first != last; ++first, ++result)
+			{
+				*result = *first;
+			}
+			return result;
+		}
+
+
+	template<class InputIterator, class OutputIterator>
+		struct copy_dispatch
+		{
+			static OutputIterator
+				copy_d(InputIterator first, InputIterator last, OutputIterator result)
+				{
+					for(; first != last; ++first, ++result)
+					{
+						*result = *first;
+					}
+					return result;
+				}
+		};
+
+#if 0
+	template<class OutputIterator>
+		struct copy_dispatch<RandomAccessIterator, OutputIterator>
+		{
+			static OutputIterator
+				copy_d(RandomAccessIterator first, RandomAccessIterator last, OutputIterator result)
+				{
+					for(size_t i = 0; i < last - first; ++i, ++first, ++result)
+					{
+						*result = *first;
+					}
+					return result;
+				}
+		};
+#endif
+
+	template<class T>
+		struct copy_dispatch<T *, T *>
+		{
+			static T *
+				copy_d(T *first, T *last, T *result)
+				{
+					typedef typename type_traits<T>::has_trivial_assignment_operator type;
+					return copy_m(first, last, result, type());
+				}
+		};
+
+	template<class T>
+		struct copy_dispatch<const T*, T *>
+		{
+			static T *
+				copy_d(const T *first, const T *last, T *result)
+				{
+					typedef typename type_traits<T>::has_trivial_assignment_operator type;
+					return copy_m(first, last, result, type());
+				}
+		};
+
+
+	template<class InputIterator, class OutputIterator>
+		OutputIterator
+		copy(InputIterator first, InputIterator last, OutputIterator result)
+		{
+			return copy_dispatch<InputIterator, OutputIterator>::copy_d(first, last, result);
+		}
+
+		char *
+		copy(char *first, char *last, char *result)
+		{
+			memmove(result, first, last - first);
 			return result + (last - first);
 		}
 
-	template<calss T>
-		inline T* copy_t(const T* first, const T* last, T *result, __false_type)
+		wchar_t *
+		copy(wchar_t *first, wchar_t *last, wchar_t *result)
 		{
-			return copy_d(first, last, result, (ptrdiff_t *)0);
+			memmove(result, first, sizeof(wchar_t) * (last - first));
+			return result + (last - first) * sizeof(wchar_t);
 		}
-#endif
 };
 
 #endif

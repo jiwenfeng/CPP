@@ -3,16 +3,18 @@
 #include <sys/time.h>
 #include <vector>
 
-static int a = 0;
-
 using namespace wf;
 
 class Test
 {
 public:
-	Test() {}
 	Test(int v) : _v(v) {}
-	~Test() {std::cout<<"Destroy"<<std::endl; ++a; }
+	friend std::ostream &operator<<(std::ostream &os, const Test &t)
+	{
+		os<<t._v;
+		return os;
+	}
+
 private:
 	int _v;
 };
@@ -27,47 +29,23 @@ int get_tick()
 
 int main()
 {
-#if 0
-	vector<int> v;
-	int t1 = get_tick();
-	for(int i = 0; i < 10000000; ++i)
-	{
-		v.push_back(i);
-	}
-	int t2 = get_tick();
-
-	printf("t2 - t1 = %d\n", t2 - t1);
-
-	std::vector<int> std_v;
-	int t3 = get_tick();
-	for(int i = 0; i < 10000000; ++i)
-	{
-		std_v.push_back(i);
-	}
-	int t4 = get_tick();
-	printf("t4 - t3 = %d\n", t4 - t3);
-#endif
-#if 0
-	vector<int>::iterator it;
-	for(it = v.begin(); it != v.end(); ++it)
-	{
-		std::cout<<*it<<std::endl;
-	}
-#endif
 #ifdef __TEST_MINE
 	vector<Test> v;
 	for(int i = 0; i < 10; ++i)
 	{
-		v.push_back(Test());
+		v.push_back(Test(i));
 	}
-	std::cout<<a<<std::endl;
+	vector<Test>::iterator i;
+	for(i = v.begin(); i != v.end(); ++i)
+	{
+		std::cout<<*i<<std::endl;
+	}
 #else
 	std::vector<Test> v;
 	for(int i = 0; i < 10; ++i)
 	{
-		v.push_back(Test());
+		v.push_back(Test(i));
 	}
-	std::cout<<a<<std::endl;
 #endif
 	return 0;
 }

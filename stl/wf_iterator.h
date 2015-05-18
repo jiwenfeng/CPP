@@ -1,38 +1,10 @@
 #ifndef __WF_ITERATOR_H__
 #define __WF_ITERATOR_H__
 
+#include "wf_iterator_type.h"
+
 namespace wf
 {
-	template<class T>
-		struct iterator_traits
-		{
-			typedef typename T::value_type value_type;
-			typedef typename T::pointer	pointer;
-			typedef typename T::const_pointer const_pointer;
-			typedef typename T::reference reference;
-			typedef typename T::const_reference const_reference;
-		};
-
-	template<class T>
-		struct iterator_traits<T *>
-		{
-			typedef T value_type;
-			typedef T* pointer;
-			typedef const T* const_pointer;
-			typedef T& reference;
-			typedef const T& const_reference;
-		};
-
-	template<class T>
-		struct iterator_traits<const T*>
-		{
-			typedef T value_type;
-			typedef T* pointer;
-			typedef const T* const_pointer;
-			typedef T& reference;
-			typedef const T& const_reference;
-		};
-
 	template<class _Iterator, class Container>
 		class normal_iterator
 		{
@@ -120,10 +92,12 @@ namespace wf
 			public:
 				_Iterator _cur;
 		};
+
 	template<class T, class Container>
 		bool operator !=(const normal_iterator<T, Container> &lhs, const normal_iterator<T, Container> &rhs)
 		{
 			return lhs.base() != rhs.base();
 		}
+
 };
 #endif
