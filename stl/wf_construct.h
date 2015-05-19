@@ -6,6 +6,17 @@
 
 namespace wf
 {
+	template<class T>
+		void Construct(T *p)
+		{
+			new(p) T();
+		}
+
+	template<class T1, class T2>
+		void Construct(T1 *p, const T2 &value)
+		{
+			new(p) T1(value);
+		}
 
 	template<class T>
 		void _Destroy(T *pointer)

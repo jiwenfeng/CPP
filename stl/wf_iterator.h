@@ -14,11 +14,11 @@ namespace wf
 				typedef typename iterator_traits<_Iterator>::reference reference;
 
 			public:
-				normal_iterator() { _cur = 0; }
+				normal_iterator() { _current = 0; }
 
-				normal_iterator(_Iterator i) { _cur = i; }
+				normal_iterator(_Iterator i) { _current = i; }
 
-				normal_iterator(const normal_iterator &i) { _cur = i._cur; }
+				normal_iterator(const normal_iterator &i) { _current = i._current; }
 
 				normal_iterator& operator=(const normal_iterator& i)
 				{
@@ -26,71 +26,71 @@ namespace wf
 					{
 						return *this;
 					}
-					_cur = i._cur;
+					_current = i._current;
 					return *this;
 				}
 
 				normal_iterator& operator++()
 				{
-					++_cur;
+					++_current;
 					return *this;
 				}
 
 				normal_iterator operator++(int)
 				{
-					return normal_iterator(_cur++);
+					return normal_iterator(_current++);
 				}
 
 				normal_iterator& operator--()
 				{
-					--_cur;
+					--_current;
 					return *this;
 				}
 
 				normal_iterator operator--(int)
 				{
-					return normal_iterator(_cur++);
+					return normal_iterator(_current++);
 				}
 
 				normal_iterator operator+=(int n)
 				{
-					return normal_iterator(_cur + n);
+					return normal_iterator(_current + n);
 				}
 
 				normal_iterator operator-=(int n)
 				{
-					return normal_iterator(_cur - n);
+					return normal_iterator(_current - n);
 				}
 
-				reference operator*()
+				reference operator*() const
 				{
-					return *_cur;
+					return *_current;
 				}
 
-				pointer operator->()
+				pointer operator->() const
 				{
-					return _cur;
+					return _current;
 				}
 
-				reference operator[](size_t n)
+				reference operator[](size_t n) const
 				{
-					return _cur[n];
+					return _current[n];
 				}
 
 				normal_iterator operator+(int n)
 				{
-					return normal_iterator(_cur + n);
+					return normal_iterator(_current + n);
 				}
 
 				normal_iterator operator-(int n)
 				{
-					return normal_iterator(_cur - n);
+					return normal_iterator(_current - n);
 				}
 
-				_Iterator base() const { return _cur; }
+				_Iterator base() const { return _current; }
 
 			public:
-				_Iterator _cur;
+				_Iterator _current;
 		};
 
 	template<class T, class Container>

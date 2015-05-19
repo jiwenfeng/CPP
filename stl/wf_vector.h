@@ -3,11 +3,13 @@
 
 #include "wf_alloc.h"
 #include "wf_alloc_traits.h"
+#include "wf_uninitialized.h"
 #include "wf_iterator.h"
 #include "wf_algorithm.h"
 #include "wf_construct.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 
 namespace wf
 {
@@ -16,12 +18,13 @@ namespace wf
 		{
 			public:
 				typedef T	value_type;
-				typedef T*	pointer;
-				typedef T&	reference;
-				typedef const T* const_pointer;
-				typedef const T& const_reference;
+				typedef typename _Alloc::pointer pointer;
+				typedef typename _Alloc::const_pointer const_pointer;
+				typedef typename _Alloc::reference reference;
+				typedef typename _Alloc::const_reference const_reference;
 			public:
 				typedef normal_iterator<pointer, vector> iterator;
+				typedef normal_iterator<const_pointer, vector> const_iterator;
 				typedef _Alloc alloc_type;
 				typedef alloc_traits<_Alloc> _Tr;
 
@@ -39,6 +42,10 @@ namespace wf
 
 				vector(const vector &v)
 				{
+					_start = _Tr::allocate(_alloc, v.size());
+					_finish = _start;
+					_cap = _start + v.size();
+					_finish = wf_uninitialized_copy(v.begin(), v.end(), _start);
 				}
 
 				vector& operator=(const vector &v)
@@ -71,14 +78,10 @@ namespace wf
 					}
 					else
 					{
-						size_t new_size = calc_new_size(1);
+						size_t new_size = calc_new_size();
 						pointer new_start = _Tr::allocate(_alloc, new_size);
 						pointer new_finish = new_start;
-						pointer tmp  = _start;
-						while(tmp != _finish)
-						{
-							_Tr::constuct(_alloc, new_finish++, *tmp++);
-						}
+						new_finish = wf_uninitialized_copy(_start, _finish, new_finish);
 						_Tr::constuct(_alloc, new_finish, v);
 						++new_finish;
 						Destroy(_start, _finish);
@@ -89,20 +92,24 @@ namespace wf
 					}
 				}
 
-				value_type pop_back()
-				{}
+				void pop_back()
+				{
+					--_finish;
+					Destroy(_finish, _finish);
+				}
 
 				iterator begin() { return iterator(_start); }
+				const_iterator begin() const { return const_iterator(_start); }
 
 				iterator end() { return iterator(_finish); }
+				const_iterator end() const { return const_iterator(_finish); }
 
-				size_t size() { return _finish - _start; }
-
+				size_t size() const { return _finish - _start; }
 
 				size_t max_size() { return _Tr::max_size(_alloc); }
 
 			private:
-				size_t calc_new_size(size_t n)
+				size_t calc_new_size(size_t n = 1)
 				{
 					if(max_size() - size() < n)
 					{

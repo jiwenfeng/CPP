@@ -48,9 +48,10 @@ namespace wf
 		T *
 		copy_m(T *first, T *last, T *result, false_type)
 		{
-			for(size_t i = 0; i < last - first; ++i, ++ first, ++result)
+			size_t n = last - first;
+			for(size_t i = 0; i < n; ++i)
 			{
-				*result = *first;
+				*result++ = *first++;
 			}
 			return result;
 		}
@@ -91,22 +92,6 @@ namespace wf
 					return result;
 				}
 		};
-
-#if 0
-	template<class OutputIterator>
-		struct copy_dispatch<RandomAccessIterator, OutputIterator>
-		{
-			static OutputIterator
-				copy_d(RandomAccessIterator first, RandomAccessIterator last, OutputIterator result)
-				{
-					for(size_t i = 0; i < last - first; ++i, ++first, ++result)
-					{
-						*result = *first;
-					}
-					return result;
-				}
-		};
-#endif
 
 	template<class T>
 		struct copy_dispatch<T *, T *>

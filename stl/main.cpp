@@ -35,8 +35,9 @@ int main()
 	{
 		v.push_back(Test(i));
 	}
+	vector<Test> v1(v);
 	vector<Test>::iterator i;
-	for(i = v.begin(); i != v.end(); ++i)
+	for(i = v1.begin(); i != v1.end(); ++i)
 	{
 		std::cout<<*i<<std::endl;
 	}
