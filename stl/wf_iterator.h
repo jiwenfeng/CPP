@@ -1,7 +1,7 @@
 #ifndef __WF_ITERATOR_H__
 #define __WF_ITERATOR_H__
 
-#include "wf_iterator_type.h"
+#include "wf_iterator_traits.h"
 
 namespace wf
 {
