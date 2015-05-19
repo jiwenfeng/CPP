@@ -17,11 +17,11 @@ namespace wf
 		class vector
 		{
 			public:
-				typedef T	value_type;
-				typedef typename _Alloc::pointer pointer;
-				typedef typename _Alloc::const_pointer const_pointer;
-				typedef typename _Alloc::reference reference;
-				typedef typename _Alloc::const_reference const_reference;
+				typedef T					value_type;
+				typedef T*					pointer;
+				typedef const T*			const_pointer;
+				typedef T&					reference;
+				typedef const T&			const_reference;
 			public:
 				typedef normal_iterator<pointer, vector> iterator;
 				typedef normal_iterator<const_pointer, vector> const_iterator;
@@ -54,6 +54,12 @@ namespace wf
 					{
 						return *this;
 					}
+					Destroy(_start, _finish);
+					_Tr::deallocate(_alloc, _start);
+					_start = _Tr::allocate(_alloc, v.size());
+					_finish = _start;
+					_cap = _start + v.size();
+					_finish = wf_uninitialized_copy(v.begin(), v.end(), _start);
 					return *this;
 				}
 

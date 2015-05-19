@@ -30,12 +30,12 @@ int get_tick()
 int main()
 {
 #ifdef __TEST_MINE
-	vector<Test> v;
+	vector<Test> v, v1;
 	for(int i = 0; i < 10; ++i)
 	{
 		v.push_back(Test(i));
 	}
-	vector<Test> v1(v);
+	v1 = v;
 	vector<Test>::iterator i;
 	for(i = v1.begin(); i != v1.end(); ++i)
 	{
