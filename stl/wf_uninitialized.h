@@ -12,7 +12,7 @@ template<class InputIterator, class T>
 void
 wf_uninitialized_fill_aux(InputIterator first, InputIterator last, const T& value, true_type)
 {
-
+	wf::fill(first, last, value);
 }
 
 template<class InputIterator, class T>

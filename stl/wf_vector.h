@@ -48,6 +48,11 @@ namespace wf
 					_finish = wf_uninitialized_copy(v.begin(), v.end(), _start);
 				}
 
+				template<class InputIterator>
+					vector(InputIterator first, InputIterator last)
+					{
+					}
+
 				vector& operator=(const vector &v)
 				{
 					if(this == &v)
@@ -111,8 +116,52 @@ namespace wf
 				const_iterator end() const { return const_iterator(_finish); }
 
 				size_t size() const { return _finish - _start; }
+				
+				size_t capacity() const { return _cap - _start; }
 
 				size_t max_size() { return _Tr::max_size(_alloc); }
+
+				void resize(size_t n) 
+				{
+					if(n < size())
+					{
+						Destroy(_start + n, _finish);
+						_finish = _start + n;
+						return;
+					}
+					if(size() < n && n < capacity())
+					{
+						// fill n - size()
+						return;
+					}
+					pointer new_start = _Tr::allocate(_alloc, n);
+					pointer new_finish = wf_uninitialized_copy(_start, _finish, new_start);
+					// fill n - (new_start - new_finish)
+					Destroy(_start, _finish);
+					_Tr::deallocate(_start);
+					_finish = _start + n;
+					_cap = _finish;
+				}
+
+				void resize(size_t n, const value_type &value)
+				{
+				}
+
+				iterator erase(iterator begin, iterator end)
+				{
+					// TODO
+					return begin();
+				}
+
+				iterator erase(iterator pos)
+				{
+					// TODO
+					return begin();
+				}
+
+				void clear()
+				{
+				}
 
 			private:
 				size_t calc_new_size(size_t n = 1)

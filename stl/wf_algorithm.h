@@ -2,12 +2,20 @@
 #define __WF_ALGORITHM_H__
 
 #include "wf_type_traits.h"
-#include <stdlib.h>
-#include <string.h>
-#include <wchar.h>
+#include "wf_iterator.h"
 
 namespace wf
 {
+	template<class I>
+		struct iter_base
+		{
+			typename I
+		};
+
+	template<class _I, class Container>
+		struct iter_base<normal_iterator<_I, Container> >
+		{};
+
 	template<class T>
 		const T&
 		max(const T &_T1, const T &_T2)
@@ -136,6 +144,35 @@ namespace wf
 			memmove(result, first, sizeof(wchar_t) * (last - first));
 			return result + (last - first) * sizeof(wchar_t);
 		}
+
+		template<class InputIterator, class T>
+			void
+			fill_aux(InputIterator first, InputIterator last, const T& value, true_type)
+			{
+				
+			}
+
+		template<class InputIterator, class T>
+			void
+			fill_aux(InputIterator first, InputIterator last, const T& value, false_type)
+			{
+				for(; first != last; ++first)
+				{
+					*first = value;
+				}
+			}
+
+		template<class InputIterator, class T>
+			void
+			fill(InputIterator first, InputIterator last, const T &value)
+			{
+			}
+
+		template<class InputIterator, class T>
+			void 
+			fill_n(InputIterator first, size_t n, const T &value)
+			{
+			}
 };
 
 #endif

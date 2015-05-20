@@ -181,4 +181,40 @@ struct is_pointer<T *>
 	enum { value = 1 };
 	typedef true_type __type;
 };
+
+template<class T>
+struct is_byte
+{
+	enum { value = 0 };
+	typedef false_type __type;
+};
+
+template<>
+struct is_byte<char>
+{
+	enum { value = 1 };
+	typedef true_type __type;
+};
+
+template<>
+struct is_byte<signed char>
+{
+	enum { value = 1 };
+	typedef true_type __type;
+};
+
+template<>
+struct is_byte<unsigned char>
+{
+	enum { value = 1 };
+	typedef true_type __type;
+};
+
+template<>
+struct is_byte<wchar_t>
+{
+	enum { value = 1 };
+	typedef true_type __type;
+};
+
 #endif
