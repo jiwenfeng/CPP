@@ -39,30 +39,41 @@ wf_uninitialized_fill_n(InputIterator first, size_t n, const T& value)
 {
 }
 
-template<class InputIterator, class OutputIterator>
-OutputIterator
-wf_uninitialized_copy_aux(InputIterator first, InputIterator last, OutputIterator result, true_type)
+template<bool>
+struct uninit_copy
 {
-	return wf::copy(first, last, result);
-}
+	template<class InputIterator, class OutputIterator>
+		static OutputIterator
+		uninit_copy_aux(InputIterator first, InputIterator last, OutputIterator result)
+		{
+			for(; first != last; ++first, ++result)
+			{
+				std::cout<<typeid(result).name()<<std::endl;
+				std::cout<<typeid(first).name()<<std::endl;
+				wf::Construct(result, *first);
+			}
+			return result;
+		}
+};
 
-template<class InputIterator, class OutputIterator>
-OutputIterator
-wf_uninitialized_copy_aux(InputIterator first, InputIterator last, OutputIterator result, false_type)
+template<>
+struct uninit_copy<true>
 {
-	for(; first != last; ++first, ++result)
-	{
-		wf::Construct(result, *first);
-	}
-	return result;
-}
+	template<class InputIterator, class OutputIterator>
+		static OutputIterator
+		uninit_copy_aux(InputIterator first, InputIterator last, OutputIterator result)
+		{
+			return wf::copy(first, last, result);
+		}
+};
 
 template<class InputIterator, class OutputIterator>
 OutputIterator
 wf_uninitialized_copy(InputIterator first, InputIterator last, OutputIterator result)
 {
-	typedef typename type_traits<InputIterator>::is_POD is_POD;
-	return wf_uninitialized_copy_aux(first, last, result, is_POD());
+	typedef typename iterator_traits<InputIterator>::value_type ValueType1;
+	typedef typename iterator_traits<InputIterator>::value_type ValueType2;
+	return uninit_copy<is_pod<ValueType1>::value && is_pod<ValueType2>::value>::uninit_copy_aux(first, last, result);
 }
 
 #endif

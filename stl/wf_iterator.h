@@ -12,11 +12,12 @@ namespace wf
 				typedef typename iterator_traits<_Iterator>::pointer pointer;
 				typedef typename iterator_traits<_Iterator>::value_type value_type;
 				typedef typename iterator_traits<_Iterator>::reference reference;
+				typedef typename iterator_traits<_Iterator>::iterator_category iterator_category;
 
 			public:
 				normal_iterator() { _current = 0; }
 
-				normal_iterator(_Iterator i) { _current = i; }
+				explicit normal_iterator(_Iterator i) { _current = i; }
 
 				normal_iterator(const normal_iterator &i) { _current = i._current; }
 

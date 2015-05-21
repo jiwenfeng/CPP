@@ -2,6 +2,7 @@
 #define __WF_TYPE_TRAITS_H__
 
 struct true_type {};
+
 struct false_type {};
 
 template<class T>
@@ -215,6 +216,23 @@ struct is_byte<wchar_t>
 {
 	enum { value = 1 };
 	typedef true_type __type;
+};
+
+typedef char one;
+typedef char two[2];
+
+one test_type(true_type);
+two &test_type(false_type);
+
+
+template<class T>
+struct is_pod
+{
+	typedef typename type_traits<T>::is_POD is_POD;
+	enum
+	{
+		value = (sizeof(test_type(is_POD())) == sizeof(one))
+	};
 };
 
 #endif

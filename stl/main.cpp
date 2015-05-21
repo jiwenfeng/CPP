@@ -8,7 +8,7 @@ using namespace wf;
 class Test
 {
 public:
-	Test(int v) : _v(v) {}
+	explicit Test(int v) : _v(v) {}
 	friend std::ostream &operator<<(std::ostream &os, const Test &t)
 	{
 		os<<t._v;

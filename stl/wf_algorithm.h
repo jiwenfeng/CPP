@@ -3,13 +3,16 @@
 
 #include "wf_type_traits.h"
 #include "wf_iterator.h"
+#include <stdlib.h>
+#include <wchar.h>
+#include <string.h>
 
 namespace wf
 {
 	template<class I>
 		struct iter_base
 		{
-			typename I
+			//typename I
 		};
 
 	template<class _I, class Container>
