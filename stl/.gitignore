@@ -1,1 +1,4 @@
-engineCode/
+*
+!.gitignore
+!*.h
+!*.cpp
