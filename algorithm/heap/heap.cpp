@@ -61,6 +61,12 @@ MaxHeap<T, Alloc>::expand_heap()
 }
 
 template<class T, class Alloc>
+void 
+rebuild_heap()
+{
+}
+
+template<class T, class Alloc>
 void
 MaxHeap<T, Alloc>::push(const T &value)
 {
@@ -133,8 +139,7 @@ void
 MaxHeap<T, Alloc>::debug()
 {
 	std::cout<<"---------------------"<<std::endl;
-	iterator i;
-	for(i = begin(); i != end(); ++i)
+	for(iterator i = begin(); i != end(); ++i)
 	{
 		std::cout<<(*i)<<std::endl;
 	}
@@ -161,15 +166,17 @@ int main()
 	int arr[] = {12, 32, 39, 80, 79, 73, 90, 10, 54, 87};
 #define N (sizeof(arr) / sizeof(arr[0]))
 	MaxHeap<int> iHeap(arr, N);
+//	iHeap.debug();
+//
+//	iHeap.pop();
+//	iHeap.debug();
+//
+//	iHeap.pop();
+//	iHeap.debug();
+
+	MaxHeap<int>::iterator itr = iHeap.begin();
 	iHeap.debug();
 
-	iHeap.pop();
-	iHeap.debug();
-
-	iHeap.pop();
-	iHeap.debug();
-
-	MaxHeap<int>::iterator itr;
 
 #endif
 

@@ -34,6 +34,11 @@ public:
 		return *_value;
 	}
 
+	const reference operator*()
+	{
+		return *_value;
+	}
+
 	bool operator != (const HeapIterator<T> &rhs)
 	{
 		return _value != rhs._value;
@@ -42,11 +47,6 @@ public:
 	bool operator == (const HeapIterator<T> &rhs)
 	{
 		 return _value == rhs._value;
-	}
-
-	reference operator*()
-	{
-		return *_value;
 	}
 
 private:
@@ -64,7 +64,7 @@ public:
 	typedef const T*		const_pointer;
 	typedef const T&		const_reference;
 
-	typedef HeapIterator<pointer> iterator;
+	typedef HeapIterator<const_pointer> iterator;
 	typedef HeapIterator<const_pointer> const_iterator;
 
 public:
@@ -107,6 +107,7 @@ private:
 	void heap_shift_up(int pos, const T &value);
 	void heap_shift_down(int pos, const T &value);
 	void expand_heap();
+	void rebuild_heap();
 	Alloc &get_allocator() { return _allocator; }
 
 private:
