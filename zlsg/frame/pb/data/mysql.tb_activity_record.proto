@@ -1,0 +1,7 @@
+
+package mysql;
+
+message tb_activity_record{
+    required uint32 activity_id = 1;
+	required bytes act_record   = 2;
+}

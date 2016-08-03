@@ -1,0 +1,43 @@
+import "inner.comm.proto";
+package inner;
+
+message promotions {
+    required uint32 id            = 1;
+    required string name          = 2;
+    required uint32 type          = 3;// 开启类型（可修改）
+    required uint32 start_time    = 4;// 开启时间（可修改）
+    required uint32 duration_time = 5;// 持续时间（可修改）
+    required uint32 end_time      = 6;
+    required uint32 loop_time     = 7;// 循环时间（可以修改）
+    required uint32 state         = 8;// 0 进行中 1 暂停 2 结束
+}
+
+message get_promotions_req {
+    required uint32 unixtime = 1;
+    optional inner_head head = 1000;
+}
+
+message get_promotions_rsp {
+    repeated promotions ps   = 1;
+    required inner_tail tail = 1000;
+}
+
+message set_promotions_req {
+    repeated promotions ps   = 1;
+    optional inner_head head = 1000;
+}
+
+message set_promotions_rsp {
+    repeated promotions ps   = 1;
+    required inner_tail tail = 1000;
+}
+// 关闭 or 开启进行中
+message del_promotions_req {
+    repeated uint32     ids  = 1;
+    optional inner_head head = 1000;
+}
+
+message del_promotions_rsp {
+    repeated uint32     ids  = 1;
+    optional inner_tail tail = 1000;
+}

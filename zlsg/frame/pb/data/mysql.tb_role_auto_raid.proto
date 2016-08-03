@@ -1,0 +1,7 @@
+
+package mysql;
+
+message tb_role_auto_raid{
+    required uint32 role_id = 1;
+    required bytes info = 2;
+}

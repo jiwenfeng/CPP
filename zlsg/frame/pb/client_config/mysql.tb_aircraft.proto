@@ -1,0 +1,19 @@
+
+package mysql;
+
+message tb_aircraft{
+    required uint32 aircraft_id = 1;
+    required string name = 2;
+    required uint32 level = 3;
+    required uint32 exp = 4;
+    required uint32 max_life = 5;
+    required uint32 max_power = 6;
+    required uint32 attack = 7;
+    required uint32 defense = 8;
+    required uint32 dodge = 9;
+    required uint32 move_speed = 10;
+    required string icon_path = 11;
+    required string appe_path = 12;
+    required uint32 coin = 13;
+    required uint32 stone = 14;
+}

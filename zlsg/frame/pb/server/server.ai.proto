@@ -1,0 +1,345 @@
+package server;
+
+enum AI_COMPARE_RULE {
+    ACR_LESS    = 0;
+    ACR_GREATER = 1;
+    ACR_EQUAL   = 2;
+}
+
+enum AI_TARGET_TYPE {
+    ATT_OWN   = 0;
+    ATT_ENEMY = 1;
+}
+
+message ai_method {
+    required uint32 rand      = 1;
+    required uint32 skill_id  = 2;
+    required uint32 target    = 3;
+    required uint32 count     = 4;
+}
+
+message ai_move {
+    repeated uint32 x    = 1;
+    repeated uint32 y    = 2;
+    required uint32 rand = 3;
+}
+
+message ai_fix_move {
+    repeated uint32 grid  = 1;
+    repeated uint32 atk   = 2;
+    repeated uint32 watch = 3;
+    repeated uint32 block = 4;
+    required uint32 rand  = 5;
+}
+
+message ai_timer {
+    optional uint32 timer    = 1;
+    optional uint32 alarm    = 2;
+}
+
+message ai_status {
+    required uint32    status = 1;
+    optional uint32    timer  = 2;
+    optional uint32    each   = 3;
+}
+
+message ai_attr {
+    required uint32    attr    = 1;
+    optional uint32    less    = 2;
+    optional uint32    greater = 3;
+    optional uint32    equal   = 4;
+}
+
+message ai_distance {
+    required uint32 distance = 1;
+    required uint32 limit    = 2;
+    optional uint32 less     = 3;
+    optional uint32 greater  = 4;
+    optional uint32 equal    = 5;
+}
+
+message ai_attack {
+    required uint32 attack = 1;
+}
+
+message ai_defense {
+    required uint32 defense = 1;
+}
+
+message ai_dead {
+    required bool dead = 1;
+}
+
+message ai_hide {
+	required uint32 time = 1;
+	required uint32 rand = 2;
+	required uint32 pet  = 3;
+}
+
+message ai_stop {
+	required uint32 time = 1;
+	required uint32 rand = 2;
+}
+
+message ai_master {
+	required uint32 type = 1;
+	required uint32 time = 2;
+	required uint32 rand = 3;
+}
+
+message ai_msg {
+    required string text  = 1;
+	required uint32 show  = 2;
+    required uint32 delay = 3;
+	optional bool   send  = 4;
+}
+
+message ai_data {
+    repeated ai_timer    timer      = 1 ;
+    repeated ai_status   status     = 2 ;
+    repeated ai_attr     attr       = 3 ;
+    repeated ai_distance distance   = 4 ;
+    repeated ai_attack   attack     = 5 ;
+    repeated ai_defense  defense    = 6 ;
+    optional ai_dead     dead       = 7 ;
+    repeated ai_method   method     = 8 ;
+    repeated ai_move     move       = 9 ;
+    repeated ai_fix_move fix_move   = 10;
+    repeated ai_move     force_move = 11;
+    repeated ai_attack   target     = 12;
+    optional ai_msg      msg        = 13;
+	optional ai_stop     stop       = 14;
+	optional ai_hide     hide       = 15;
+	optional ai_master   master     = 16;
+}
+
+message ai_info {
+    repeated ai_data ai = 1;
+}
+
+message ai_run {
+    optional ai_method   method     = 1;
+    optional ai_move     move       = 2;
+    optional ai_fix_move fix_move   = 3;
+    optional ai_attack   target     = 4;
+    optional ai_msg      msg        = 5;
+	optional ai_stop     stop       = 6;
+	optional ai_hide     hide       = 7;
+	optional ai_master   master     = 8;
+}
+
+///////////
+message appeare {
+    repeated int32  x      = 1;
+    repeated int32  y      = 2;
+    repeated int32  roll   = 3;
+    repeated uint32 effect = 4;
+    enum type {
+        normal = 1;
+        sky    = 2;
+        ground = 3;
+        view   = 4;
+        around = 5;
+    }
+    required type   t      = 5;
+}
+
+message advance_appeare {
+    required int32 x = 1;
+    required int32 y = 2;
+}
+
+message into_appeare {
+    required int32  x        = 1;
+    required int32  y        = 2;
+    required int32  distance = 3;
+    optional uint32 seconds  = 4;
+	optional uint32 role     = 5;
+}
+
+message after_story {
+    required uint32 id   = 1;
+    required uint32 tick = 2;
+}
+
+message kill_monster {
+    required uint32 monster_id = 1;
+    required uint32 number     = 2;
+    optional uint32 seconds    = 3;
+}
+
+message touch_task {
+    required uint32 task_id = 1;
+}
+
+message start_activity {
+    required uint32 activity_id = 1;
+}
+
+message start_time_week {
+    required uint32         d = 1;
+    required start_time_day t = 2;
+}
+
+message start_time_day {
+    required uint32 h = 1;
+    required uint32 m = 2;
+    required uint32 s = 3;
+    required uint32 c = 4;
+}
+
+message start_time {
+    required uint32 time = 1;
+}
+
+message get_item {
+    required uint32 item_id = 1;
+    required uint32 count   = 2;
+    required uint32 tick    = 3;
+}
+
+message touch_scense_object {
+    required uint32 object = 1;
+    required uint32 count  = 2;
+    required uint32 tick   = 3;
+}
+
+message find_monster {
+    required uint32 character_id = 1;
+    optional uint32 distance     = 2;
+    optional uint32 seconds      = 3;
+}
+
+message group_monster {
+    required uint32 monster_id = 1;
+    required uint32 number     = 2;
+    optional uint32 seconds    = 3;
+}
+
+message appear_around {
+    required uint32 id       = 1;
+    required uint32 distance = 2;
+    required uint32 tick     = 3;
+}
+
+message create_msg {
+    required string content = 1;
+    required uint32 delay   = 2;
+    required uint32 show    = 3;
+}
+
+message suspend_create {
+    required uint32 type  = 1;
+    required uint32 count = 2;
+}
+
+message create_npc_rule {
+    repeated advance_appeare     advance  = 1;
+    repeated into_appeare        into     = 2;
+    repeated after_story         story    = 3;
+    repeated kill_monster        kill     = 4;
+    repeated start_time_week     week     = 5;
+    repeated touch_task          task     = 6; 
+    repeated start_activity      activity = 7; 
+    repeated start_time          time     = 8; 
+    repeated get_item            item     = 9; 
+    repeated touch_scense_object object   = 10;
+    repeated find_monster        find     = 11;
+    repeated group_monster       monster  = 12;
+    repeated appeare             app      = 13;
+    repeated appear_around       around   = 14;
+    optional bool                clear    = 15;
+    optional uint32              index    = 16;
+    repeated create_msg          msg      = 17;
+    repeated suspend_create      suspend  = 18;
+}
+
+message create_npc_rules {
+    repeated create_npc_rule rules = 1;
+}
+
+message appear_effect {
+    required uint32 id        = 1;
+    required uint32 x         = 2;
+    required uint32 y         = 3;
+    required uint32 frequency = 4;
+}
+
+message create_effect_rule {
+    repeated advance_appeare     advance  = 1;
+    repeated into_appeare        into     = 2;
+    repeated after_story         story    = 3;
+    repeated kill_monster        kill     = 4;
+    repeated start_time_week     week     = 5;
+    repeated touch_task          task     = 6; 
+    repeated start_activity      activity = 7; 
+    repeated start_time          time     = 8; 
+    repeated get_item            item     = 9; 
+    repeated touch_scense_object object   = 10;
+    repeated find_monster        find     = 11;
+    repeated group_monster       monster  = 12;
+    repeated appear_effect       app      = 13;
+}
+
+message create_effect_rules {
+    repeated create_effect_rule rules = 1;
+}
+
+////////
+message dead_role {
+    required uint32 id    = 1;
+    required uint32 count = 2;
+    required uint32 tick  = 3;
+}
+
+//
+message survive_role {
+    required uint32 count = 1;
+    required uint32 tick = 2;
+}
+
+message scene_timeout {
+    required uint32 tenms = 1;
+}
+
+message dead_count {
+    required uint32 count = 1;
+}
+
+message role_attribute {
+    required uint32 id    = 1;
+    required uint32 type  = 2;
+    required uint32 value = 3;
+}
+
+message role_postion {
+    required uint32 id       = 1;
+    required uint32 x        = 2;
+    required uint32 y        = 3;
+    required uint32 distance = 4;
+    required uint32 number   = 5;
+    required uint32 tick     = 6;
+}
+
+message raid_success_rule {
+    repeated dead_role    role  = 1;
+    repeated get_item     item  = 2;
+    repeated dead_role    touch = 3;
+    repeated ai_timer     timer = 4;
+    repeated role_postion pos   = 5;
+    repeated role_postion block = 6;
+    repeated survive_role survive = 7;
+}
+
+message raid_failure_rule {
+    repeated dead_count     role    = 1;
+    repeated scene_timeout  timeout = 2;
+    repeated dead_count     count   = 3;
+    repeated role_attribute attr    = 4;
+    repeated role_postion   pos     = 5;
+}
+
+message raid_over_rules {
+    repeated raid_success_rule success = 1;
+    repeated raid_failure_rule failure = 2;
+}

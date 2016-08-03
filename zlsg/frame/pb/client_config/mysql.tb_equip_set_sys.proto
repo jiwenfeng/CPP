@@ -1,0 +1,20 @@
+
+package mysql;
+
+message tb_equip_set_sys{
+    required uint32 id = 1;
+    required string costom_id = 2;
+    required string name = 3;
+    required uint32 set_code = 4;
+    required uint32 rank = 5;
+    required uint32 set_num = 6;
+    required uint32 base_attr_code_1 = 7;
+    required uint32 base_attr_val_1 = 8;
+    required uint32 base_attr_code_2 = 9;
+    required uint32 base_attr_val_2 = 10;
+    required uint32 set_effects_id = 11;
+    required string created_date = 12;
+    required string last_modified_date = 13;
+    required uint32 status = 14;
+    required string remark = 15;
+}

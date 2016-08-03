@@ -1,0 +1,11 @@
+
+package mysql;
+
+message tb_task_log{
+    required uint32 sid = 1;
+    required uint32 role_id = 2;
+    required uint32 task_id = 3;
+    required int32 status = 4;
+    required int32 quality = 5;
+    required uint32 create_date = 6;
+}

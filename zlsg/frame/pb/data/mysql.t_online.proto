@@ -1,0 +1,10 @@
+
+package mysql;
+
+message t_online{
+    required uint64 id         = 1;
+    required string sid        = 2;
+    required uint64 allcount   = 3;
+    required uint64 cashcount  = 4;
+    required uint32 createDate = 5;
+}

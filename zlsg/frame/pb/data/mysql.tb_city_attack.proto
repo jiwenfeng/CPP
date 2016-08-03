@@ -1,0 +1,10 @@
+
+package mysql;
+
+message tb_city_attack{
+    required uint32 id = 1;
+    required uint32 family_id = 2;
+    required uint32 occupy_time = 3;
+    required string title = 4;
+    required uint32 mod_title_time = 5;
+}

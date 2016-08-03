@@ -1,0 +1,9 @@
+
+package mysql;
+
+message tb_center_arena{
+    required uint32 rank = 1;
+    required uint32 role_id = 2;
+    required uint32 type = 3;
+    required uint32 history = 4;
+}

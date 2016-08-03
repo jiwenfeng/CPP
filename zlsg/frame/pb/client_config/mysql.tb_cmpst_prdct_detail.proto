@@ -1,0 +1,18 @@
+
+package mysql;
+
+message tb_cmpst_prdct_detail{
+    required uint32 id = 1;
+    required uint32 prdct_id = 2;
+    required uint32 goods_id = 3;
+    required uint32 max_goods_num = 4;
+    required uint32 min_goods_num = 5;
+    required uint32 goods_odds = 6;
+    required uint32 quality = 7;
+    required uint32 is_binding = 8;
+    required uint32 is_notice = 9;
+    required uint32 is_base = 10;
+    required string created_date = 11;
+    required string last_modified_date = 12;
+    required uint32 status = 13;
+}

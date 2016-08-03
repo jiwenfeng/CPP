@@ -1,0 +1,7 @@
+
+package mysql;
+
+message tb_role_treasure{
+    required uint32 role_id = 1;
+    required bytes treasures = 2;
+}

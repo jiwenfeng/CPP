@@ -1,0 +1,9 @@
+
+package mysql;
+
+message tb_role_task{
+    required uint32 role_id = 1;
+    required bytes acpt_task = 2;
+    required bytes comp_task = 3;
+    required bytes fresh_task = 4;
+}

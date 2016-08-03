@@ -1,0 +1,10 @@
+
+package mysql;
+
+message tb_version{
+    required uint32 id = 1;
+    required string database = 2;
+    required string server = 3;
+    required string client = 4;
+    required string time = 5;
+}

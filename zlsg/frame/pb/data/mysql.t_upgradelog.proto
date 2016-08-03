@@ -1,0 +1,16 @@
+
+package mysql;
+
+message t_upgradelog{
+    required uint32 id = 1;
+    required string sid = 2;
+    required string did = 3;
+    required string accountName = 4;
+    required string playerName = 5;
+    required uint32 oldLevel = 6;
+    required uint32 newLevel = 7;
+    required uint32 sucess = 8;
+    required uint32 upgradeType = 9;
+    required string params = 10;
+    required uint32 createDate = 11;
+}

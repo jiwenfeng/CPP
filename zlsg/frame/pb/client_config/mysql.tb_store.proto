@@ -1,0 +1,29 @@
+
+package mysql;
+
+message tb_store{
+    required uint32 id = 1;
+    required uint32 goods_id = 2;
+    required uint32 display_type = 3;
+    required uint32 sort = 4;
+    required uint32 currency_code = 5;
+    required uint32 ori_price = 6;
+    required uint32 disct_price = 7;
+    required uint32 binding = 8;
+    required uint32 daily_stock = 9;
+    required uint32 curr_stock = 10;
+    required uint32 buying_limit = 11;
+    required uint32 begin_valid_date = 12;
+    required uint32 end_valid_date = 13;
+    required int32 is_activity = 14;
+    required uint32 begin_top_date = 15;
+    required uint32 end_top_date = 16;
+    required uint32 is_reset_stock = 17;
+    required uint32 reset_stock = 18;
+    required uint32 last_reset_stock_date = 19;
+    required uint32 discount_type = 20;
+    required string created_date = 21;
+    required string last_modified_date = 22;
+    required uint32 status = 23;
+    required string remark = 24;
+}

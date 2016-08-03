@@ -1,0 +1,52 @@
+
+package mysql;
+
+message tb_battle{
+    required uint32 id = 1;
+    required uint32 battle_type = 2;
+    required string name = 3;
+    required string description = 4;
+    required uint32 map_id = 5;
+    required uint32 scene_id = 6;
+    required uint32 trans_id = 7;
+    required uint32 min_lv = 8;
+    required uint32 max_lv = 9;
+    required uint32 max_enter_times = 10;
+    required uint32 max_player = 11;
+    required uint32 max_battle_num = 12;
+    required uint32 sign_sec = 13;
+    required uint32 ready_sec = 14;
+    required uint32 duration = 15;
+    required uint32 is_pet_join = 16;
+    required uint32 reconnet_interval = 17;
+    required uint32 won_cnt_type = 18;
+    required uint32 sub_cnt_type = 19;
+    required uint32 won_cnt_val = 20;
+    required uint32 relive_times = 21;
+    required uint32 group_choose_type = 22;
+    required uint32 obtain_integral_type = 23;
+    required uint32 obtain_single_kill = 24;
+    required uint32 obtain_several_kill = 25;
+    required uint32 several_kill_addition = 26;
+    required uint32 assists_kill_addition = 27;
+    required uint32 obtain_be_killed = 28;
+    required uint32 kill_npc_id_1 = 29;
+    required uint32 obtain_val_1 = 30;
+    required uint32 kill_npc_id_2 = 31;
+    required uint32 obtain_val_2 = 32;
+    required uint32 kill_npc_id_3 = 33;
+    required uint32 obtain_val_3 = 34;
+    required uint32 kill_npc_id_4 = 35;
+    required uint32 obtain_val_4 = 36;
+    required uint32 kill_npc_id_5 = 37;
+    required uint32 obtain_val_5 = 38;
+    required uint32 kill_npc_id_6 = 39;
+    required uint32 obtain_val_6 = 40;
+    required uint32 effects_id_1 = 41;
+    required uint32 effects_id_2 = 42;
+    required uint32 effects_id_3 = 43;
+    required string icon_path = 44;
+    required string created_date = 45;
+    required string last_modified_date = 46;
+    required uint32 status = 47;
+}

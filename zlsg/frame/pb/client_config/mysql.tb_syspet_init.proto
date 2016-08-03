@@ -1,0 +1,21 @@
+
+package mysql;
+
+message tb_syspet_init{
+    required uint32 id = 1;
+    required uint32 sys_id = 2;
+    required uint32 order = 3;
+    required uint32 level = 4;
+    required string name = 5;
+    required string icon_path = 6;
+    required string appe_path = 7;
+    required uint32 init_default_skill_id = 8;
+    required uint32 init_skill_id_1 = 9;
+    required uint32 init_skill_id_2 = 10;
+    required uint32 init_skill_id_3 = 11;
+    required uint32 init_skill_id_4 = 12;
+    required uint32 init_skill_id_5 = 13;
+    required uint32 init_skill_id_6 = 14;
+    required uint32 init_skill_id_7 = 15;
+    required uint32 init_skill_id_8 = 16;
+}

@@ -1,0 +1,17 @@
+
+package mysql;
+
+message tb_npc_refresh_time{
+    required uint32 id = 1;
+    required uint32 npc_id = 2;
+    required int32 is_activity = 3;
+    required string begin_activity_date = 4;
+    required string end_activity_date = 5;
+    required uint32 refresh_type = 6;
+    required uint32 hh = 7;
+    required uint32 mm = 8;
+    required uint32 ss = 9;
+    required string created_date = 10;
+    required string last_modified_date = 11;
+    required uint32 status = 12;
+}

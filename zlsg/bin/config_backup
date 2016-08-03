@@ -1,0 +1,14 @@
+root = "./"
+thread = 16 
+logger = nil
+cpath = root.."service/?.so"
+db_host = "127.0.0.1"
+db_port = 3306
+db_name = "Programmer"
+db_user = "abel"
+db_pass = "0402"
+client_port = "0|0|0|1288|0|0|"
+per_gate_num = 1300
+max_online_user = 3000
+inner_port = "1289"
+start_svr_time = 1384790399

@@ -1,0 +1,20 @@
+
+package mysql;
+
+message t_moneylog{
+    required uint32 id = 1;
+    required string sid = 2;
+    required string did = 3;
+    required string accountName = 4;
+    required string playerName = 5;
+    required uint32 rootId = 6;
+    required uint32 typeId = 7;
+    required uint32 oldValue = 8;
+    required uint32 newValue = 9;
+    required uint32 gold = 10;
+    required uint32 goldTicke = 11;
+    required uint32 goodsId = 12;
+    required uint32 num = 13;
+    required uint32 createDate = 14;
+    required uint32 roleId = 15;
+}

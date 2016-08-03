@@ -1,0 +1,37 @@
+﻿  coded_stream.cc
+  common.cc
+  descriptor.cc
+  descriptor.pb.cc
+  descriptor_database.cc
+  dynamic_message.cc
+  extension_set.cc
+  extension_set_heavy.cc
+  generated_message_reflection.cc
+  generated_message_util.cc
+  gzip_stream.cc
+  importer.cc
+  message.cc
+  message_lite.cc
+  once.cc
+  atomicops_internals_x86_msvc.cc
+  parser.cc
+  printer.cc
+  reflection_ops.cc
+  repeated_field.cc
+  Generating Code...
+  Compiling...
+  service.cc
+  structurally_valid.cc
+  strutil.cc
+  substitute.cc
+  text_format.cc
+  tokenizer.cc
+  unknown_field_set.cc
+  wire_format.cc
+  wire_format_lite.cc
+  zero_copy_stream.cc
+  zero_copy_stream_impl.cc
+  zero_copy_stream_impl_lite.cc
+  stringprintf.cc
+  Generating Code...
+  libprotobuf.vcxproj -> E:\zlsg\code\zproj\server\tpl\protobuf-2.5.0\vsprojects\x64\Debug\libprotobuf.lib

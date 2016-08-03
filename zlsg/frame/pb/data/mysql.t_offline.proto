@@ -1,0 +1,15 @@
+
+package mysql;
+
+message t_offline{
+    required uint32 id = 1;
+    required string sid = 2;
+    required string did = 3;
+    required string accountName = 4;
+    required string playerName = 5;
+    required uint32 playerLevel = 6;
+    required string ip = 7;
+    required uint32 onlineTime = 8;
+    required uint32 historyOnline = 9;
+    required uint32 createDate = 10;
+}

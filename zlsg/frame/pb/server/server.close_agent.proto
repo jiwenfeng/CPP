@@ -1,0 +1,5 @@
+package server;
+
+message close_agent {
+	required uint32 agent_id = 1;
+}

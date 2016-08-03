@@ -1,0 +1,7 @@
+
+package mysql;
+
+message tb_mail_center{
+    required uint32 role_id = 1;
+    required bytes mail = 2;
+}

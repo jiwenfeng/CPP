@@ -1,0 +1,65 @@
+import "inner.comm.proto";
+package inner;
+
+message faqType_req {
+    required int32  lang = 1;
+    required int32  game_id = 2;
+    
+}
+
+message faqType_rsp {
+    required inner_tail tail = 1000;
+}
+
+message faqList_req {
+    required int32  kind_id = 1;
+    optional int32  page = 2;
+    optional int32  ps = 3;
+    
+}
+
+message faqList_rsp {
+    required inner_tail tail = 1000;
+}
+
+message faqDetail_req {
+    required int32 id = 1;
+    
+}
+
+message faqDetail_rsp {
+    required inner_tail tail = 1000;
+}
+
+message faqEvaluate_req {
+    required int32  id = 1;
+    required int32  faq_whether = 2;
+    required int32  faq_opinion = 3;
+    required string content = 4;
+}
+
+message faqEvaluate_rsp {
+    required inner_tail tail = 1000;
+}
+
+message faqHot_req {
+    required int32  lang = 1;
+    required int32  ps = 2;
+    required int32  game_id = 3;
+}
+
+message faqHot_rsp {
+    required inner_tail tail = 1000;
+}
+
+message faqSearch_req {
+    required int32  lang = 1;
+    required string  key_word = 2;
+    required int32  game_id = 3;
+    optional int32  page = 4;
+    optional int32  ps = 5;
+}
+
+message faqSearch_rsp {
+    required inner_tail tail = 1000;
+}

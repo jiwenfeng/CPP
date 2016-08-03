@@ -1,0 +1,9 @@
+import "mysql.tb_player.proto";
+import "mysql.tb_player_role.proto";
+package mysql;
+
+message auth_player{
+    required  tb_player p = 1;
+    optional  tb_player_role pr = 2;
+}
+

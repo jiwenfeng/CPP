@@ -1,0 +1,2 @@
+/usr/bin/ar cr libnode_service.a  CMakeFiles/node_service.dir/node_interface.cc.o CMakeFiles/node_service.dir/node_service.cc.o
+/usr/bin/ranlib libnode_service.a

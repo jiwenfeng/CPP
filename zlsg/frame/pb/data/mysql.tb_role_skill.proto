@@ -1,0 +1,16 @@
+
+package mysql;
+
+message tb_role_skill{
+    required uint32 role_id = 1;
+    required uint32 skill_id = 2;
+    required uint32 skill_level = 3;
+    required uint32 skill_grid_index = 4;
+    required uint32 skillful = 5;
+    required uint32 studied = 6;
+    required uint32 end_cd_time = 7;
+    required uint32 created_date = 8;
+    required uint32 status = 9;
+    required uint32 effect_id = 10;
+	required uint32 smy_id  = 11;
+}

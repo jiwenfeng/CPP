@@ -1,0 +1,7 @@
+
+package mysql;
+
+message tb_role_buffer{
+    required uint32 role_id = 1;
+    required bytes buffers = 2;
+}

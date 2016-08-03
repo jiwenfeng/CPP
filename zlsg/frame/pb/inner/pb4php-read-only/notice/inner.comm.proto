@@ -1,0 +1,14 @@
+package inner;
+
+message inner_head {
+    optional int32 svr_id      = 1[default = 0];
+    optional int32 agent_id    = 2[default = 0];
+    optional int32 client_id   = 3[default = 0];
+    optional string client_ip   = 4;
+}
+
+message inner_tail {
+    optional int32 status  = 1;
+    optional string info    = 2;
+    optional string data    = 3;
+}

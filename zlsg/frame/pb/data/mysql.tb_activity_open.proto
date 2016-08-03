@@ -1,0 +1,8 @@
+
+package mysql;
+
+message tb_activity_open{
+    required uint32 activity_id = 1;
+	required uint32 open_type   = 2;
+	required uint32 reward_flag = 3;
+}

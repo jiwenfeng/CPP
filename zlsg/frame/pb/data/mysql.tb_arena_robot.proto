@@ -1,0 +1,14 @@
+
+package mysql;
+
+message tb_arena_robot{
+    required uint32 id = 1;
+    required string name = 2;
+    required uint32 config_id = 3;
+    required uint32 fighting_power = 4;
+    required bytes attr = 5;
+    required uint32 pet_id = 6;
+    required bytes g_attr = 7;
+    required uint32 standby = 8;
+    required bytes b_attr = 9;
+}

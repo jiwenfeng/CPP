@@ -1,0 +1,13 @@
+
+package mysql;
+
+message tb_sys_reward{
+    required uint32 id = 1;
+    required uint32 reward_code = 2;
+    required string name = 3;
+    required string desciption = 4;
+    required uint32 sys_mail_tpl_id = 5;
+    required string created_date = 6;
+    required string last_modified_date = 7;
+    required uint32 status = 8;
+}

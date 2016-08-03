@@ -1,0 +1,16 @@
+
+package mysql;
+
+message tb_equip_sublime{
+    required uint32 id = 1;
+    required uint32 src_goods_id = 2;
+    required uint32 dst_goods_id = 3;
+    required uint32 expend_goods_id_1 = 4;
+    required uint32 expend_goods_num_1 = 5;
+    required uint32 expend_goods_id_2 = 6;
+    required uint32 expend_goods_num_2 = 7;
+    required uint32 expend_goods_id_3 = 8;
+    required uint32 expend_goods_num_3 = 9;
+    required uint32 expend_goods_id_4 = 10;
+    required uint32 expend_goods_num_4 = 11;
+}

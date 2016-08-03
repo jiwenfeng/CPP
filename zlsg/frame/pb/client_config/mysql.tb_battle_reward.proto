@@ -1,0 +1,14 @@
+
+package mysql;
+
+message tb_battle_reward{
+    required uint32 id = 1;
+    required uint32 battle_id = 2;
+    required uint32 winner_type = 3;
+    required uint32 min_rank = 4;
+    required uint32 max_rank = 5;
+    required uint32 reward_id = 6;
+    required string created_date = 7;
+    required string last_modified_date = 8;
+    required uint32 status = 9;
+}

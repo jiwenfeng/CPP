@@ -1,0 +1,13 @@
+
+package mysql;
+
+message tb_city_welfare{
+    required uint32 id = 1;
+    required uint32 family_id = 2;
+    required uint32 official_1 = 3;
+    required uint32 official_2 = 4;
+    required uint32 official_3 = 5;
+    required uint32 official_4 = 6;
+    required uint32 official_5 = 7;
+    required uint32 official_6 = 8;
+}

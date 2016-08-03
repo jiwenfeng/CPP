@@ -1,0 +1,15 @@
+import "inner.comm.proto";
+package inner;
+
+message sendEmail_req {
+	required uint32     type     = 1;
+    repeated inner_user user     = 2;
+    required string     title    = 3;
+    required string     content  = 4;
+
+    optional inner_head head     = 1000;
+}
+
+message sendEmail_rsp {
+    required inner_tail tail = 1000;
+}

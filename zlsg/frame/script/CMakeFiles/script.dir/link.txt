@@ -1,0 +1,2 @@
+/usr/bin/ar cr libscript.a  CMakeFiles/script.dir/link/link_lua.cc.o
+/usr/bin/ranlib libscript.a

@@ -1,0 +1,16 @@
+import "inner.comm.proto";
+package inner;
+
+message online_player_req {
+	required uint32 	unixtime = 1;
+	optional inner_head head     = 1000;
+}
+
+message online_player_rsp {
+	repeated uint32 	role_id = 1;
+	required inner_tail tail    = 1000;
+}
+
+message kick_req {
+	repeated uint32 role_id = 1;
+}

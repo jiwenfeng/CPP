@@ -1,0 +1,10 @@
+
+package mysql;
+
+message t_moneylogconfig{
+    required uint32 id = 1;
+    required uint32 rootid = 2;
+    required string rootname = 3;
+    required uint32 typeid = 4;
+    required string typename = 5;
+}

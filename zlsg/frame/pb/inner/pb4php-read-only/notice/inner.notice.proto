@@ -1,0 +1,52 @@
+import "inner.comm.proto";
+package inner;
+
+message addNotice_req {
+    required string     message      = 1;
+    required int32     intervalTime = 2;
+    required int32     startTime    = 3;
+    required int32     endTime      = 4;
+    optional inner_head head         = 1000;
+}
+
+message addNotice_rsp {
+    required inner_tail tail = 1000;
+}
+
+message getNoticeList_req {
+    required int32     id       = 1;
+    required int32     page     = 2[default = 1];
+    required int32     pageSize = 3[default = 20];
+    optional inner_head head     = 1000;
+}
+
+message notice_info {
+    required int32 id           = 1;
+    required string message      = 2;
+    required int32 intervalTime = 3;
+    required int32 startTime    = 4;
+    required int32 endTime      = 5;
+}
+
+message getNoticeList_rsp {
+    repeated notice_info ni   = 1;
+    required inner_tail  tail = 1000;
+}
+
+message updateNotice_req {
+    required notice_info ni   = 1;
+    optional inner_head  head = 1000;
+}
+
+message updateNotice_rsp {
+    optional inner_tail tail = 1000;
+}
+
+message delNotice_req {
+    required int32     id   = 1;
+    optional inner_head head = 1000;
+}
+
+message delNotice_rsp {
+    optional inner_tail tail = 1000;
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libchores.a  CMakeFiles/chores.dir/farm/farm_mgr.cc.o CMakeFiles/chores.dir/farm/farm.cc.o
+/usr/bin/ranlib libchores.a

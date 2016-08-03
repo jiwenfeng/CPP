@@ -1,0 +1,21 @@
+
+package mysql;
+
+message tb_battle_group{
+    required uint32 id = 1;
+    required uint32 battle_id = 2;
+    required uint32 group_code = 3;
+    required string group_name = 4;
+    required uint32 max_player = 5;
+    required uint32 trans_id = 6;
+    required uint32 effects_id_1 = 7;
+    required uint32 effects_id_2 = 8;
+    required uint32 effects_id_3 = 9;
+    required uint32 effects_id_4 = 10;
+    required uint32 effects_id_5 = 11;
+    required uint32 effects_id_6 = 12;
+    required string icon_path = 13;
+    required string created_date = 14;
+    required string last_modified_date = 15;
+    required uint32 status = 16;
+}

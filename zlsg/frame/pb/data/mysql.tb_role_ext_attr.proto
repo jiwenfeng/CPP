@@ -1,0 +1,8 @@
+
+package mysql;
+
+message tb_role_ext_attr{
+    required uint32 role_id = 1;
+    required uint32 src_type = 2;
+    required bytes attr = 3;
+}

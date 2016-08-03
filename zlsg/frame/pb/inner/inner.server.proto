@@ -1,0 +1,22 @@
+import "inner.comm.proto";
+package inner;
+
+message start_time_req {
+    required uint32     unixtime    = 1;
+    optional inner_head head        = 1000;
+}
+
+message start_time_rsp {
+    required uint32     unixtime    = 1;
+    required inner_tail tail        = 1000;
+}
+
+message open_gm_req {
+    required uint32     unixtime    = 1;
+    optional inner_head head        = 1000;
+}
+
+message open_gm_rsp {
+    required uint32     unixtime    = 1;
+    required inner_tail tail        = 1000;
+}

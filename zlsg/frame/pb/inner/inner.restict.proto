@@ -1,0 +1,38 @@
+import "inner.comm.proto";
+package inner;
+
+message getPlayerRestictList_req {
+    optional int32      type     = 1;
+    optional int32      page     = 2;
+    optional int32      pageSize = 3;
+    optional inner_head head     = 1000;
+}
+
+message ban_info {
+    required inner_user user  = 1;
+    required uint32     type  = 2;
+    required uint32     time  = 3;
+}
+
+message getPlayerRestictList_rsp {
+    repeated ban_info   bi   = 1;
+    required inner_tail tail = 1000;
+}
+
+message addPlayerRestict_req{
+    repeated ban_info   bi   = 1;
+    optional inner_head head = 1000;
+}
+
+message addPlayerRestict_rsp {
+    required inner_tail tail = 1000;
+}
+
+message delPlayerRestict_req{
+    repeated ban_info   bi   = 1;
+    optional inner_head head = 1000;
+}
+
+message delPlayerRestict_rsp {
+    required inner_tail tail = 1000;
+}

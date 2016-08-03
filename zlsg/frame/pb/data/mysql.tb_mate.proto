@@ -1,0 +1,13 @@
+
+package mysql;
+
+message tb_mate{
+    required uint32 role_id = 1;
+    required uint32 mate_role_id = 2;
+    required uint32 today_times = 3;
+    required uint32 last_time = 4;
+    required uint32 miss_times = 5;
+    required uint32 total_times = 6;
+    required uint32 depth_time = 7;
+    required uint32 advance_depth = 8;
+}

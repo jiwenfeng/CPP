@@ -1,0 +1,28 @@
+import "inner.comm.proto";
+package inner;
+
+message getBackpackGoodsList_req {
+    required uint32     type = 1;
+    repeated inner_user user = 2;
+    optional inner_head head = 1000;
+}
+
+message backpackGoods {
+    repeated inner_goods goods = 1;
+    required inner_user  user  = 2;
+}
+
+message getBackpackGoodsList_rsp {
+    repeated backpackGoods data = 1;
+    required inner_tail    tail = 1000;
+}
+
+message updateBackpackGoods_req {
+    repeated backpackGoods update = 1;
+    optional inner_head    head   = 1000;
+}
+
+message updateBackpackGoods_rsp {
+    required inner_tail tail = 1000;
+}
+

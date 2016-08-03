@@ -1,0 +1,1368 @@
+-- MySQL dump 10.13  Distrib 5.1.73, for redhat-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: jwf
+-- ------------------------------------------------------
+-- Server version	5.1.73-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `t_login`
+--
+
+DROP TABLE IF EXISTS `t_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_login` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` varchar(255) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `accountName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶å¸å·',
+  `platform` varchar(255) NOT NULL DEFAULT '' COMMENT 'å¹³å°æ ‡è¯†ï¼ˆå¦‚91,UCç­‰ï¼‰',
+  `channel_id` varchar(255) NOT NULL DEFAULT '' COMMENT 'æ¸ é“IDï¼Œå¹¿å‘ŠæŠ•æ”¾æ‰“åŒ…æ—¶ç”¨åˆ°',
+  `appVersion` varchar(255) NOT NULL DEFAULT '' COMMENT 'èŽ·å–åº”ç”¨çš„ç‰ˆæœ¬å·',
+  `appType` varchar(255) NOT NULL DEFAULT '' COMMENT 'iphoneã€ipadã€android',
+  `device` varchar(255) NOT NULL DEFAULT '' COMMENT 'èŽ·å–çš„è®¾å¤‡çš„æœºåž‹',
+  `nm` varchar(255) NOT NULL DEFAULT '' COMMENT 'è”ç½‘æ–¹å¼å¦‚ï¼šwifi',
+  `mno` varchar(255) NOT NULL DEFAULT '' COMMENT 'èŽ·å–è®¾å¤‡çš„è¿è¥å•† å¦‚ï¼šç§»åŠ¨',
+  `screen` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡çš„å±å¹•åˆ†è¾¨çŽ‡',
+  `os` varchar(255) NOT NULL DEFAULT '' COMMENT 'æ“ä½œç³»ç»Ÿ',
+  `mac` varchar(255) NOT NULL DEFAULT '' COMMENT 'iosçš„MACåœ°å€,ä¸å¸¦:å·',
+  `ip` varchar(255) NOT NULL DEFAULT '' COMMENT 'ç™»å½•IP',
+  `Createtime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'ç™»å½•æ—¶é—´',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_moneylog`
+--
+
+DROP TABLE IF EXISTS `t_moneylog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_moneylog` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` varchar(255) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `accountName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶å¸å·',
+  `playerName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶è§’è‰²',
+  `rootId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'æ¶ˆè€—çš„å¤§ç±»ï¼ˆå¯¹æ¸¸æˆæœ‰ç›¸ä¼¼æ€§è´¨çš„ä¸åŒæ¶ˆè€—ç±»åž‹å½’ç±»ï¼‰',
+  `typeId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'æ¶ˆè€—çš„å°ç±»',
+  `oldValue` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'æ¶ˆè€—å‰è¯¥çŽ©å®¶çš„é‡‘å¸å€¼',
+  `newValue` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'æ¶ˆè€—åŽè¯¥çŽ©å®¶çš„é‡‘å¸å€¼',
+  `gold` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'æ¶ˆè€—çš„é‡‘å¸æ•°ï¼ˆå¦‚æœ‰oldvalueå’ŒnewValueï¼Œè¯¥å­—æ®µå¯ç•¥ï¼‰',
+  `goldTicke` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'æ‰©å±•å­—æ®µï¼ˆå¦‚æœ‰æ¶ˆè€—èµ é€çš„ç¤¼åˆ¸ç­‰ï¼‰',
+  `goodsId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'è´­ä¹°çš„é“å…·id',
+  `num` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'è´­ä¹°ç‰©å“çš„æ•°é‡',
+  `createDate` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'äº‹ä»¶å‘ç”Ÿæ—¶é—´',
+  `roleId` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `rootId` (`rootId`) USING BTREE,
+  KEY `typeId` (`typeId`) USING BTREE,
+  KEY `createDate` (`createDate`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_moneylogconfig`
+--
+
+DROP TABLE IF EXISTS `t_moneylogconfig`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_moneylogconfig` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `rootid` int(10) unsigned NOT NULL,
+  `rootname` varchar(255) NOT NULL DEFAULT '',
+  `typeid` int(10) unsigned NOT NULL,
+  `typename` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_newtask`
+--
+
+DROP TABLE IF EXISTS `t_newtask`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_newtask` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` varchar(255) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `accountName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶å¸å·',
+  `playerName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶è§’è‰²',
+  `taskId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'ä»»åŠ¡id',
+  `status` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'ä»»åŠ¡çŠ¶æ€ï¼ˆ0ï¼šæŽ¥æ”¶ï¼Œ1ï¼šå®Œæˆï¼Œ2ï¼šå¤±è´¥ï¼‰',
+  `quality` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'ä»»åŠ¡å®Œæˆå“è´¨',
+  `createDate` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'äº‹ä»¶å‘ç”Ÿæ—¶é—´',
+  PRIMARY KEY (`id`),
+  KEY `createDate` (`createDate`) USING BTREE,
+  KEY `taskId` (`taskId`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1344 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_newtaskconfig`
+--
+
+DROP TABLE IF EXISTS `t_newtaskconfig`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_newtaskconfig` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `taskid` int(10) unsigned NOT NULL,
+  `taskname` varchar(255) NOT NULL DEFAULT '',
+  `taskOrder` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_offline`
+--
+
+DROP TABLE IF EXISTS `t_offline`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_offline` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` varchar(255) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `accountName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶å¸å·',
+  `playerName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶è§’è‰²',
+  `playerLevel` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å½“å‰çŽ©å®¶ç­‰çº§',
+  `ip` varchar(255) NOT NULL DEFAULT '' COMMENT 'ç”¨æˆ·ç™»å½•ip',
+  `onlineTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'çŽ©å®¶è¯¥æ¬¡ç™»å½•åœ¨çº¿æ—¶é•¿ï¼ˆsocketè¿žæŽ¥æ—¶é•¿ï¼‰',
+  `historyOnline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'çŽ©å®¶åŽ†å²ç´¯è®¡åœ¨çº¿æ—¶é•¿',
+  `createDate` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'äº‹ä»¶å‘ç”Ÿæ—¶é—´',
+  PRIMARY KEY (`id`),
+  KEY `createDate` (`createDate`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_online`
+--
+
+DROP TABLE IF EXISTS `t_online`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_online` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'è‡ªå¢žid',
+  `sid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `allcount` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'å…¨æœè¯¥æ—¶åˆ»åœ¨çº¿æ•°',
+  `cashcount` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'å……å€¼è¿‡çš„çŽ©å®¶åœ¨çº¿æ•°',
+  `createDate` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'æ—¥å¿—æ—¶é—´ï¼ˆå»ºè®®æ¯5åˆ†é’Ÿçºªå½•ä¸€æ¬¡ï¼‰',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1838 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_recharge`
+--
+
+DROP TABLE IF EXISTS `t_recharge`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_recharge` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` varchar(255) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `accountName` varchar(255) NOT NULL DEFAULT '' COMMENT 'å……å€¼å¸å·',
+  `playerName` varchar(255) NOT NULL DEFAULT '' COMMENT 'å……å€¼è§’è‰²',
+  `playerLevel` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å……å€¼æ—¶çš„çŽ©å®¶ç­‰çº§',
+  `transactionId` varchar(100) NOT NULL DEFAULT '' COMMENT 'è®¢å•å·',
+  `currency` varchar(10) NOT NULL DEFAULT '' COMMENT 'è´§å¸ç±»åž‹ï¼šä¸€èˆ¬ä¸ºå¤§å†™ç®€å†™ï¼Œå¦‚RMB',
+  `inpourType` varchar(50) NOT NULL DEFAULT '' COMMENT 'æ”¯ä»˜æ–¹å¼ï¼šå¦‚æ”¯ä»˜å®ã€ç½‘é“¶ç­‰',
+  `addcoin` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT 'å¥—é¤ç±»åž‹ï¼šå¦‚æžœæ¸¸æˆæœ‰å……å€¼å¥—é¤æ ‡è®°',
+  `money` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT 'å……å€¼é‡‘é¢ï¼ˆQå¸ã€å¹³å°å¸ã€rmbï¼‰',
+  `gold` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å……å€¼èŽ·å¾—é‡‘å¸',
+  `exchangeType` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT 'å……å€¼ç±»åž‹(0/1æ­£å¸¸å……å€¼,2.è¡¥å¿é‡‘å¸å¡(å……å€¼å¤±è´¥å®¢æœè¡¥å¿ï¼Œå¯å½“ä½œæ­£å¸¸å……å€¼) 3.æ™ºèƒ½é‡‘å¸å¡(æ´»åŠ¨å¥–åŠ±æˆ–è€…æ‰£é™¤é‡‘å¸ï¼Œå¯ä»¥æœ‰æ­£è´Ÿ) 4.å†…éƒ¨æµ‹è¯•(ç»™å†…éƒ¨äººå‘˜å‘æ”¾é‡‘å¸)',
+  `depay` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT 'æ‰‹ç»­è´¹(ç½‘é“¶æ‰‹ç»­è´¹ç­‰)',
+  `gDepay` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT 'æ¸¸æˆæ‰‹ç»­è´¹(å¦‚ï¼šè…¾è®¯æŠµæ‰£åˆ¸å……å€¼)',
+  `state` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT 'çŠ¶æ€ï¼šå¦‚æœ‰å¤±è´¥çš„æƒ…å†µï¼Œç”¨äºŽåŒºåˆ†',
+  `createDate` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å……å€¼æ—¶é—´ï¼ˆç§’æ—¶é—´æˆ³ï¼‰',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_upgradelog`
+--
+
+DROP TABLE IF EXISTS `t_upgradelog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_upgradelog` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` varchar(255) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(255) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `accountName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶å¸å·',
+  `playerName` varchar(255) NOT NULL DEFAULT '' COMMENT 'çŽ©å®¶è§’è‰²',
+  `oldLevel` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å‡çº§å‰ç­‰çº§',
+  `newLevel` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å‡çº§åŽç­‰çº§',
+  `sucess` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '1ï¼šæˆåŠŸï¼Œ0å¤±è´¥',
+  `upgradeType` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å‡çº§ç±»åž‹(1:çŽ©å®¶ç­‰çº§,2:åéª‘ç­‰çº§,3:å® ç‰©ç­‰çº§â€¦)',
+  `params` varchar(255) NOT NULL DEFAULT '' COMMENT 'æ¶ˆè€—é‡‘å¸å’Œé“å…·æƒ…å†µï¼ˆæ²¡æœ‰å¯ä»¥ä¸è®°å½•ï¼‰è§æ³¨â‘ ',
+  `createDate` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'äº‹ä»¶å‘ç”Ÿæ—¶é—´',
+  PRIMARY KEY (`id`),
+  KEY `createDate` (`createDate`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=350 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_activity_record`
+--
+
+DROP TABLE IF EXISTS `tb_activity_record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_activity_record` (
+  `activity_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `act_record` blob NOT NULL,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_arena_record`
+--
+
+DROP TABLE IF EXISTS `tb_arena_record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_arena_record` (
+  `role_id` int(11) unsigned NOT NULL,
+  `status` int(11) NOT NULL,
+  `log` blob NOT NULL,
+  PRIMARY KEY (`role_id`),
+  KEY `ID` (`role_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_arena_robot`
+--
+
+DROP TABLE IF EXISTS `tb_arena_robot`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_arena_robot` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `config_id` int(10) unsigned NOT NULL,
+  `fighting_power` int(10) unsigned NOT NULL,
+  `attr` blob NOT NULL,
+  `pet_id` int(10) NOT NULL,
+  `g_attr` blob NOT NULL,
+  `standby` int(11) NOT NULL,
+  `b_attr` blob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_center_arena`
+--
+
+DROP TABLE IF EXISTS `tb_center_arena`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_center_arena` (
+  `rank` int(11) unsigned NOT NULL,
+  `role_id` int(11) unsigned NOT NULL,
+  `type` int(11) DEFAULT NULL,
+  `history` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`rank`),
+  KEY `rank_id` (`rank`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_center_cycle`
+--
+
+DROP TABLE IF EXISTS `tb_center_cycle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_center_cycle` (
+  `level` int(11) unsigned NOT NULL,
+  `role_id` int(11) unsigned NOT NULL,
+  `tick` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`level`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_center_cycle_role`
+--
+
+DROP TABLE IF EXISTS `tb_center_cycle_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_center_cycle_role` (
+  `role_id` int(10) unsigned NOT NULL,
+  `helped_count` int(10) unsigned NOT NULL,
+  `passed_levels` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_city_attack`
+--
+
+DROP TABLE IF EXISTS `tb_city_attack`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_city_attack` (
+  `id` int(11) NOT NULL,
+  `family_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `occupy_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL,
+  `mod_title_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_city_welfare`
+--
+
+DROP TABLE IF EXISTS `tb_city_welfare`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_city_welfare` (
+  `id` int(10) unsigned NOT NULL,
+  `family_id` int(10) unsigned NOT NULL,
+  `official_1` int(10) unsigned DEFAULT NULL,
+  `official_2` int(10) unsigned DEFAULT NULL,
+  `official_3` int(10) unsigned DEFAULT NULL,
+  `official_4` int(10) unsigned DEFAULT NULL,
+  `official_5` int(10) unsigned DEFAULT NULL,
+  `official_6` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family`
+--
+
+DROP TABLE IF EXISTS `tb_family`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family` (
+  `id` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂID',
+  `name` varchar(64) NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂÃ¥ÂÂÃ¥Â­â€”',
+  `flag_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `flag_name` varchar(64) NOT NULL,
+  `lvl` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂÃ§Â­â€°Ã§ÂºÂ§',
+  `chief_id` int(11) unsigned NOT NULL COMMENT 'Ã¦â€”ÂÃ©â€¢Â¿',
+  `chief_name` varchar(64) NOT NULL DEFAULT '',
+  `deputy_id` int(11) unsigned NOT NULL,
+  `post` varchar(1024) NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂÃ¥â€¦Â¬Ã¥â€˜Å ',
+  `money` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂÃ¨Âµâ€žÃ©â€¡â€˜',
+  `power` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂÃ¦Ë†ËœÃ¦â€“â€”Ã¥Å â€º',
+  `domain` int(11) unsigned NOT NULL DEFAULT '0',
+  `king` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `emperor` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `cur_member_num` int(11) unsigned NOT NULL COMMENT 'Ã¥Â½â€œÃ¥â€°ÂÃ¦Ë†ÂÃ¥â€˜ËœÃ¤Â¸ÂªÃ¦â€¢Â°',
+  `approval` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `activity` int(11) unsigned NOT NULL DEFAULT '0',
+  `qq` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'QQÃ§Â¾Â¤Ã¥ÂÂ·',
+  `yy` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'YYÃ§Â¾Â¤Ã¥ÂÂ·',
+  `boss_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `call_boss_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `op_tag` int(11) unsigned NOT NULL DEFAULT '0',
+  `op_tag_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` int(11) unsigned NOT NULL DEFAULT '0',
+  `belong_sect` int(11) unsigned NOT NULL DEFAULT '1',
+  `create_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'å†›å›¢åˆ›å»ºæ—¶é—´',
+  `dragon_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `tiger_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `rosefinch_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `tortoise_count` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`,`belong_sect`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family_diplomacy`
+--
+
+DROP TABLE IF EXISTS `tb_family_diplomacy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family_diplomacy` (
+  `family_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `target_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `relation_type` int(11) unsigned NOT NULL DEFAULT '0',
+  `apply_time` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`family_id`,`target_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family_domain`
+--
+
+DROP TABLE IF EXISTS `tb_family_domain`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family_domain` (
+  `scene_id` int(11) unsigned NOT NULL,
+  `family_id` int(11) unsigned NOT NULL,
+  `time` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`scene_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family_log`
+--
+
+DROP TABLE IF EXISTS `tb_family_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family_log` (
+  `id` int(11) unsigned NOT NULL DEFAULT '0',
+  `family_id` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂId',
+  `time` int(11) unsigned NOT NULL COMMENT 'Ã¦â€”Â¶Ã©â€”Â´',
+  `type` int(11) unsigned NOT NULL COMMENT 'Ã§Â±Â»Ã¥Å¾â€¹',
+  `key` int(11) unsigned NOT NULL COMMENT 'Ã¥Ââ€˜Ã¨ÂµÂ·',
+  `value` int(11) unsigned NOT NULL COMMENT 'Ã¤Âºâ€¹Ã¨Â¿Â¹',
+  `family_name` varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`,`family_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family_member`
+--
+
+DROP TABLE IF EXISTS `tb_family_member`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family_member` (
+  `family_id` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂId',
+  `role_id` int(11) unsigned NOT NULL COMMENT 'Ã¨Â§â€™Ã¨â€°Â²Id',
+  `permissions` int(11) unsigned NOT NULL COMMENT 'Ã¦ÂÆ’Ã©â„¢Â',
+  `time` int(11) unsigned NOT NULL COMMENT 'Ã¥Å Â Ã¥â€¦Â¥Ã¦â€”Â¶Ã©â€”Â´',
+  `add_by` int(11) unsigned NOT NULL COMMENT 'Ã¦Â·Â»Ã¥Å Â Ã¨â‚¬â€¦Ã¨Â§â€™Ã¨â€°Â²Id',
+  `strength` int(11) unsigned NOT NULL,
+  `dragon_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `tiger_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `rosefinch_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `tortoise_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `money` int(11) unsigned NOT NULL DEFAULT '0',
+  `total_donate` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`family_id`,`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family_record`
+--
+
+DROP TABLE IF EXISTS `tb_family_record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family_record` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `type` int(11) unsigned NOT NULL,
+  `killer_family` int(11) unsigned NOT NULL COMMENT 'Ã¥Â®Â¶Ã¦â€”ÂId',
+  `killer` int(11) unsigned NOT NULL COMMENT 'Ã¦Ë†ËœÃ¦â€“â€”Ã§Â±Â»Ã¥Å¾â€¹',
+  `slain_family` int(11) unsigned NOT NULL COMMENT 'Ã¥â€¡Â»Ã¦Ââ‚¬Ã¨â‚¬â€¦',
+  `slain_title` int(11) unsigned NOT NULL COMMENT 'Ã¨Â¢Â«Ã¥â€¡Â»Ã¦Ââ‚¬Ã¨â‚¬â€¦',
+  `slain` int(11) unsigned NOT NULL COMMENT 'Ã¨Â¢Â«Ã¦Ââ‚¬Ã¨â‚¬â€¦Ã¨ÂÅ’Ã¤Â½Â',
+  PRIMARY KEY (`id`,`killer_family`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_family_skill`
+--
+
+DROP TABLE IF EXISTS `tb_family_skill`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_family_skill` (
+  `family_id` int(11) unsigned NOT NULL,
+  `skills` blob NOT NULL,
+  PRIMARY KEY (`family_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_gamesvr`
+--
+
+DROP TABLE IF EXISTS `tb_gamesvr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_gamesvr` (
+  `svr_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `svr_name` varchar(32) NOT NULL DEFAULT '',
+  `player_port` int(11) unsigned NOT NULL DEFAULT '0',
+  `inner_port` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`svr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_mail_center`
+--
+
+DROP TABLE IF EXISTS `tb_mail_center`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_mail_center` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `mail` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_mate`
+--
+
+DROP TABLE IF EXISTS `tb_mate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_mate` (
+  `role_id` int(11) unsigned NOT NULL,
+  `mate_role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `today_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `last_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `miss_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `total_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `depth_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_depth` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`),
+  KEY `role_id` (`role_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_player`
+--
+
+DROP TABLE IF EXISTS `tb_player`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_player` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `svr_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `openid` varchar(32) NOT NULL DEFAULT '',
+  `last_login_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `create_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `platform_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `sid` varchar(64) NOT NULL DEFAULT '' COMMENT 'æœåŸŸåå”¯ä¸€æ ‡è¯†ç¬¦',
+  `did` varchar(64) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡å”¯ä¸€æ€§ID',
+  `platform` varchar(64) NOT NULL DEFAULT '' COMMENT 'å¹³å°æ ‡è¯†ï¼ˆå¦‚91,UCç­‰ï¼‰',
+  `channel_id` varchar(64) NOT NULL DEFAULT '' COMMENT 'æ¸ é“IDï¼Œå¹¿å‘ŠæŠ•æ”¾æ‰“åŒ…æ—¶ç”¨åˆ°',
+  `appVersion` varchar(64) NOT NULL DEFAULT '' COMMENT 'èŽ·å–åº”ç”¨çš„ç‰ˆæœ¬å·',
+  `appType` varchar(64) NOT NULL DEFAULT '' COMMENT '(iphoneã€ipadã€android)',
+  `device` varchar(64) NOT NULL DEFAULT '' COMMENT 'èŽ·å–çš„è®¾å¤‡çš„æœºåž‹',
+  `nm` varchar(64) NOT NULL DEFAULT '' COMMENT 'è”ç½‘æ–¹å¼å¦‚ï¼šwifi',
+  `mno` varchar(64) NOT NULL DEFAULT '' COMMENT 'èŽ·å–è®¾å¤‡çš„è¿è¥å•† å¦‚ï¼šç§»åŠ¨',
+  `screen` varchar(64) NOT NULL DEFAULT '' COMMENT 'è®¾å¤‡çš„å±å¹•åˆ†è¾¨çŽ‡',
+  `os` varchar(64) NOT NULL DEFAULT '' COMMENT 'æ“ä½œç³»ç»Ÿ',
+  `mac` varchar(64) NOT NULL DEFAULT '' COMMENT 'iosçš„MACåœ°å€,ä¸å¸¦:å·',
+  PRIMARY KEY (`id`),
+  KEY `openid` (`openid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=12582933 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_player_role`
+--
+
+DROP TABLE IF EXISTS `tb_player_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_player_role` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `system_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `player_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `role_name` varchar(64) NOT NULL DEFAULT '',
+  `status` int(11) unsigned NOT NULL DEFAULT '0',
+  `sex` int(11) unsigned NOT NULL DEFAULT '0',
+  `profession` int(11) unsigned NOT NULL DEFAULT '0',
+  `experience` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `level` int(11) unsigned NOT NULL DEFAULT '0',
+  `tael` int(11) unsigned NOT NULL DEFAULT '0',
+  `ingot` int(11) unsigned NOT NULL DEFAULT '0',
+  `gift_money` int(11) unsigned NOT NULL DEFAULT '0',
+  `is_suspended_account` int(11) unsigned NOT NULL DEFAULT '0',
+  `partner_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `family_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `family_position` int(11) unsigned NOT NULL DEFAULT '0',
+  `can_be_raised` int(11) unsigned NOT NULL DEFAULT '0',
+  `family_level` int(11) unsigned NOT NULL DEFAULT '0',
+  `can_join_family` int(11) unsigned NOT NULL DEFAULT '0',
+  `can_be_transmit` int(11) unsigned NOT NULL DEFAULT '0',
+  `pk_model` int(11) unsigned NOT NULL DEFAULT '0',
+  `pk_value` int(11) unsigned NOT NULL DEFAULT '0',
+  `military_strategy` int(11) unsigned NOT NULL DEFAULT '0',
+  `map_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `x_pos` int(11) unsigned NOT NULL DEFAULT '0',
+  `y_pos` int(11) unsigned NOT NULL DEFAULT '0',
+  `siege_reputation` int(11) unsigned NOT NULL DEFAULT '0',
+  `cross_svr_war_reputation` int(11) unsigned NOT NULL DEFAULT '0',
+  `max_hp` int(11) unsigned NOT NULL DEFAULT '0',
+  `cur_hp` int(11) unsigned NOT NULL DEFAULT '0',
+  `absorb_hp` int(11) unsigned NOT NULL DEFAULT '0',
+  `max_mp` int(11) unsigned NOT NULL DEFAULT '0',
+  `cur_mp` int(11) unsigned NOT NULL DEFAULT '0',
+  `absorb_mp` int(11) unsigned NOT NULL DEFAULT '0',
+  `attack_min` int(11) unsigned NOT NULL DEFAULT '0',
+  `attack_max` int(11) unsigned NOT NULL DEFAULT '0',
+  `defense_min` int(11) unsigned NOT NULL DEFAULT '0',
+  `defense_max` int(11) unsigned NOT NULL DEFAULT '0',
+  `hit_point` int(11) unsigned NOT NULL DEFAULT '0',
+  `dodge` int(11) unsigned NOT NULL DEFAULT '0',
+  `stability` int(11) unsigned NOT NULL DEFAULT '0',
+  `recover` int(11) unsigned NOT NULL DEFAULT '0',
+  `attack_speed` int(11) unsigned NOT NULL DEFAULT '0',
+  `bow_speed` int(11) unsigned NOT NULL DEFAULT '0',
+  `poisoning_addition_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `palsy_addition_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `dizziness_addition_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `frozen_resistance_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `poisoning_resistance_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `palsy_resistance_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `dizziness_resistance_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `output_hurt_promote_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `suffer_hurt_reduce_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `ignore_defense_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `rebound_hurt_ratio` int(11) unsigned NOT NULL DEFAULT '0',
+  `exp_coefficient` int(11) unsigned NOT NULL DEFAULT '0',
+  `move_speed` int(11) unsigned NOT NULL DEFAULT '0',
+  `armor_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `weapon_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `mounts_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `backpack_size` int(11) unsigned NOT NULL DEFAULT '0',
+  `warehouse_size` int(11) unsigned NOT NULL DEFAULT '0',
+  `physical_power` int(11) unsigned NOT NULL DEFAULT '0',
+  `fighting_power` int(11) unsigned NOT NULL DEFAULT '0',
+  `anger` int(11) unsigned NOT NULL DEFAULT '0',
+  `create_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `online_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `offline_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `update_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `history_online` int(11) unsigned NOT NULL,
+  `melting` int(11) unsigned NOT NULL DEFAULT '0',
+  `potential_share_max` int(11) unsigned NOT NULL DEFAULT '0',
+  `potential_accumulation` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_point` int(11) unsigned NOT NULL DEFAULT '0',
+  `popularity` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_point_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `vip_level` int(11) unsigned NOT NULL DEFAULT '0',
+  `team_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `camp_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `strategy` int(11) unsigned NOT NULL DEFAULT '0',
+  `store_weapon` int(11) unsigned NOT NULL DEFAULT '0',
+  `bow_id` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_raid_center`
+--
+
+DROP TABLE IF EXISTS `tb_raid_center`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_raid_center` (
+  `raid_id` int(11) unsigned NOT NULL COMMENT 'Ã¥â€°Â¯Ã¦Å“Â¬Id',
+  `clearance_sec` int(11) unsigned NOT NULL COMMENT 'Ã¦Å“â‚¬Ã¥Â¿Â«Ã¦Â¸â€¦Ã©â„¢Â¤Ã¦â€”Â¶Ã©â€”Â´',
+  `clearance_role_id` int(11) unsigned NOT NULL COMMENT 'Ã¦Å“â‚¬Ã¥Â¿Â«Ã¦Â¸â€¦Ã©â„¢Â¤Ã¨Â§â€™Ã¨â€°Â²',
+  PRIMARY KEY (`raid_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_rank`
+--
+
+DROP TABLE IF EXISTS `tb_rank`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_rank` (
+  `rank_type` int(11) NOT NULL,
+  `update_time` int(11) NOT NULL,
+  `rank_list` blob NOT NULL,
+  PRIMARY KEY (`rank_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_auto_raid`
+--
+
+DROP TABLE IF EXISTS `tb_role_auto_raid`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_auto_raid` (
+  `role_id` int(11) unsigned NOT NULL,
+  `info` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_black_shop`
+--
+
+DROP TABLE IF EXISTS `tb_role_black_shop`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_black_shop` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `black_shops` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_bows`
+--
+
+DROP TABLE IF EXISTS `tb_role_bows`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_bows` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `bow_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_bless` int(11) unsigned NOT NULL DEFAULT '0',
+  `bow_level` int(11) unsigned NOT NULL DEFAULT '0',
+  `bow_exp` int(11) unsigned NOT NULL DEFAULT '0',
+  `bow_power` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_buffer`
+--
+
+DROP TABLE IF EXISTS `tb_role_buffer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_buffer` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `buffers` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_cd_cooldown`
+--
+
+DROP TABLE IF EXISTS `tb_role_cd_cooldown`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_cd_cooldown` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `cds` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_center_set`
+--
+
+DROP TABLE IF EXISTS `tb_role_center_set`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_center_set` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `team_auto_agree` int(11) unsigned NOT NULL DEFAULT '1',
+  `team_auto_join` int(11) unsigned NOT NULL DEFAULT '1',
+  `team_min_lvl` int(11) unsigned NOT NULL DEFAULT '30',
+  `team_max_lvl` int(11) unsigned NOT NULL DEFAULT '100',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_cycle`
+--
+
+DROP TABLE IF EXISTS `tb_role_cycle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_cycle` (
+  `role_id` int(10) unsigned NOT NULL,
+  `reset_time` int(10) unsigned NOT NULL,
+  `cur_level` int(10) unsigned NOT NULL,
+  `top_level` int(10) unsigned NOT NULL,
+  `passed_levels` blob NOT NULL COMMENT '{level:{"time":time, "tick":tick, "alone":alone, "freeze":freeze}}',
+  `helpers` blob NOT NULL COMMENT '{role_id:time}',
+  PRIMARY KEY (`role_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_explore`
+--
+
+DROP TABLE IF EXISTS `tb_role_explore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_explore` (
+  `role_id` int(11) unsigned NOT NULL COMMENT 'Ã§Å½Â©Ã¥Â®Â¶Id',
+  `num` int(11) unsigned NOT NULL COMMENT 'Ã¦Å½Â¢Ã©â„¢Â©Ã§Å¡â€žÃ¦Â¬Â¡Ã¦â€¢Â°',
+  `money` int(11) unsigned NOT NULL COMMENT 'Ã¦Å½Â¢Ã©â„¢Â©Ã§â€Â¨Ã§Å¡â€žÃ©â€™Â±',
+  `success_ratio` int(11) unsigned NOT NULL COMMENT 'Ã¦Ë†ÂÃ¥Å Å¸Ã§Å½â€¡',
+  `failure_money` int(11) unsigned NOT NULL COMMENT 'Ã¥Â¤Â±Ã¨Â´Â¥Ã§â€Â¨Ã§Å¡â€žÃ©â€™Â±',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_explore_detail`
+--
+
+DROP TABLE IF EXISTS `tb_role_explore_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_explore_detail` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) unsigned NOT NULL,
+  `time` int(11) unsigned NOT NULL,
+  `place_id` int(11) unsigned NOT NULL,
+  `goods_id` int(11) unsigned NOT NULL,
+  `goods_num` int(11) unsigned NOT NULL,
+  `goods_quality` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`,`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_ext_attr`
+--
+
+DROP TABLE IF EXISTS `tb_role_ext_attr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_ext_attr` (
+  `role_id` int(11) unsigned NOT NULL,
+  `src_type` int(11) unsigned NOT NULL DEFAULT '0',
+  `attr` blob NOT NULL,
+  PRIMARY KEY (`role_id`,`src_type`),
+  KEY `role_id` (`role_id`) USING BTREE,
+  KEY `src_type` (`src_type`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_farm`
+--
+
+DROP TABLE IF EXISTS `tb_role_farm`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_farm` (
+  `role_id` int(11) unsigned NOT NULL,
+  `farm` blob NOT NULL,
+  PRIMARY KEY (`role_id`),
+  KEY `ID` (`role_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_friends`
+--
+
+DROP TABLE IF EXISTS `tb_role_friends`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_friends` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `friends` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_gem`
+--
+
+DROP TABLE IF EXISTS `tb_role_gem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_gem` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `gems` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_label`
+--
+
+DROP TABLE IF EXISTS `tb_role_label`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_label` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Ã¨Â§â€™Ã¨â€°Â²Id',
+  `label_code` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Ã§Â§Â°Ã¥ÂÂ·Id',
+  `use_state` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Ã¤Â½Â¿Ã§â€Â¨Ã§Å Â¶Ã¦â‚¬Â',
+  `effective_state` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Ã¦â€¢Ë†Ã¦Å¾Å“Ã§Å Â¶Ã¦â‚¬Â',
+  `end_date` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Ã¨Â¶â€¦Ã¦â€”Â¶Ã¦â€”Â¶Ã©â€”Â´',
+  PRIMARY KEY (`role_id`,`label_code`),
+  KEY `role_id` (`role_id`) USING BTREE,
+  KEY `label_code` (`label_code`) USING BTREE,
+  KEY `use_state` (`use_state`) USING BTREE,
+  KEY `end_date` (`end_date`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_levels`
+--
+
+DROP TABLE IF EXISTS `tb_role_levels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_levels` (
+  `role_id` int(10) unsigned NOT NULL,
+  `time` int(10) unsigned NOT NULL,
+  `new_level` int(10) unsigned NOT NULL,
+  `old_level` int(10) unsigned NOT NULL,
+  `new_power` int(10) unsigned NOT NULL,
+  `old_power` int(10) unsigned NOT NULL,
+  `cur_level` int(10) NOT NULL,
+  `levels` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_lottery`
+--
+
+DROP TABLE IF EXISTS `tb_role_lottery`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_lottery` (
+  `role_id` int(11) unsigned NOT NULL,
+  `num` int(11) unsigned NOT NULL,
+  `gold_time` int(11) unsigned NOT NULL,
+  `bronze_time` int(11) unsigned NOT NULL,
+  `props_list` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_mail`
+--
+
+DROP TABLE IF EXISTS `tb_role_mail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_mail` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `mail` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_mounts`
+--
+
+DROP TABLE IF EXISTS `tb_role_mounts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_mounts` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `mount_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `advance_bless` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_upgrade_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `mount_level` int(11) unsigned NOT NULL DEFAULT '0',
+  `mount_exp` int(11) unsigned NOT NULL DEFAULT '0',
+  `mount_power` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_order`
+--
+
+DROP TABLE IF EXISTS `tb_role_order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_order` (
+  `role_id` int(11) unsigned NOT NULL,
+  `store_id` int(11) unsigned NOT NULL,
+  `count` int(11) unsigned NOT NULL,
+  `type` int(11) unsigned NOT NULL,
+  `time` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`role_id`,`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_pet`
+--
+
+DROP TABLE IF EXISTS `tb_role_pet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_pet` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `pets` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_potential`
+--
+
+DROP TABLE IF EXISTS `tb_role_potential`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_potential` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `potentials` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_props`
+--
+
+DROP TABLE IF EXISTS `tb_role_props`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_props` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `pack` blob NOT NULL,
+  `depot` blob NOT NULL,
+  `equip` blob NOT NULL,
+  `explore` blob NOT NULL,
+  `task` blob NOT NULL,
+  `created_date` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_raid`
+--
+
+DROP TABLE IF EXISTS `tb_role_raid`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_raid` (
+  `role_id` int(11) unsigned NOT NULL,
+  `raid_id` int(11) unsigned NOT NULL,
+  `star_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `fast_tick` int(11) unsigned NOT NULL DEFAULT '0',
+  `last_complete_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `complete_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `create_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `auto_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_star_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_fast_tick` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_last_complete_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_complete_count` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_create_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_auto_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `elite_enter_count` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`,`raid_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_recharge`
+--
+
+DROP TABLE IF EXISTS `tb_role_recharge`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_recharge` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(32) NOT NULL DEFAULT '',
+  `openkey` varchar(64) NOT NULL,
+  `pf` varchar(32) NOT NULL DEFAULT '',
+  `ts` int(11) NOT NULL,
+  `payitem` varchar(128) NOT NULL DEFAULT '',
+  `token` varchar(64) NOT NULL DEFAULT '',
+  `billno` varchar(64) NOT NULL DEFAULT '',
+  `zoneid` int(11) NOT NULL,
+  `providetype` int(11) NOT NULL,
+  `amt` int(11) NOT NULL,
+  `payamt_coins` int(11) NOT NULL,
+  `pubacct_payamt_coins` int(11) NOT NULL,
+  `state` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_set`
+--
+
+DROP TABLE IF EXISTS `tb_role_set`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_set` (
+  `role_id` int(11) unsigned NOT NULL,
+  `shortcut` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_skill`
+--
+
+DROP TABLE IF EXISTS `tb_role_skill`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_skill` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_level` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_grid_index` int(11) unsigned NOT NULL DEFAULT '0',
+  `skillful` int(11) NOT NULL,
+  `studied` int(11) unsigned NOT NULL DEFAULT '0',
+  `end_cd_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `created_date` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` int(11) unsigned NOT NULL DEFAULT '0',
+  `effect_id` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`,`skill_id`),
+  KEY `role_id` (`role_id`) USING BTREE,
+  KEY `skill_id` (`skill_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_statis`
+--
+
+DROP TABLE IF EXISTS `tb_role_statis`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_statis` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `statis_type` int(11) unsigned NOT NULL DEFAULT '0',
+  `update_type` int(11) unsigned NOT NULL,
+  `val` int(11) unsigned NOT NULL DEFAULT '0',
+  `last_time` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`,`statis_type`),
+  KEY `role_id` (`role_id`) USING BTREE,
+  KEY `statis_type` (`statis_type`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_status`
+--
+
+DROP TABLE IF EXISTS `tb_role_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_status` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `pos_map_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `pos_scene_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `pos_x` int(11) unsigned NOT NULL DEFAULT '0',
+  `pos_y` int(11) unsigned NOT NULL DEFAULT '0',
+  `pos_z` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_map_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_scene_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_x` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_y` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_z` int(11) unsigned NOT NULL DEFAULT '0',
+  `mditation` int(11) unsigned NOT NULL DEFAULT '0',
+  `riding` int(11) unsigned NOT NULL DEFAULT '0',
+  `findpath` int(11) unsigned NOT NULL DEFAULT '0',
+  `fight` int(11) unsigned NOT NULL DEFAULT '0',
+  `auto_play` int(11) unsigned NOT NULL DEFAULT '0',
+  `pvp_mode` int(11) unsigned NOT NULL DEFAULT '0',
+  `attk_mode` int(11) unsigned NOT NULL DEFAULT '0',
+  `alive` int(11) unsigned NOT NULL DEFAULT '1',
+  `online` int(11) unsigned NOT NULL DEFAULT '0',
+  `red_goods_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `blue_goods_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `complete_task_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `abandon_task_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `receve_task_num` int(11) unsigned NOT NULL DEFAULT '0',
+  `is_package_full` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_furious` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_hurted` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_week` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_giddy` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_faint` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_fired` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_posion` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_blood` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_injury` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_cursed` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_blind` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_maimed` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_silent` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_disarm` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_slowly` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_dec_harm` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_rej_harm` int(11) unsigned NOT NULL DEFAULT '0',
+  `buf_turn_body` int(11) unsigned NOT NULL DEFAULT '0',
+  `strength` int(11) unsigned NOT NULL DEFAULT '0',
+  `status` int(11) unsigned NOT NULL DEFAULT '0',
+  `created_date` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_scene_inst_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `tmp_scene_inst_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `spa_action_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `spa_last_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `arena_last_chall_time` int(11) unsigned NOT NULL DEFAULT '0',
+  `arena_has_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `arena_buy_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `test_rewards` int(11) unsigned NOT NULL DEFAULT '0',
+  `unlimited_fly` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`),
+  UNIQUE KEY `role_id` (`role_id`) USING BTREE,
+  KEY `online` (`online`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_target`
+--
+
+DROP TABLE IF EXISTS `tb_role_target`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_target` (
+  `role_id` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  `list` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_task`
+--
+
+DROP TABLE IF EXISTS `tb_role_task`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_task` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `acpt_task` blob NOT NULL,
+  `comp_task` blob NOT NULL,
+  `fresh_task` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_task_chain`
+--
+
+DROP TABLE IF EXISTS `tb_role_task_chain`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_task_chain` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `chain_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `succ_times` int(11) unsigned NOT NULL DEFAULT '0',
+  `submit_index` int(11) unsigned NOT NULL DEFAULT '0',
+  `created_date` int(11) unsigned NOT NULL DEFAULT '0',
+  `cnt` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`,`chain_id`),
+  KEY `role_id` (`role_id`) USING BTREE,
+  KEY `chain_id` (`chain_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_treasure`
+--
+
+DROP TABLE IF EXISTS `tb_role_treasure`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_treasure` (
+  `role_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `treasures` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_role_vip`
+--
+
+DROP TABLE IF EXISTS `tb_role_vip`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_role_vip` (
+  `role_id` int(11) unsigned NOT NULL,
+  `vip_lv` int(11) NOT NULL,
+  `vip_exp` int(11) unsigned NOT NULL DEFAULT '0',
+  `month_timeout` int(11) unsigned NOT NULL DEFAULT '0',
+  `list` blob NOT NULL,
+  `buy_record` blob NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_version`
+--
+
+DROP TABLE IF EXISTS `tb_version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_version` (
+  `id` int(11) unsigned NOT NULL,
+  `database` varchar(256) NOT NULL DEFAULT '',
+  `server` varchar(256) NOT NULL DEFAULT '',
+  `client` varchar(256) NOT NULL DEFAULT '',
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-05-08 17:13:13

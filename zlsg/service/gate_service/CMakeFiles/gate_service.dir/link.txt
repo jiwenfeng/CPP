@@ -1,0 +1,2 @@
+/usr/bin/ar cr libgate_service.a  CMakeFiles/gate_service.dir/mread.cc.o CMakeFiles/gate_service.dir/ringbuffer.cc.o CMakeFiles/gate_service.dir/event.cc.o CMakeFiles/gate_service.dir/gate_service.cc.o
+/usr/bin/ranlib libgate_service.a

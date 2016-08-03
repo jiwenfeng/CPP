@@ -1,0 +1,8 @@
+
+package mysql;
+
+message tb_raid_center{
+    required uint32 raid_id = 1;
+    required uint32 clearance_sec = 2;
+    required uint32 clearance_role_id = 3;
+}

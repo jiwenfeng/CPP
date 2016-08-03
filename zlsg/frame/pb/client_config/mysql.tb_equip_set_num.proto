@@ -1,0 +1,29 @@
+
+package mysql;
+
+message tb_equip_set_num{
+    required uint32 id = 1;
+    required string costom_id = 2;
+    required string name = 3;
+    required uint32 total_set_num = 4;
+    required uint32 head_equip_id = 5;
+    required uint32 suit_equip_id = 6;
+    required uint32 shoulder_equip_id = 7;
+    required uint32 cape_equip_id = 8;
+    required uint32 band_equip_id = 9;
+    required uint32 wristlet_equip_id = 10;
+    required uint32 leg_equip_id = 11;
+    required uint32 shoe_equip_id = 12;
+    required uint32 ring_equip_id = 13;
+    required uint32 necklace_equip_id = 14;
+    required uint32 adorn_equip_id = 15;
+    required uint32 weapon_equip_id = 16;
+    required uint32 assistant_equip_id = 17;
+    required uint32 defend_equip_id = 18;
+    required uint32 flying_equip_id = 19;
+    required uint32 dress_equip_id = 20;
+    required string created_date = 21;
+    required string last_modified_date = 22;
+    required uint32 status = 23;
+    required string remark = 24;
+}

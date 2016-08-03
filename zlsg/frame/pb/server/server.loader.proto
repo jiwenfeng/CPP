@@ -1,0 +1,15 @@
+package server; 
+
+message load_role_msg {
+    required uint32 role_id = 1; // 角色ID
+	required string pb = 2;      // 附加的请求pb  
+}
+
+message load_role_ret {
+    required uint64 ptr = 1; // 角色对象
+	required uint64 cptr = 2; // center里面用到的角色对象
+}
+
+
+
+

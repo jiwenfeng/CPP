@@ -1,0 +1,12 @@
+
+package mysql;
+
+message tb_center_notice{
+    required uint32 msg_id			= 1;
+    required string content			= 2;
+    required uint32 start_time		= 3;
+	required uint32 close_time		= 4;
+	required uint32 interval_time   = 5;
+	required uint32 is_over			= 6;
+	required uint32 brocast_time    = 7;
+}

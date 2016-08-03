@@ -1,0 +1,20 @@
+
+package mysql;
+
+message tb_farm_set{
+    required uint32 id = 1;
+    required uint32 seed_goods_id = 2;
+    required uint32 seed_id = 3;
+    required string seed_path = 4;
+    required uint32 growup_times = 5;
+    required uint32 growup_id = 6;
+    required string growup_path = 7;
+    required uint32 mature_times = 8;
+    required uint32 mature_id = 9;
+    required string mature_path = 10;
+    required uint32 gain_goods_id = 11;
+    required uint32 max_gain_num = 12;
+    required uint32 min_gain_num = 13;
+    required uint32 max_steal_num = 14;
+    required uint32 score = 15;
+}

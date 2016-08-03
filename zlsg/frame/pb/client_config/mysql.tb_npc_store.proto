@@ -1,0 +1,22 @@
+
+package mysql;
+
+message tb_npc_store{
+    required uint32 id = 1;
+    required uint32 npc_id = 2;
+    required uint32 goods_id = 3;
+    required uint32 sort = 4;
+    required uint32 currency_code = 5;
+    required uint32 ori_price = 6;
+    required uint32 price = 7;
+    required uint32 binding = 8;
+    required uint32 buying_limit = 9;
+    required uint32 quality = 10;
+    required uint32 authed = 11;
+    required int32 is_activity = 12;
+    required uint32 begin_valid_date = 13;
+    required uint32 end_valid_date = 14;
+    required string created_date = 15;
+    required string last_modified_date = 16;
+    required uint32 status = 17;
+}

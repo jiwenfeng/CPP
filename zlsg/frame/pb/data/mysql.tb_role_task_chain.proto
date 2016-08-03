@@ -1,0 +1,11 @@
+
+package mysql;
+
+message tb_role_task_chain{
+    required uint32 role_id = 1;
+    required uint32 chain_id = 2;
+    required uint32 succ_times = 3;
+    required uint32 submit_index = 4;
+    required uint32 created_date = 5;
+    required uint32 cnt = 6;
+}

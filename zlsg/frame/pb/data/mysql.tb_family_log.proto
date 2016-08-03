@@ -1,0 +1,12 @@
+
+package mysql;
+
+message tb_family_log{
+    required uint32 id = 1;
+    required uint32 family_id = 2;
+    required uint32 time = 3;
+    required uint32 type = 4;
+    required uint32 key = 5;
+    required uint32 value = 6;
+    required string family_name = 7;
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libchores_service.a  CMakeFiles/chores_service.dir/chores_service.cc.o CMakeFiles/chores_service.dir/pb_chores_farm.cc.o CMakeFiles/chores_service.dir/chores_interface.cc.o
+/usr/bin/ranlib libchores_service.a

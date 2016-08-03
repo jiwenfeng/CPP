@@ -1,0 +1,8 @@
+
+package mysql;
+
+message tb_role_target{
+    required uint32 role_id = 1;
+    required uint32 time = 2;
+    required bytes list = 3;
+}

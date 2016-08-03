@@ -1,0 +1,2 @@
+/usr/bin/ar cr libnavmesh.a  CMakeFiles/navmesh.dir/DetourNode.cc.o CMakeFiles/navmesh.dir/DetourCommon.cc.o CMakeFiles/navmesh.dir/DetourNavMeshBuilder.cc.o CMakeFiles/navmesh.dir/DetourAlloc.cc.o CMakeFiles/navmesh.dir/DetourNavMeshQuery.cc.o CMakeFiles/navmesh.dir/DetourNavMesh.cc.o
+/usr/bin/ranlib libnavmesh.a

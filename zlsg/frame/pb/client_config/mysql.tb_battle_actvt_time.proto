@@ -1,0 +1,14 @@
+
+package mysql;
+
+message tb_battle_actvt_time{
+    required uint32 id = 1;
+    required uint32 battle_id = 2;
+    required uint32 time_type = 3;
+    required uint32 from_hh = 4;
+    required uint32 from_mm = 5;
+    required uint32 from_ss = 6;
+    required string created_date = 7;
+    required string last_modified_date = 8;
+    required uint32 status = 9;
+}

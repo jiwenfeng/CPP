@@ -1,0 +1,14 @@
+package server;
+
+enum TEAM_NOTIFY_OPERATE_TYPE_E
+{
+    TNOTE_ENTER_TEAM = 1; // 有了一个新的队伍
+	TNOTE_LEAVE_TEAM = 2; // 离开了队伍
+}
+
+message team_notify
+{
+    required TEAM_NOTIFY_OPERATE_TYPE_E type = 1; // 操作类型
+	required uint32 role_id = 2; // 角色ID
+	required uint32 team_id = 3; // 队伍ID
+}

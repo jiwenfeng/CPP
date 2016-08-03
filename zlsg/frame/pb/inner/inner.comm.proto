@@ -1,0 +1,33 @@
+package inner;
+
+message inner_head {
+    optional uint32 svr_id      = 1[default = 0];
+    optional uint32 agent_id    = 2[default = 0];
+    optional uint32 client_id   = 3[default = 0];
+    optional string client_ip   = 4;
+}
+
+message inner_tail {
+    optional uint32 status  = 1;
+    optional string info    = 2;
+    optional string data    = 3;
+}
+
+message inner_user {
+    optional uint32 id           = 1;
+    optional string account_name = 2;
+    optional string nickname     = 3;
+}
+
+message inner_goods {
+    optional uint32 index      = 1;
+    optional uint32 goods_id   = 2;
+    optional string goods_name = 3;
+    optional uint32 goods_num  = 4;
+    optional uint32 goods_type = 5;
+}
+
+message close_server {
+    required uint32 unixtime = 1;
+    optional inner_head head = 1000;
+}

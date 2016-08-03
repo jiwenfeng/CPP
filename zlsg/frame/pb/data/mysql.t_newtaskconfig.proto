@@ -1,0 +1,9 @@
+
+package mysql;
+
+message t_newtaskconfig{
+    required uint32 id = 1;
+    required uint32 taskid = 2;
+    required string taskname = 3;
+    required uint32 taskOrder = 4;
+}

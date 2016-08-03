@@ -1,0 +1,15 @@
+import "inner.comm.proto";
+package inner;
+
+message rechargeQuery_req {
+    required string user = 1;
+    required int32 userType = 2;
+    optional int32 state = 3;
+    optional string orderID = 4;
+    optional int32 beginTime = 5;
+    optional int32 endTime = 6;
+}
+
+message rechargeQuery_rsp {
+    required inner_tail tail = 1000;
+}

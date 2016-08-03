@@ -1,0 +1,12 @@
+
+package mysql;
+
+message tb_lottery_code{
+    required uint32 id = 1;
+    required uint32 lottery_code = 2;
+    required string name = 3;
+    required string desciption = 4;
+    required string created_date = 5;
+    required string last_modified_date = 6;
+    required uint32 status = 7;
+}

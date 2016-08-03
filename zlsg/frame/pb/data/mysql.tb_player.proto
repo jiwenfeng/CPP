@@ -1,0 +1,23 @@
+
+package mysql;
+
+message tb_player{
+    required uint32 id = 1;
+    required uint32 svr_id = 2;
+    required string openid = 3;
+    required uint32 last_login_time = 4;
+    required uint32 create_time = 5;
+    required uint32 platform_id = 6;
+    required string sid = 7;
+    required string did = 8;
+    required string platform = 9;
+    required string channel_id = 10;
+    required string appVersion = 11;
+    required string appType = 12;
+    required string device = 13;
+    required string nm = 14;
+    required string mno = 15;
+    required string screen = 16;
+    required string os = 17;
+    required string mac = 18;
+}

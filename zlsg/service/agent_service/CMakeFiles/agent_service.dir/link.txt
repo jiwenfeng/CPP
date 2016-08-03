@@ -1,0 +1,2 @@
+/usr/bin/ar cr libagent_service.a  CMakeFiles/agent_service.dir/agent_service.cc.o CMakeFiles/agent_service.dir/pb_agent_node.cc.o CMakeFiles/agent_service.dir/inner_interface.cc.o CMakeFiles/agent_service.dir/agent_interface.cc.o
+/usr/bin/ranlib libagent_service.a

@@ -1,0 +1,14 @@
+
+package mysql;
+
+message tb_sys_func_config{
+    required uint32 id = 1;
+    required uint32 func_type = 2;
+    required uint32 func_code = 3;
+    required uint32 props_id = 4;
+    required string desciption = 5;
+    required string created_date = 6;
+    required string last_modified_date = 7;
+    required uint32 status = 8;
+    required string remark = 9;
+}

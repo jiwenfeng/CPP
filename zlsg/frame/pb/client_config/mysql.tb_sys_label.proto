@@ -1,0 +1,28 @@
+
+package mysql;
+
+message tb_sys_label{
+    required uint32 label_code = 1;
+    required uint32 label_type = 2;
+    required string label_name = 3;
+    required string color_code = 4;
+    required string desciption = 5;
+    required uint32 priority_sort = 6;
+    required uint32 priority_lv = 7;
+    required uint32 duration_sec = 8;
+    required uint32 category = 9;
+    required uint32 add_state_code_1 = 10;
+    required uint32 add_state_val_1 = 11;
+    required uint32 add_state_code_2 = 12;
+    required uint32 add_state_val_2 = 13;
+    required uint32 add_state_code_3 = 14;
+    required uint32 add_state_val_3 = 15;
+    required uint32 add_state_code_4 = 16;
+    required uint32 add_state_val_4 = 17;
+    required uint32 add_state_code_5 = 18;
+    required uint32 add_state_val_5 = 19;
+    required string icon_path = 20;
+    required string created_date = 21;
+    required string last_modified_date = 22;
+    required uint32 status = 23;
+}

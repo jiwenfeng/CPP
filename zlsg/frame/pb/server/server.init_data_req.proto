@@ -1,0 +1,7 @@
+package server; 
+
+message init_data_req {
+    required uint32 time = 1;
+}
+
+

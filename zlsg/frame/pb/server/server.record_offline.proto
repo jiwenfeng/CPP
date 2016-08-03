@@ -1,0 +1,6 @@
+package server;
+
+message record_offline_user
+{
+    required uint64 ptr = 1; // 场景角色对象
+}

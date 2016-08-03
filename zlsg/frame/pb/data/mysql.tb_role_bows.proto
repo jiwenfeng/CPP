@@ -1,0 +1,13 @@
+
+package mysql;
+
+message tb_role_bows{
+    required uint32 role_id = 1;
+    required uint32 bow_id = 2;
+    required uint32 advance_num = 3;
+    required uint32 advance_time = 4;
+    required uint32 advance_bless = 5;
+    required uint32 bow_level = 6;
+    required uint32 bow_exp = 7;
+    required uint32 bow_power = 8;
+}

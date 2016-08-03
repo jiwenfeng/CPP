@@ -1,0 +1,15 @@
+import "inner.comm.proto";
+package inner;
+
+message delivery_ingot_req {
+    required int32      role_id  = 1;
+    required int32      ingot    = 2;
+    optional inner_head head     = 1000;
+}
+
+message delivery_ingot_rsp {
+    required uint32     role_id = 1;
+    required uint32     ingot   = 2;
+    required uint32     ret     = 3;
+    required inner_tail tail    = 1000;
+}

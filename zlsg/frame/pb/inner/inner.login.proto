@@ -1,0 +1,11 @@
+import "inner.comm.proto";
+package inner;
+
+message loginGame_req {
+    required string user = 1;
+    required int32 userType = 2;
+}
+
+message loginGame_rsp {
+    required inner_tail tail = 1000;
+}

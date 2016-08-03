@@ -1,0 +1,9 @@
+package server; 
+
+message register_role {
+    required uint32 user_id = 1;
+	required uint32 role_id = 2;
+	required uint32 scene_server_id = 3;
+}
+
+

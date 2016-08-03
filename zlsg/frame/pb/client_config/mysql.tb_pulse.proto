@@ -1,0 +1,16 @@
+
+package mysql;
+
+message tb_pulse{
+    required uint32 id = 1;
+    required uint32 figure_id = 2;
+    required uint32 pulse_id = 3;
+    required uint32 lvl_limit = 4;
+    required uint32 attr_code = 5;
+    required uint32 attr_val = 6;
+    required uint32 skill_id_1 = 7;
+    required uint32 skill_id_2 = 8;
+    required uint32 skill_id_3 = 9;
+    required uint32 figure_attr_code = 10;
+    required uint32 effect_id = 11;
+}

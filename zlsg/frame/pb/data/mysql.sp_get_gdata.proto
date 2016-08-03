@@ -1,0 +1,38 @@
+package mysql;
+message sp_get_gdata {
+	required uint32 max_lvl = 1;    
+	required uint32 spare_num = 2;    
+	required uint32 svr_open_time = 3;    
+	required uint32 joint_active_flag = 4;    
+	required uint32 svr_merge_time = 5;    
+	required uint32 activity_flag = 6;	
+	required uint32 first_pay_flag = 7; 
+}
+
+message sp_get_gdata_max_role {
+	required uint32 svr_id = 1;    
+	required uint32 max_role_id = 2;
+}
+
+message sp_load_all_user_smy {
+	required uint32 role_id         = 1;    
+	required string role_name       = 2;    
+	required uint32 status          = 3;	
+	required uint32 profession      = 4;	
+	required uint32 fighting_power  = 5;    
+	required uint32 level           = 6;
+	required uint32 weapon_id       = 7;// ÒÂ·şID
+	required uint32 armor_id        = 8;// ÎäÆ÷ID
+	required uint32 mount_level     = 9;
+	required uint32 mount_power     = 10;
+	required uint32 mount_id        = 11;
+	required uint32 vip_level       = 12;
+	required uint32 offline_time	= 13;
+}
+
+message sp_load_offline_user {
+	required uint32 role_id = 1;
+	required uint32 player_id = 2;     
+	required string player_name = 3;    
+	required uint32 svr_id = 4;
+}

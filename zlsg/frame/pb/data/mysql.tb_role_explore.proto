@@ -1,0 +1,10 @@
+
+package mysql;
+
+message tb_role_explore{
+    required uint32 role_id = 1;
+    required uint32 num = 2;
+    required uint32 money = 3;
+    required uint32 success_ratio = 4;
+    required uint32 failure_money = 5;
+}

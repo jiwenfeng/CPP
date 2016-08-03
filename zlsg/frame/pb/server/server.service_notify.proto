@@ -1,0 +1,10 @@
+package server;
+
+message scene_service_info{
+    required uint32 scene_id = 1;
+	required uint32 service_id = 2;
+}
+
+message scene_service_msg {
+    repeated scene_service_info ssi = 1;
+}

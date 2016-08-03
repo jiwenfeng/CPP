@@ -1,0 +1,9 @@
+
+package mysql;
+
+message tb_family_diplomacy{
+    required uint32 family_id = 1;
+    required uint32 target_id = 2;
+    required uint32 relation_type = 3;
+    required uint32 apply_time = 4;
+}

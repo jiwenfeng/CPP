@@ -1,0 +1,22 @@
+
+package mysql;
+
+message t_recharge{
+    required uint32 id = 1;
+    required string sid = 2;
+    required string did = 3;
+    required string accountName = 4;
+    required string playerName = 5;
+    required uint32 playerLevel = 6;
+    required string transactionId = 7;
+    required string currency = 8;
+    required string inpourType = 9;
+    required int32 addcoin = 10;
+	required double money = 11;
+    required uint32 gold = 12;
+    required int32 exchangeType = 13;
+	required double Depay = 14;
+	required double gDepay = 15;
+    required int32 state = 16;
+    required uint32 createDate = 17;
+}

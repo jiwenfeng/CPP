@@ -1,0 +1,14 @@
+import "inner.comm.proto";
+package inner;
+
+// 活动开关控制
+message activity_control_req {
+	required uint32 open_type	 = 1;  // 0开 1关
+	required uint32 activity_id  = 2;  // 活动ID
+	optional inner_head head     = 1000;
+}
+
+message activity_control_rsp {
+	required uint32 result_type  = 1; // 0 成功 1失败
+	required uint32 open_type    = 2; // 0开 1关 
+}

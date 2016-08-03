@@ -1,0 +1,11 @@
+
+package mysql;
+
+message tb_role_cycle{
+    required uint32 role_id = 1;
+    required uint32 reset_time = 2;
+    required uint32 cur_level = 3;
+    required uint32 top_level = 4;
+    required bytes passed_levels = 5;
+    required bytes helpers = 6;
+}

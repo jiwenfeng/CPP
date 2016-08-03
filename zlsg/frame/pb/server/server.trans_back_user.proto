@@ -1,0 +1,11 @@
+package server; 
+
+//game 要退回原来保存的正式景
+message trans_back_user{
+    repeated uint32 role_id    = 1; // 要返回原场景的角色id们
+	required uint32 game_handle  = 2[default=0]; // 发送消息的gamesvr   
+}
+
+
+
+

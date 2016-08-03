@@ -1,0 +1,12 @@
+
+package mysql;
+
+message tb_equip_reset{
+    required uint32 id = 1;
+    required uint32 equip_code = 2;
+    required uint32 min_lv = 3;
+    required uint32 max_lv = 4;
+    required uint32 attr_code = 5;
+    required uint32 attr_val = 6;
+    required uint32 odds = 7;
+}

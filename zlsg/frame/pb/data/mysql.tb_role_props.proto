@@ -1,0 +1,12 @@
+
+package mysql;
+
+message tb_role_props{
+    required uint32 role_id = 1;
+    required bytes pack = 2;
+    required bytes depot = 3;
+    required bytes equip = 4;
+    required bytes explore = 5;
+    required bytes task = 6;
+    required uint32 created_date = 7;
+}

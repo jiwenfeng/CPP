@@ -1,0 +1,17 @@
+
+package mysql;
+
+message tb_family_member{
+    required uint32 family_id = 1;
+    required uint32 role_id = 2;
+    required uint32 permissions = 3;
+    required uint32 time = 4;
+    required uint32 add_by = 5;
+    required uint32 strength = 6;
+    required uint32 dragon_count = 7;
+    required uint32 tiger_count = 8;
+    required uint32 rosefinch_count = 9;
+    required uint32 tortoise_count = 10;
+    required uint32 money = 11;
+    required uint32 total_donate = 12;
+}

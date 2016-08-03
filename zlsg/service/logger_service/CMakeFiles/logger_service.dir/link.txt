@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblogger_service.a  CMakeFiles/logger_service.dir/logger_service.cc.o
+/usr/bin/ranlib liblogger_service.a

@@ -1,0 +1,42 @@
+import "inner.comm.proto";
+package inner;
+
+message getCardList_req {
+    optional string     cardId   = 1;
+    optional string     cardName = 2;
+    optional int32      page     = 3;
+    optional int32      pageSize = 4;
+    optional inner_head head     = 1000;
+}
+
+message getCardList_rsp {
+    required inner_tail tail = 1000;
+}
+
+message getGoodsList_rsp {
+    required inner_tail tail = 1000;
+}
+
+message goods_info {
+    required uint32 goods_type = 1;
+    required uint32 goods_id   = 2;
+    required uint32 goods_num  = 3;
+	optional bool   bind       = 4;
+}
+
+message sendGoods_req {
+    required uint32     type        = 1;
+    repeated inner_user user        = 2;
+    required string     title       = 4;
+    required string     content     = 5;
+    repeated goods_info gi          = 6;
+    required uint32     invalidTime = 7;
+    required uint32     count       = 8; 
+    optional inner_head head        = 1000;
+}
+
+message sendGoods_rsp {
+    required inner_tail tail = 1000;
+}
+
+

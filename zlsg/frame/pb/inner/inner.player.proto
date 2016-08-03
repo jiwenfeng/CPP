@@ -1,0 +1,69 @@
+import "inner.comm.proto";
+package inner;
+
+// 获取玩家列表
+message getPlayerList_req {
+    optional string     user           = 1;
+    optional int32      userType       = 2;
+    optional int32      regBeginTime   = 3;
+    optional int32      regEndTime     = 4;
+    optional int32      loginBeginTime = 5;
+    optional int32      loginEndTime   = 6;
+    optional int32      page           = 7;
+    optional int32      pageSize       = 8;
+    optional inner_head head           = 1000;
+}
+
+message getPlayerList_rsp {
+    required inner_tail tail = 1000;
+}
+
+// 玩家在线日志(t_online)
+message t_online_req {
+    required uint32     unixtime = 1;
+    optional inner_head head     = 1000;
+}
+
+message t_online_rsp {
+    required uint32     id         = 1;    // 自增ID
+    required uint32     sid        = 2;    // 服域名唯一标识符
+    required uint32     allcount   = 3;    // 全服该时刻在线数
+    required uint32     cashcount  = 4;    // 充值过的玩家在线数
+    required uint32     createdate = 5;    // 日志时间（建议每5分钟纪录一次）
+    required inner_tail tail       = 1000; 
+}
+
+// 请求实时玩家数据
+message realtime_roles {
+    repeated uint32 id = 1; // 空数组获取所有
+}
+
+// 设置属性
+message set_attr_req {
+	required uint32     index = 1;
+	required uint32     value = 2;
+	repeated inner_user user  = 3;
+	optional inner_head head  = 1000;
+}
+
+message set_attr_rsp {
+	required uint32     index = 1;
+	required uint32     value = 2;
+	repeated inner_user user  = 3;
+	optional inner_tail tail = 1000;
+}
+
+// 增加vip经验
+message set_vip_req {
+	required uint32     lv    = 1;
+	required uint32     month = 2;
+	repeated inner_user user  = 3;
+	optional inner_head head  = 1000;
+}
+
+message set_vip_rsp {
+	required uint32     lv    = 1;
+	required uint32     month = 2;
+	repeated inner_user user  = 3;
+	optional inner_tail tail = 1000;
+}

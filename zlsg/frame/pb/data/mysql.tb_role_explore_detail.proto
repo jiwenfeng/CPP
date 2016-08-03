@@ -1,0 +1,12 @@
+
+package mysql;
+
+message tb_role_explore_detail{
+    required uint32 id = 1;
+    required uint32 role_id = 2;
+    required uint32 time = 3;
+    required uint32 place_id = 4;
+    required uint32 goods_id = 5;
+    required uint32 goods_num = 6;
+    required uint32 goods_quality = 7;
+}

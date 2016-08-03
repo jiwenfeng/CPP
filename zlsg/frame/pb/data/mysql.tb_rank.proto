@@ -1,0 +1,8 @@
+
+package mysql;
+
+message tb_rank{
+    required uint32 rank_type = 1;
+    required uint32 update_time = 2;
+    required bytes rank_list = 3;
+}

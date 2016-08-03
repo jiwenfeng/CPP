@@ -1,0 +1,6 @@
+import "inner.comm.proto";
+package inner;
+
+message getLogType_rsp {
+    required inner_tail tail = 1000;
+}

@@ -1,0 +1,18 @@
+
+package mysql;
+
+message tb_sys_reward_detail{
+    required uint32 id = 1;
+    required uint32 reward_id = 2;
+    required uint32 reward_type = 3;
+    required uint32 reward_enum = 4;
+    required uint32 reward_val = 5;
+    required uint32 quality = 6;
+    required uint32 is_binding = 7;
+    required uint32 begin_valid_date = 8;
+    required uint32 end_valid_date = 9;
+    required int32 is_activity = 10;
+    required string created_date = 11;
+    required string last_modified_date = 12;
+    required uint32 status = 13;
+}

@@ -1,0 +1,71 @@
+import "inner.comm.proto";
+package inner;
+
+// 固定公告
+
+message bulletin_req {
+	required string 	contents = 1;
+	optional inner_head head     = 1000;
+}
+
+message bulletin_rsp {
+	required inner_tail tail        = 1000;
+}
+
+// 走马灯
+
+message revolving_req {
+	required string 	contents    = 1;
+	required uint32 	start_time  = 2;
+	required uint32 	end_time    = 3;
+	required uint32 	repeat_time = 4;
+	optional inner_head head        = 1000;
+}
+
+message revolving_rsp {
+	required inner_tail tail        = 1000;
+}
+
+message revolving {
+	required uint32     msg_id		= 1;// 消息ID（系统自生成）
+	required string 	contents    = 2;// 内容
+	required uint32 	start_time  = 3;// 开始时间
+	required uint32 	end_time    = 4;// 结束时间
+	required uint32 	repeat_time = 5;// 间隔时间
+	required uint32		is_over		= 6;//  0 未播完 1 已播完
+}
+
+message get_revolving_req {
+	required uint32     unixtime = 1;
+	optional inner_head head     = 1000;
+}
+
+message get_revolving_rsp {
+	repeated revolving  rs   = 1;
+	required inner_tail tail = 1000;
+}
+
+message del_revolving_req {
+	repeated uint32     ids  = 1;
+	optional inner_head head = 1000;
+}
+
+message del_revolving_rsp {
+	repeated uint32     ids  = 1;
+	required inner_tail tail = 1000;
+}
+
+message stop_revolving_req {
+	repeated uint32     ids  = 1;
+	optional inner_head head = 1000;
+}
+
+message stop_revolving_rsp {
+	repeated uint32     ids  = 1;
+	required inner_tail tail = 1000;
+}
+
+// 聊天
+message chat {
+	required string contents    = 1;
+}

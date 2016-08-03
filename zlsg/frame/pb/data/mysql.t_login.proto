@@ -1,0 +1,21 @@
+
+package mysql;
+
+message t_login{
+    required uint32 id = 1;
+    required string sid = 2;
+    required string did = 3;
+    required string accountName = 4;
+    required string platform = 5;
+    required string channel_id = 6;
+    required string appVersion = 7;
+    required string appType = 8;
+    required string device = 9;
+    required string nm = 10;
+    required string mno = 11;
+    required string screen = 12;
+    required string os = 13;
+    required string mac = 14;
+    required string ip = 15;
+    required uint32 Createtime = 16;
+}

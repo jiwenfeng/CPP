@@ -1,0 +1,19 @@
+
+package mysql;
+
+message tb_role_recharge{
+    required uint32 id = 1;
+    required string openid = 2;
+    required string openkey = 3;
+    required string pf = 4;
+    required uint32 ts = 5;
+    required string payitem = 6;
+    required string token = 7;
+    required string billno = 8;
+    required uint32 zoneid = 9;
+    required uint32 providetype = 10;
+    required uint32 amt = 11;
+    required uint32 payamt_coins = 12;
+    required uint32 pubacct_payamt_coins = 13;
+    required uint32 state = 14;
+}

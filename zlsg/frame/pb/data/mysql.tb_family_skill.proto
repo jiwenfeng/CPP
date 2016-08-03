@@ -1,0 +1,7 @@
+
+package mysql;
+
+message tb_family_skill{
+    required uint32 family_id = 1;
+    required bytes skills = 2;
+}

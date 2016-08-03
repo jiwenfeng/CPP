@@ -1,0 +1,1367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug32|Win32">
+      <Configuration>Debug32</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug32|x64">
+      <Configuration>Debug32</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_luajit|Win32">
+      <Configuration>Debug_luajit</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_luajit|x64">
+      <Configuration>Debug_luajit</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5BBAB924-CBE2-4EED-82EB-6E32501ADAE9}</ProjectGuid>
+    <RootNamespace>server</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>E:\zlsg\code\zproj\server\frame\center\randnpc;E:\zlsg\code\zproj\server\frame\center\sect;E:\zlsg\code\zproj\server\frame\center\mate;E:\zlsg\code\zproj\server\frame\center\arena;E:\zlsg\code\zproj\server\frame\center\chat;E:\zlsg\code\zproj\server\frame\center\siege;E:\zlsg\code\zproj\server\frame\center\explore;E:\zlsg\code\zproj\server\frame\center\family;E:\zlsg\code\zproj\server\frame\navmesh;E:\zlsg\code\zproj\server\frame\center\team;E:\zlsg\code\zproj\server\frame\center\rank;E:\zlsg\code\zproj\server\frame\center\boss;E:\zlsg\code\zproj\server\frame\center\friends;E:\zlsg\code\zproj\server\frame\center\mail;E:\zlsg\code\zproj\server\frame\center\cache;E:\zlsg\code\zproj\server\frame\center\city;E:\zlsg\code\zproj\server\frame\chores\farm;E:\zlsg\code\zproj\server\tpl\include;E:\zlsg\code\zproj\server\amtsvr;E:\zlsg\code\zproj\server\tpl\dirent-1.20.1\include;E:\zlsg\code\zproj\server\service\agent_service;E:\zlsg\code\zproj\server\service\center_service;E:\zlsg\code\zproj\server\service\chores_service;E:\zlsg\code\zproj\server\service\data_service\loader;E:\zlsg\code\zproj\server\service\data_service\sqlmgr;E:\zlsg\code\zproj\server\service\data_service\writer;E:\zlsg\code\zproj\server\service\game_service;E:\zlsg\code\zproj\server\service\gate_service;E:\zlsg\code\zproj\server\service\logger_service;E:\zlsg\code\zproj\server\service\role_service;E:\zlsg\code\zproj\server\service\sender_service;E:\zlsg\code\zproj\server\service\watchdog_service;E:\zlsg\code\zproj\server\tpl\mysql-connector-c-6.1.3-winx64\include;E:\zlsg\code\zproj\server\frame\player_role;E:\zlsg\code\zproj\server\frame\scene;E:\zlsg\code\zproj\server\frame\config;E:\zlsg\code\zproj\server\frame\pb\server;E:\zlsg\code\zproj\server\frame\pb\inner;E:\zlsg\code\zproj\server\frame\pb\data;E:\zlsg\code\zproj\server\frame\pb\config;E:\zlsg\code\zproj\server\frame\pb\client;E:\zlsg\code\zproj\server;E:\zlsg\code\zproj\server\tpl\protobuf-2.5.0\src;E:\zlsg\code\zproj\server\tpl\LuaTinker;E:\zlsg\code\zproj\server\frame\base;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|Win32'">
+    <IncludePath>$(ProjectDir)frame\center\cycle;$(ProjectDir)frame\center\city;$(ProjectDir)frame\center\timer;$(ProjectDir)frame\center\randnpc;$(ProjectDir)frame\center\sect;$(ProjectDir)frame\center\mate;$(ProjectDir)frame\center\arena;$(ProjectDir)frame\center\chat;$(ProjectDir)frame\center\siege;$(ProjectDir)frame\center\explore;$(ProjectDir)frame\center\poll_activity;$(ProjectDir)frame\center\family;$(ProjectDir)frame\navmesh;$(ProjectDir)frame\center\team;$(ProjectDir)frame\center\rank;$(ProjectDir)frame\center\boss;$(ProjectDir)frame\center\friends;$(ProjectDir)frame\center\mail;$(ProjectDir)frame\center\cache;$(ProjectDir)frame\chores\farm;$(ProjectDir)amtsvr;$(ProjectDir)tpl\include;$(ProjectDir)tpl\dirent-1.20.1\include;$(ProjectDir)service\agent_service;$(ProjectDir)service\center_service;$(ProjectDir)service\chores_service;$(ProjectDir)service\data_service\loader;$(ProjectDir)service\data_service\sqlmgr;$(ProjectDir)service\data_service\writer;$(ProjectDir)service\game_service;$(ProjectDir)service\gate_service;$(ProjectDir)service\logger_service;$(ProjectDir)service\role_service;$(ProjectDir)service\sender_service;$(ProjectDir)service\node_service;$(ProjectDir)service\watchdog_service;$(ProjectDir)frame\base;$(ProjectDir)frame\player_role;$(ProjectDir)frame\scene;$(ProjectDir)frame\config;$(ProjectDir)frame\pb\server;$(ProjectDir)frame\pb\inner;$(ProjectDir)frame\pb\data;$(ProjectDir)frame\pb\config;$(ProjectDir)frame\pb\client;$(ProjectDir)frame\script\link;$(ProjectDir);$(ProjectDir)tpl\protobuf-2.5.0\src;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\include;$(ProjectDir)tpl\lua\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)tpl\protobuf-2.5.0\vsprojects\Debug;E:\zlsg\code\zproj\server\tpl\lua-5.2.3_Win32_dll11_lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-win32\lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-win32\lib\vs11;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|Win32'">
+    <IncludePath>$(ProjectDir)frame\center\cycle;$(ProjectDir)frame\center\city;$(ProjectDir)frame\center\timer;$(ProjectDir)frame\center\randnpc;$(ProjectDir)frame\center\sect;$(ProjectDir)frame\center\mate;$(ProjectDir)frame\center\arena;$(ProjectDir)frame\center\chat;$(ProjectDir)frame\center\siege;$(ProjectDir)frame\center\explore;$(ProjectDir)frame\center\poll_activity;$(ProjectDir)frame\center\notice;$(ProjectDir)frame\center\family;$(ProjectDir)frame\navmesh;$(ProjectDir)frame\center\team;$(ProjectDir)frame\center\rank;$(ProjectDir)frame\center\boss;$(ProjectDir)frame\center\friends;$(ProjectDir)frame\center\mail;$(ProjectDir)frame\center\cache;$(ProjectDir)frame\center\devil;$(ProjectDir)frame\center\illegal_word;$(ProjectDir)frame\chores\farm;$(ProjectDir)amtsvr;$(ProjectDir)tpl\include;$(ProjectDir)tpl\dirent-1.20.1\include;$(ProjectDir)service\agent_service;$(ProjectDir)service\center_service;$(ProjectDir)service\chores_service;$(ProjectDir)service\data_service\loader;$(ProjectDir)service\data_service\sqlmgr;$(ProjectDir)service\data_service\writer;$(ProjectDir)service\game_service;$(ProjectDir)service\gate_service;$(ProjectDir)service\logger_service;$(ProjectDir)service\role_service;$(ProjectDir)service\sender_service;$(ProjectDir)service\node_service;$(ProjectDir)service\watchdog_service;$(ProjectDir)frame\base;$(ProjectDir)frame\player_role;$(ProjectDir)frame\scene;$(ProjectDir)frame\config;$(ProjectDir)frame\pb\server;$(ProjectDir)frame\pb\inner;$(ProjectDir)frame\pb\data;$(ProjectDir)frame\pb\config;$(ProjectDir)frame\pb\client;$(ProjectDir)frame\script\link;$(ProjectDir);$(ProjectDir)tpl\protobuf-2.5.0\src;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\include;$(ProjectDir)tpl\lua\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)tpl\protobuf-2.5.0\vsprojects\Debug;$(ProjectDir)tpl\lua-5.2.3_Win32_dll11_lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-win32\lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-win32\lib\vs11;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
+    <EmbedManifest>false</EmbedManifest>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)frame\center\randnpc;$(ProjectDir)frame\center\sect;$(ProjectDir)frame\center\mate;$(ProjectDir)frame\center\arena;$(ProjectDir)frame\center\chat;$(ProjectDir)frame\center\siege;$(ProjectDir)frame\center\explore;$(ProjectDir)frame\center\family;$(ProjectDir)frame\navmesh;$(ProjectDir)frame\center\team;$(ProjectDir)frame\center\rank;$(ProjectDir)frame\center\boss;$(ProjectDir)frame\center\friends;$(ProjectDir)frame\center\mail;$(ProjectDir)frame\center\cache;$(ProjectDir)frame\chores\farm;$(ProjectDir)tpl\include;$(ProjectDir)amtsvr;$(ProjectDir)tpl\dirent-1.20.1\include;$(ProjectDir)service\agent_service;$(ProjectDir)service\center_service;$(ProjectDir)service\chores_service;$(ProjectDir)service\data_service\loader;$(ProjectDir)service\data_service\sqlmgr;$(ProjectDir)service\data_service\writer;$(ProjectDir)service\game_service;$(ProjectDir)service\gate_service;$(ProjectDir)service\logger_service;$(ProjectDir)service\role_service;$(ProjectDir)service\sender_service;$(ProjectDir)service\watchdog_service;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\include;$(ProjectDir)frame\player_role;$(ProjectDir)frame\scene;$(ProjectDir)frame\config;$(ProjectDir)frame\pb\server;$(ProjectDir)frame\pb\inner;$(ProjectDir)frame\pb\data;$(ProjectDir)frame\pb\config;$(ProjectDir)frame\pb\client;E:\zlsg\code\zproj\server;$(ProjectDir)tpl\protobuf-2.5.0\src;$(ProjectDir)tpl\lua\include;$(ProjectDir)frame\base;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)tpl\protobuf-2.5.0\vsprojects\x64\Debug;$(ProjectDir)tpl\lua;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\lib\vs11;$(LibraryPath)</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|x64'">
+    <IncludePath>$(ProjectDir)frame\center\randnpc;$(ProjectDir)frame\center\sect;$(ProjectDir)frame\center\mate;$(ProjectDir)frame\center\arena;$(ProjectDir)frame\center\chat;$(ProjectDir)frame\center\siege;$(ProjectDir)frame\center\explore;$(ProjectDir)frame\center\family;$(ProjectDir)frame\navmesh;$(ProjectDir)frame\center\team;$(ProjectDir)frame\center\rank;$(ProjectDir)frame\center\boss;$(ProjectDir)frame\center\friends;$(ProjectDir)frame\center\mail;$(ProjectDir)frame\center\cache;$(ProjectDir)frame\chores\farm;$(ProjectDir)tpl\include;$(ProjectDir)amtsvr;$(ProjectDir)tpl\dirent-1.20.1\include;$(ProjectDir)service\agent_service;$(ProjectDir)service\center_service;$(ProjectDir)service\chores_service;$(ProjectDir)service\data_service\loader;$(ProjectDir)service\data_service\sqlmgr;$(ProjectDir)service\data_service\writer;$(ProjectDir)service\game_service;$(ProjectDir)service\gate_service;$(ProjectDir)service\logger_service;$(ProjectDir)service\role_service;$(ProjectDir)service\sender_service;$(ProjectDir)service\watchdog_service;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\include;$(ProjectDir)frame\player_role;$(ProjectDir)frame\scene;$(ProjectDir)frame\config;$(ProjectDir)frame\pb\server;$(ProjectDir)frame\pb\inner;$(ProjectDir)frame\pb\data;$(ProjectDir)frame\pb\config;$(ProjectDir)frame\pb\client;E:\zlsg\code\zproj\server;$(ProjectDir)tpl\protobuf-2.5.0\src;$(ProjectDir)tpl\lua\include;$(ProjectDir)frame\base;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)tpl\protobuf-2.5.0\vsprojects\x64\Debug;$(ProjectDir)tpl\lua;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\lib\vs11;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|x64'">
+    <IncludePath>$(ProjectDir)frame\center\randnpc;$(ProjectDir)frame\center\sect;$(ProjectDir)frame\center\mate;$(ProjectDir)frame\center\arena;$(ProjectDir)frame\center\chat;$(ProjectDir)frame\center\siege;$(ProjectDir)frame\center\explore;$(ProjectDir)frame\center\family;$(ProjectDir)frame\navmesh;$(ProjectDir)frame\center\team;$(ProjectDir)frame\center\rank;$(ProjectDir)frame\center\boss;$(ProjectDir)frame\center\friends;$(ProjectDir)frame\center\mail;$(ProjectDir)frame\center\cache;$(ProjectDir)frame\chores\farm;$(ProjectDir)tpl\include;$(ProjectDir)amtsvr;$(ProjectDir)tpl\dirent-1.20.1\include;$(ProjectDir)service\agent_service;$(ProjectDir)service\center_service;$(ProjectDir)service\chores_service;$(ProjectDir)service\data_service\loader;$(ProjectDir)service\data_service\sqlmgr;$(ProjectDir)service\data_service\writer;$(ProjectDir)service\game_service;$(ProjectDir)service\gate_service;$(ProjectDir)service\logger_service;$(ProjectDir)service\role_service;$(ProjectDir)service\sender_service;$(ProjectDir)service\watchdog_service;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\include;$(ProjectDir)frame\player_role;$(ProjectDir)frame\scene;$(ProjectDir)frame\config;$(ProjectDir)frame\pb\server;$(ProjectDir)frame\pb\inner;$(ProjectDir)frame\pb\data;$(ProjectDir)frame\pb\config;$(ProjectDir)frame\pb\client;E:\zlsg\code\zproj\server;$(ProjectDir)tpl\protobuf-2.5.0\src;$(ProjectDir)tpl\lua\include;$(ProjectDir)frame\base;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)tpl\protobuf-2.5.0\vsprojects\x64\Debug;$(ProjectDir)tpl\lua;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\lib;$(ProjectDir)tpl\mysql-connector-c-6.1.3-winx64\lib\vs11;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(ProjectDir)\service\node_service;E:\zlsg\code\zproj\server\tpl\lua-5.2.3_Win32_dll10_lib\include;$(ProjectDir)\tpl\LuaTinker;$(ProjectDir)\frame\center\city;$(ProjectDir)\frame\center\poll_activity;$(ProjectDir)\frame\center\cycle;$(ProjectDir)\frame\script\link;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua52.lib;mysqlclient.lib;libmysql.lib;libprotobuf.lib;Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\zlsg\code\zproj\server\tpl\lua-5.2.3_Win32_dll10_lib;E:\zlsg\code\zproj\server\tpl\mysql-connector-c-6.1.3-win32\lib\vs10\debug;E:\zlsg\code\zproj\server\tpl\mysql-connector-c-6.1.3-win32\lib;E:\zlsg\code\zproj\server\tpl\protobuf-2.5.0\vsprojects\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__VLD__;__INNER_DEBUG__PACKAGE_;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;__TEST_LUA__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>E:\zlsg\code\zproj\server\tpl\LuaTinker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua52.lib;libmysql.lib;Ws2_32.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__VLD__;__INNER_DEBUG__PACKAGE_;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;__TEST_LUA__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)tpl\LuaTinker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua52.lib;libmysql.lib;Ws2_32.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(ProjectDir)\service\node_service;$(ProjectDir)\tpl\LuaTinker;$(ProjectDir)\frame\center\city;$(ProjectDir)\frame\center\poll_activity;$(ProjectDir)\frame\center\cycle;$(ProjectDir)\frame\script\link;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua52.lib;libmysql.lib;Ws2_32.lib;libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug32|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua52.lib;libmysql.lib;Ws2_32.lib;libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_luajit|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua52.lib;libmysql.lib;Ws2_32.lib;libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="amtsvr\amtsvr_env.cc" />
+    <ClCompile Include="amtsvr\amtsvr_error.cc" />
+    <ClCompile Include="amtsvr\amtsvr_handle.cc" />
+    <ClCompile Include="amtsvr\amtsvr_init.cc" />
+    <ClCompile Include="amtsvr\amtsvr_main.cc" />
+    <ClCompile Include="amtsvr\amtsvr_module.cc" />
+    <ClCompile Include="amtsvr\amtsvr_monitor.cc" />
+    <ClCompile Include="amtsvr\amtsvr_mq.cc" />
+    <ClCompile Include="amtsvr\amtsvr_server.cc" />
+    <ClCompile Include="amtsvr\amtsvr_start.cc" />
+    <ClCompile Include="amtsvr\amtsvr_timer.cc" />
+    <ClCompile Include="amtsvr\compat52.cc" />
+    <ClCompile Include="amtsvr\stdafx.cc" />
+    <ClCompile Include="frame\base\base64_coder.cc" />
+    <ClCompile Include="frame\base\base_time.cc" />
+    <ClCompile Include="frame\base\BinTable.cc" />
+    <ClCompile Include="frame\base\cache_ctx.cc" />
+    <ClCompile Include="frame\base\cache_dwctx.cc" />
+    <ClCompile Include="frame\base\cache_mgr.cc" />
+    <ClCompile Include="frame\base\cfg_cache_ctx.cc" />
+    <ClCompile Include="frame\base\cfg_cache_mgr.cc" />
+    <ClCompile Include="frame\base\client_pb_mgr.cc" />
+    <ClCompile Include="frame\base\cmq_svr_msg.cc" />
+    <ClCompile Include="frame\base\MapConfig.cc" />
+    <ClCompile Include="frame\base\md5_encrypt.cc" />
+    <ClCompile Include="frame\base\msg_handler_pool.cc" />
+    <ClCompile Include="frame\base\pb_coder.cc" />
+    <ClCompile Include="frame\base\pb_mgr.cc" />
+    <ClCompile Include="frame\base\pb_mgr_base.cc" />
+    <ClCompile Include="frame\base\postion.cc" />
+    <ClCompile Include="frame\base\random.cc" />
+    <ClCompile Include="frame\base\rect.cc" />
+    <ClCompile Include="frame\base\sintable.cc" />
+    <ClCompile Include="frame\base\sql_operator.cc" />
+    <ClCompile Include="frame\base\sql_parser.cc" />
+    <ClCompile Include="frame\base\utf8.cc" />
+    <ClCompile Include="frame\center\arena\arena.cc" />
+    <ClCompile Include="frame\center\arena\arena_mgr.cc" />
+    <ClCompile Include="frame\center\arena\arena_record.cc" />
+    <ClCompile Include="frame\center\arena\arena_robot_mgr.cc" />
+    <ClCompile Include="frame\center\boss\boss_mgr.cc" />
+    <ClCompile Include="frame\center\cache\offline_role.cc" />
+    <ClCompile Include="frame\center\cache\offline_role_mgr.cc" />
+    <ClCompile Include="frame\center\cache\online_role.cc" />
+    <ClCompile Include="frame\center\cache\online_role_mgr.cc" />
+    <ClCompile Include="frame\center\cache\role_smy_mgr.cc" />
+    <ClCompile Include="frame\center\chat\ban_user.cc" />
+    <ClCompile Include="frame\center\chat\db_log.cc" />
+    <ClCompile Include="frame\center\chat\sys_msg.cc" />
+    <ClCompile Include="frame\center\city\city_welfare_mgr.cc" />
+    <ClCompile Include="frame\center\city\siege_mgr.cc" />
+    <ClCompile Include="frame\center\cycle\cycle_mgr.cc" />
+    <ClCompile Include="frame\center\cycle\cycle_role_mgr.cc" />
+    <ClCompile Include="frame\center\devil\devil_mgr.cc" />
+    <ClCompile Include="frame\center\explore\explore_center.cc" />
+    <ClCompile Include="frame\center\explore\explore_mgr.cc" />
+    <ClCompile Include="frame\center\family\family.cc" />
+    <ClCompile Include="frame\center\family\family_diplomacy.cc" />
+    <ClCompile Include="frame\center\family\family_diplomacy_mgr.cc" />
+    <ClCompile Include="frame\center\family\family_domain.cc" />
+    <ClCompile Include="frame\center\family\family_domain_mgr.cc" />
+    <ClCompile Include="frame\center\family\family_log.cc" />
+    <ClCompile Include="frame\center\family\family_log_mgr.cc" />
+    <ClCompile Include="frame\center\family\family_member.cc" />
+    <ClCompile Include="frame\center\family\family_member_mgr.cc" />
+    <ClCompile Include="frame\center\family\family_mgr.cc" />
+    <ClCompile Include="frame\center\family\family_record.cc" />
+    <ClCompile Include="frame\center\family\family_record_mgr.cc" />
+    <ClCompile Include="frame\center\family\family_skill.cc" />
+    <ClCompile Include="frame\center\family\family_skill_mgr.cc" />
+    <ClCompile Include="frame\center\friends\friends_mgr.cc" />
+    <ClCompile Include="frame\center\friends\friend_parser.cc" />
+    <ClCompile Include="frame\center\friends\player_role_friends.cc" />
+    <ClCompile Include="frame\center\illegal_word\illegal_word.cc" />
+    <ClCompile Include="frame\center\mail\mail_center.cc" />
+    <ClCompile Include="frame\center\mail\mail_center_mgr.cc" />
+    <ClCompile Include="frame\center\mate\mate.cc" />
+    <ClCompile Include="frame\center\mate\mate_mgr.cc" />
+    <ClCompile Include="frame\center\notice\notice_mgr.cc" />
+    <ClCompile Include="frame\center\poll_activity\activity_promotions.cc" />
+    <ClCompile Include="frame\center\poll_activity\activity_promotions_mgr.cc" />
+    <ClCompile Include="frame\center\poll_activity\activity_record.cc" />
+    <ClCompile Include="frame\center\poll_activity\activity_record_mgr.cc" />
+    <ClCompile Include="frame\center\poll_activity\poll_activity.cc" />
+    <ClCompile Include="frame\center\poll_activity\poll_activity_mgr.cc" />
+    <ClCompile Include="frame\center\poll_activity\record_parser.cc" />
+    <ClCompile Include="frame\center\raid\raid_center.cc" />
+    <ClCompile Include="frame\center\raid\raid_mgr.cc" />
+    <ClCompile Include="frame\center\randnpc\randnpc_mgr.cc" />
+    <ClCompile Include="frame\center\rank\promo.cc" />
+    <ClCompile Include="frame\center\rank\raid_center_mgr.cc" />
+    <ClCompile Include="frame\center\rank\rank.cc" />
+    <ClCompile Include="frame\center\rank\rank_center.cc" />
+    <ClCompile Include="frame\center\rank\rank_mgr.cc" />
+    <ClCompile Include="frame\center\team\team_mgr.cc" />
+    <ClCompile Include="frame\chores\farm\farm.cc" />
+    <ClCompile Include="frame\chores\farm\farm_mgr.cc" />
+    <ClCompile Include="frame\config\cfg_parser.cc" />
+    <ClCompile Include="frame\config\config_activity.cc" />
+    <ClCompile Include="frame\config\config_activity_item.cc" />
+    <ClCompile Include="frame\config\config_base.cc" />
+    <ClCompile Include="frame\config\config_basic.cc" />
+    <ClCompile Include="frame\config\config_beauty.cc" />
+    <ClCompile Include="frame\config\config_bipize.cc" />
+    <ClCompile Include="frame\config\config_birth.cc" />
+    <ClCompile Include="frame\config\config_bows.cc" />
+    <ClCompile Include="frame\config\config_bow_exp.cc" />
+    <ClCompile Include="frame\config\config_cast_equip.cc" />
+    <ClCompile Include="frame\config\config_cd_time.cc" />
+    <ClCompile Include="frame\config\config_cycle.cc" />
+    <ClCompile Include="frame\config\config_devil.cc" />
+    <ClCompile Include="frame\config\config_edreward.cc" />
+    <ClCompile Include="frame\config\config_effect.cc" />
+    <ClCompile Include="frame\config\config_equip_upgrade.cc" />
+    <ClCompile Include="frame\config\config_fallitem.cc" />
+    <ClCompile Include="frame\config\config_flag.cc" />
+    <ClCompile Include="frame\config\config_gem.cc" />
+    <ClCompile Include="frame\config\config_gem_act.cc" />
+    <ClCompile Include="frame\config\config_giant.cc" />
+    <ClCompile Include="frame\config\config_giantraid.cc" />
+    <ClCompile Include="frame\config\config_gift.cc" />
+    <ClCompile Include="frame\config\config_historyReward.cc" />
+    <ClCompile Include="frame\config\config_land.cc" />
+    <ClCompile Include="frame\config\config_legion.cc" />
+    <ClCompile Include="frame\config\config_lottery.cc" />
+    <ClCompile Include="frame\config\config_magic.cc" />
+    <ClCompile Include="frame\config\config_mail.cc" />
+    <ClCompile Include="frame\config\config_mall.cc" />
+    <ClCompile Include="frame\config\config_map.cc" />
+    <ClCompile Include="frame\config\config_material.cc" />
+    <ClCompile Include="frame\config\config_melting_equip.cc" />
+    <ClCompile Include="frame\config\config_mgr.cc" />
+    <ClCompile Include="frame\config\config_mounts.cc" />
+    <ClCompile Include="frame\config\config_mounts_skill.cc" />
+    <ClCompile Include="frame\config\config_mount_exp.cc" />
+    <ClCompile Include="frame\config\config_name.cc" />
+    <ClCompile Include="frame\config\config_npc.cc" />
+    <ClCompile Include="frame\config\config_open.cc" />
+    <ClCompile Include="frame\config\config_pay.cc" />
+    <ClCompile Include="frame\config\config_pet_skill.cc" />
+    <ClCompile Include="frame\config\config_potential.cc" />
+    <ClCompile Include="frame\config\config_props.cc" />
+    <ClCompile Include="frame\config\config_quest.cc" />
+    <ClCompile Include="frame\config\config_raid.cc" />
+    <ClCompile Include="frame\config\config_recharge.cc" />
+    <ClCompile Include="frame\config\config_reward.cc" />
+    <ClCompile Include="frame\config\config_robot.cc" />
+    <ClCompile Include="frame\config\config_robot_ai.cc" />
+    <ClCompile Include="frame\config\config_siege.cc" />
+    <ClCompile Include="frame\config\config_sign.cc" />
+    <ClCompile Include="frame\config\config_skill.cc" />
+    <ClCompile Include="frame\config\config_target.cc" />
+    <ClCompile Include="frame\config\config_treasure.cc" />
+    <ClCompile Include="frame\config\config_upequip.cc" />
+    <ClCompile Include="frame\config\config_upgrade.cc" />
+    <ClCompile Include="frame\config\config_vip.cc" />
+    <ClCompile Include="frame\navmesh\DetourAlloc.cc" />
+    <ClCompile Include="frame\navmesh\DetourCommon.cc" />
+    <ClCompile Include="frame\navmesh\DetourNavMesh.cc" />
+    <ClCompile Include="frame\navmesh\DetourNavMeshBuilder.cc" />
+    <ClCompile Include="frame\navmesh\DetourNavMeshQuery.cc" />
+    <ClCompile Include="frame\navmesh\DetourNode.cc" />
+    <ClCompile Include="frame\pb\client\client.arena.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.attack.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.auth.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.battle.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.big_packet.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.chat_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.city.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.comm.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.create_role.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.cycle.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.devil.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.effect.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.family.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.farm.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.field_score.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.flower.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.friend.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.heart.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.invest.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.jump_scene.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.land_raid.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.levels.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.lottery.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.mate.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.miniserver.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.mounts.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.node.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.offline.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.open.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.operate_mail.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.operate_pet.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.operate_shop.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.pets.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.pick.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.poll_activity.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.practice.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.promo.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.query.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.raid_operate.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.randnpc.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.rank.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.region.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_attr_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_bows.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_cd_cooldown.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_gem.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_label.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_login.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_move_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_name_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_pos_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_potential.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_props.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_remove_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_set.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_skill_msg.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_statis.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_status.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_tower_raid.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.role_vip.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.saparatism.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.saparatism_battle.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.scene_ready.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.script.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.secret_place.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.select.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.spa.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.target.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.task.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.team.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.team_raid.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.terrain.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.test.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.time.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.trans_user.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.vip.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.welfare.pb.cc" />
+    <ClCompile Include="frame\pb\client\client.world_boss.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.auth_player.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.sp_get_gdata.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.sp_login_auth.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_activity_open.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_activity_record.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_arena_record.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_arena_robot.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_center_arena.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_center_cycle.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_center_cycle_role.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_center_devil.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_center_notice.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_city_attack.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_city_welfare.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family_diplomacy.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family_domain.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family_log.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family_member.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family_record.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_family_skill.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_gamesvr.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_mail_center.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_mate.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_money_log.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_player.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_player_role.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_promotions.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_raid_center.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_rank.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_auto_raid.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_black_shop.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_bows.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_buffer.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_cd_cooldown.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_center_set.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_cycle.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_devil.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_explore.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_explore_detail.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_ext_attr.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_farm.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_friends.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_gem.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_label.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_levels.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_lottery.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_mail.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_mounts.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_order.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_pet.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_potential.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_props.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_raid.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_recharge.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_set.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_skill.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_statis.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_status.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_target.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_task.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_task_chain.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_treasure.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_role_vip.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_task_log.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.tb_version.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_login.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_moneylog.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_moneylogconfig.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_newtask.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_newtaskconfig.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_offline.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_online.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_recharge.pb.cc" />
+    <ClCompile Include="frame\pb\data\mysql.t_upgradelog.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.backpack.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.bulletin.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.card.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.comm.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.delivery.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.email.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.faq.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.log.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.login.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.notice.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.online.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.pay.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.player.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.promotions.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.recharge.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.restict.pb.cc" />
+    <ClCompile Include="frame\pb\inner\inner.server.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.ai.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.broadcast.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.close_agent.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.goods.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.group_operate.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.init_data_req.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.loader.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.log.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.node.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.record_offline.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.register_role.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.service_notify.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.team_notify.pb.cc" />
+    <ClCompile Include="frame\pb\server\server.trans_back_user.pb.cc" />
+    <ClCompile Include="frame\player_role\black_shop_parser.cc" />
+    <ClCompile Include="frame\player_role\buffer_parser.cc" />
+    <ClCompile Include="frame\player_role\cd_cooldown_parser.cc" />
+    <ClCompile Include="frame\player_role\center_role.cc" />
+    <ClCompile Include="frame\player_role\center_role_set.cc" />
+    <ClCompile Include="frame\player_role\gem_parser.cc" />
+    <ClCompile Include="frame\player_role\mail_parser.cc" />
+    <ClCompile Include="frame\player_role\operate_log.cc" />
+    <ClCompile Include="frame\player_role\pet_parser.cc" />
+    <ClCompile Include="frame\player_role\player_role.cc" />
+    <ClCompile Include="frame\player_role\player_role_auto_raid.cc" />
+    <ClCompile Include="frame\player_role\player_role_black_shop.cc" />
+    <ClCompile Include="frame\player_role\player_role_bows.cc" />
+    <ClCompile Include="frame\player_role\player_role_buffer.cc" />
+    <ClCompile Include="frame\player_role\player_role_cd_cooldown.cc" />
+    <ClCompile Include="frame\player_role\player_role_cycle.cc" />
+    <ClCompile Include="frame\player_role\player_role_devil.cc" />
+    <ClCompile Include="frame\player_role\player_role_explore.cc" />
+    <ClCompile Include="frame\player_role\player_role_explore_detail.cc" />
+    <ClCompile Include="frame\player_role\player_role_ext_attr.cc" />
+    <ClCompile Include="frame\player_role\player_role_ext_attr_family.cc" />
+    <ClCompile Include="frame\player_role\player_role_gem.cc" />
+    <ClCompile Include="frame\player_role\player_role_label.cc" />
+    <ClCompile Include="frame\player_role\player_role_label_mgr.cc" />
+    <ClCompile Include="frame\player_role\player_role_levels.cc" />
+    <ClCompile Include="frame\player_role\player_role_lottery.cc" />
+    <ClCompile Include="frame\player_role\player_role_mail.cc" />
+    <ClCompile Include="frame\player_role\player_role_mission.cc" />
+    <ClCompile Include="frame\player_role\player_role_mounts.cc" />
+    <ClCompile Include="frame\player_role\player_role_order.cc" />
+    <ClCompile Include="frame\player_role\player_role_order_mgr.cc" />
+    <ClCompile Include="frame\player_role\player_role_pet.cc" />
+    <ClCompile Include="frame\player_role\player_role_potential.cc" />
+    <ClCompile Include="frame\player_role\player_role_props.cc" />
+    <ClCompile Include="frame\player_role\player_role_raid.cc" />
+    <ClCompile Include="frame\player_role\player_role_raid_mgr.cc" />
+    <ClCompile Include="frame\player_role\player_role_set.cc" />
+    <ClCompile Include="frame\player_role\player_role_skill.cc" />
+    <ClCompile Include="frame\player_role\player_role_skill_mgr.cc" />
+    <ClCompile Include="frame\player_role\player_role_statis.cc" />
+    <ClCompile Include="frame\player_role\player_role_statis_mgr.cc" />
+    <ClCompile Include="frame\player_role\player_role_status.cc" />
+    <ClCompile Include="frame\player_role\player_role_target.cc" />
+    <ClCompile Include="frame\player_role\player_role_task.cc" />
+    <ClCompile Include="frame\player_role\player_role_treasure.cc" />
+    <ClCompile Include="frame\player_role\player_role_vip.cc" />
+    <ClCompile Include="frame\player_role\potential_parser.cc" />
+    <ClCompile Include="frame\player_role\props_parser.cc" />
+    <ClCompile Include="frame\player_role\set_parser.cc" />
+    <ClCompile Include="frame\player_role\task_parser.cc" />
+    <ClCompile Include="frame\player_role\treasure_parser.cc" />
+    <ClCompile Include="frame\scene\arena_scene_inst.cc" />
+    <ClCompile Include="frame\scene\battle_scene.cc" />
+    <ClCompile Include="frame\scene\battle_scene_inst.cc" />
+    <ClCompile Include="frame\scene\battle_user_score.cc" />
+    <ClCompile Include="frame\scene\boss_scene.cc" />
+    <ClCompile Include="frame\scene\boss_scene_inst.cc" />
+    <ClCompile Include="frame\scene\camp_mgr.cc" />
+    <ClCompile Include="frame\scene\cell.cc" />
+    <ClCompile Include="frame\scene\create_npc_rule.cc" />
+    <ClCompile Include="frame\scene\cycle_scene_inst.cc" />
+    <ClCompile Include="frame\scene\effect_result.cc" />
+    <ClCompile Include="frame\scene\family_scene_inst.cc" />
+    <ClCompile Include="frame\scene\farm_npc_mgr.cc" />
+    <ClCompile Include="frame\scene\farm_scene_inst.cc" />
+    <ClCompile Include="frame\scene\farm_scene_npc.cc" />
+    <ClCompile Include="frame\scene\filter_target.cc" />
+    <ClCompile Include="frame\scene\game_map.cc" />
+    <ClCompile Include="frame\scene\game_map_mgr.cc" />
+    <ClCompile Include="frame\scene\halo.cc" />
+    <ClCompile Include="frame\scene\hate_man.cc" />
+    <ClCompile Include="frame\scene\levels_scene_inst.cc" />
+    <ClCompile Include="frame\scene\navmesh.cc" />
+    <ClCompile Include="frame\scene\npc.cc" />
+    <ClCompile Include="frame\scene\origin_npc.cc" />
+    <ClCompile Include="frame\scene\pet.cc" />
+    <ClCompile Include="frame\scene\raid_scene.cc" />
+    <ClCompile Include="frame\scene\raid_scene_inst.cc" />
+    <ClCompile Include="frame\scene\region_over.cc" />
+    <ClCompile Include="frame\scene\role.cc" />
+    <ClCompile Include="frame\scene\role_buffer.cc" />
+    <ClCompile Include="frame\scene\role_effect.cc" />
+    <ClCompile Include="frame\scene\role_skill.cc" />
+    <ClCompile Include="frame\scene\sa_camp_mgr.cc" />
+    <ClCompile Include="frame\scene\scene.cc" />
+    <ClCompile Include="frame\scene\scene_inst.cc" />
+    <ClCompile Include="frame\scene\scene_inst_mgr.cc" />
+    <ClCompile Include="frame\scene\scene_lose_mgr.cc" />
+    <ClCompile Include="frame\scene\scene_npc.cc" />
+    <ClCompile Include="frame\scene\scene_pet.cc" />
+    <ClCompile Include="frame\scene\scene_robot.cc" />
+    <ClCompile Include="frame\scene\scene_role.cc" />
+    <ClCompile Include="frame\scene\scene_role_ai.cc" />
+    <ClCompile Include="frame\scene\scene_role_attr.cc" />
+    <ClCompile Include="frame\scene\scene_role_status.cc" />
+    <ClCompile Include="frame\scene\scene_role_task.cc" />
+    <ClCompile Include="frame\scene\scene_user.cc" />
+    <ClCompile Include="frame\scene\scene_user_pb.cc" />
+    <ClCompile Include="frame\scene\shmap.cc" />
+    <ClCompile Include="frame\scene\siege_scene_inst.cc" />
+    <ClCompile Include="frame\scene\skill_effect.cc" />
+    <ClCompile Include="frame\scene\style_box.cc" />
+    <ClCompile Include="frame\scene\team_scene_inst.cc" />
+    <ClCompile Include="frame\scene\terrain.cc" />
+    <ClCompile Include="frame\scene\tower_scene_inst.cc" />
+    <ClCompile Include="frame\scene\user.cc" />
+    <ClCompile Include="frame\scene\raid_over.cc" />
+    <ClCompile Include="frame\script\link\link_lua.cc" />
+    <ClCompile Include="service\agent_service\agent_interface.cc" />
+    <ClCompile Include="service\agent_service\agent_service.cc" />
+    <ClCompile Include="service\agent_service\inner_interface.cc" />
+    <ClCompile Include="service\agent_service\pb_agent_node.cc" />
+    <ClCompile Include="service\center_service\center_interface.cc" />
+    <ClCompile Include="service\center_service\center_map_mgr.cc" />
+    <ClCompile Include="service\center_service\center_service.cc" />
+    <ClCompile Include="service\center_service\pb_center_activity.cc" />
+    <ClCompile Include="service\center_service\pb_center_arena.cc" />
+    <ClCompile Include="service\center_service\pb_center_battle.cc" />
+    <ClCompile Include="service\center_service\pb_center_boss.cc" />
+    <ClCompile Include="service\center_service\pb_center_chat_msg.cc" />
+    <ClCompile Include="service\center_service\pb_center_city.cc" />
+    <ClCompile Include="service\center_service\pb_center_create_role_check.cc" />
+    <ClCompile Include="service\center_service\pb_center_cycle.cc" />
+    <ClCompile Include="service\center_service\pb_center_delivery_mail.cc" />
+    <ClCompile Include="service\center_service\pb_center_devil.cc" />
+    <ClCompile Include="service\center_service\pb_center_explore.cc" />
+    <ClCompile Include="service\center_service\pb_center_family.cc" />
+    <ClCompile Include="service\center_service\pb_center_farm.cc" />
+    <ClCompile Include="service\center_service\pb_center_flower.cc" />
+    <ClCompile Include="service\center_service\pb_center_friend.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_activity.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_backpack.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_ban.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_delivery.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_email.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_notice.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_player.cc" />
+    <ClCompile Include="service\center_service\pb_center_inner_server.cc" />
+    <ClCompile Include="service\center_service\pb_center_jump_user.cc" />
+    <ClCompile Include="service\center_service\pb_center_label.cc" />
+    <ClCompile Include="service\center_service\pb_center_log.cc" />
+    <ClCompile Include="service\center_service\pb_center_mate.cc" />
+    <ClCompile Include="service\center_service\pb_center_offline.cc" />
+    <ClCompile Include="service\center_service\pb_center_open.cc" />
+    <ClCompile Include="service\center_service\pb_center_player_info.cc" />
+    <ClCompile Include="service\center_service\pb_center_query_req.cc" />
+    <ClCompile Include="service\center_service\pb_center_rank.cc" />
+    <ClCompile Include="service\center_service\pb_center_team.cc" />
+    <ClCompile Include="service\center_service\pb_center_trans_back_user.cc" />
+    <ClCompile Include="service\center_service\role_key.cc" />
+    <ClCompile Include="service\chores_service\chores_interface.cc" />
+    <ClCompile Include="service\chores_service\chores_service.cc" />
+    <ClCompile Include="service\chores_service\pb_chores_farm.cc" />
+    <ClCompile Include="service\data_service\loader\loader.cc" />
+    <ClCompile Include="service\data_service\loader\loader_role.cc" />
+    <ClCompile Include="service\data_service\loader\loader_role_mgr.cc" />
+    <ClCompile Include="service\data_service\sqlmgr\sql_mgr.cc" />
+    <ClCompile Include="service\data_service\writer\cache_dwriter.cc" />
+    <ClCompile Include="service\data_service\writer\writer.cc" />
+    <ClCompile Include="service\data_service\writer\writer_role_mgr.cc" />
+    <ClCompile Include="service\game_service\game_interface.cc" />
+    <ClCompile Include="service\game_service\game_service.cc" />
+    <ClCompile Include="service\game_service\pb_activity.cc" />
+    <ClCompile Include="service\game_service\pb_arena.cc" />
+    <ClCompile Include="service\game_service\pb_attack.cc" />
+    <ClCompile Include="service\game_service\pb_battle.cc" />
+    <ClCompile Include="service\game_service\pb_bows.cc" />
+    <ClCompile Include="service\game_service\pb_city_attack.cc" />
+    <ClCompile Include="service\game_service\pb_cycle.cc" />
+    <ClCompile Include="service\game_service\pb_devil.cc" />
+    <ClCompile Include="service\game_service\pb_family.cc" />
+    <ClCompile Include="service\game_service\pb_farm.cc" />
+    <ClCompile Include="service\game_service\pb_filed_score.cc" />
+    <ClCompile Include="service\game_service\pb_flower.cc" />
+    <ClCompile Include="service\game_service\pb_friend.cc" />
+    <ClCompile Include="service\game_service\pb_game_inner_backpack.cc" />
+    <ClCompile Include="service\game_service\pb_game_inner_ban.cc" />
+    <ClCompile Include="service\game_service\pb_game_inner_delivery.cc" />
+    <ClCompile Include="service\game_service\pb_gem.cc" />
+    <ClCompile Include="service\game_service\pb_invest.cc" />
+    <ClCompile Include="service\game_service\pb_jump_scene.cc" />
+    <ClCompile Include="service\game_service\pb_label.cc" />
+    <ClCompile Include="service\game_service\pb_levels.cc" />
+    <ClCompile Include="service\game_service\pb_lottery.cc" />
+    <ClCompile Include="service\game_service\pb_mail.cc" />
+    <ClCompile Include="service\game_service\pb_mate.cc" />
+    <ClCompile Include="service\game_service\pb_mounts.cc" />
+    <ClCompile Include="service\game_service\pb_move.cc" />
+    <ClCompile Include="service\game_service\pb_offline.cc" />
+    <ClCompile Include="service\game_service\pb_pet.cc" />
+    <ClCompile Include="service\game_service\pb_pick.cc" />
+    <ClCompile Include="service\game_service\pb_practice.cc" />
+    <ClCompile Include="service\game_service\pb_props.cc" />
+    <ClCompile Include="service\game_service\pb_raid.cc" />
+    <ClCompile Include="service\game_service\pb_randnpc.cc" />
+    <ClCompile Include="service\game_service\pb_rank.cc" />
+    <ClCompile Include="service\game_service\pb_role_set.cc" />
+    <ClCompile Include="service\game_service\pb_scene_chat_msg.cc" />
+    <ClCompile Include="service\game_service\pb_scene_player_enter.cc" />
+    <ClCompile Include="service\game_service\pb_scene_query.cc" />
+    <ClCompile Include="service\game_service\pb_scene_ready.cc" />
+    <ClCompile Include="service\game_service\pb_secret_place.cc" />
+    <ClCompile Include="service\game_service\pb_shop.cc" />
+    <ClCompile Include="service\game_service\pb_skill.cc" />
+    <ClCompile Include="service\game_service\pb_spa.cc" />
+    <ClCompile Include="service\game_service\pb_statis.cc" />
+    <ClCompile Include="service\game_service\pb_status.cc" />
+    <ClCompile Include="service\game_service\pb_target.cc" />
+    <ClCompile Include="service\game_service\pb_task.cc" />
+    <ClCompile Include="service\game_service\pb_team_notify.cc" />
+    <ClCompile Include="service\game_service\pb_test.cc" />
+    <ClCompile Include="service\game_service\pb_tower.cc" />
+    <ClCompile Include="service\game_service\pb_trans_back_user.cc" />
+    <ClCompile Include="service\game_service\pb_vip.cc" />
+    <ClCompile Include="service\game_service\pb_welfare.cc" />
+    <ClCompile Include="service\game_service\pb_world_boss.cc" />
+    <ClCompile Include="service\gate_service\event.cc" />
+    <ClCompile Include="service\gate_service\gate_service.cc" />
+    <ClCompile Include="service\gate_service\mread.cc" />
+    <ClCompile Include="service\gate_service\ringbuffer.cc" />
+    <ClCompile Include="service\logger_service\logger_service.cc" />
+    <ClCompile Include="service\node_service\node_interface.cc" />
+    <ClCompile Include="service\node_service\node_service.cc" />
+    <ClCompile Include="service\role_service\pb_auth.cc" />
+    <ClCompile Include="service\role_service\pb_create_role.cc" />
+    <ClCompile Include="service\role_service\role_interface.cc" />
+    <ClCompile Include="service\role_service\role_login_mgr.cc" />
+    <ClCompile Include="service\role_service\role_service.cc" />
+    <ClCompile Include="service\sender_service\sender_service.cc" />
+    <ClCompile Include="service\watchdog_service\watchdog_interface.cc" />
+    <ClCompile Include="service\watchdog_service\watchdog_service.cc" />
+    <ClCompile Include="tpl\LuaTinker\lua_tinker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="amtsvr\amtsvr.h" />
+    <ClInclude Include="amtsvr\amtsvr_env.h" />
+    <ClInclude Include="amtsvr\amtsvr_handle.h" />
+    <ClInclude Include="amtsvr\amtsvr_imp.h" />
+    <ClInclude Include="amtsvr\amtsvr_init.h" />
+    <ClInclude Include="amtsvr\amtsvr_module.h" />
+    <ClInclude Include="amtsvr\amtsvr_monitor.h" />
+    <ClInclude Include="amtsvr\amtsvr_mq.h" />
+    <ClInclude Include="amtsvr\amtsvr_server.h" />
+    <ClInclude Include="amtsvr\amtsvr_timer.h" />
+    <ClInclude Include="amtsvr\luacompat52.h" />
+    <ClInclude Include="amtsvr\rwlock.h" />
+    <ClInclude Include="amtsvr\stdafx.h" />
+    <ClInclude Include="frame\base\base64_coder.h" />
+    <ClInclude Include="frame\base\base_func.h" />
+    <ClInclude Include="frame\base\base_time.h" />
+    <ClInclude Include="frame\base\BinTable.h" />
+    <ClInclude Include="frame\base\cache_ctx.h" />
+    <ClInclude Include="frame\base\cache_dwctx.h" />
+    <ClInclude Include="frame\base\cache_mgr.h" />
+    <ClInclude Include="frame\base\cfg_cache_ctx.h" />
+    <ClInclude Include="frame\base\cfg_cache_mgr.h" />
+    <ClInclude Include="frame\base\client_pb_mgr.h" />
+    <ClInclude Include="frame\base\cmq_svr_msg.h" />
+    <ClInclude Include="frame\base\comm.h" />
+    <ClInclude Include="frame\base\define.h" />
+    <ClInclude Include="frame\base\hash_map_obj.h" />
+    <ClInclude Include="frame\base\MapConfig.h" />
+    <ClInclude Include="frame\base\md5_encrypt.h" />
+    <ClInclude Include="frame\base\msg_handler_pool.h" />
+    <ClInclude Include="frame\base\pb_coder.h" />
+    <ClInclude Include="frame\base\pb_container.h" />
+    <ClInclude Include="frame\base\pb_dispatcher.h" />
+    <ClInclude Include="frame\base\pb_mgr.h" />
+    <ClInclude Include="frame\base\pb_mgr_base.h" />
+    <ClInclude Include="frame\base\pb_writer.h" />
+    <ClInclude Include="frame\base\postion.h" />
+    <ClInclude Include="frame\base\random.h" />
+    <ClInclude Include="frame\base\rect.h" />
+    <ClInclude Include="frame\base\server_define.h" />
+    <ClInclude Include="frame\base\singleton.h" />
+    <ClInclude Include="frame\base\sintable.h" />
+    <ClInclude Include="frame\base\sql_operator.h" />
+    <ClInclude Include="frame\base\sql_parser.h" />
+    <ClInclude Include="frame\base\utf8.h" />
+    <ClInclude Include="frame\base\vector_obj.h" />
+    <ClInclude Include="frame\center\arena\arena.h" />
+    <ClInclude Include="frame\center\arena\arena_mgr.h" />
+    <ClInclude Include="frame\center\arena\arena_record.h" />
+    <ClInclude Include="frame\center\arena\arena_robot_mgr.h" />
+    <ClInclude Include="frame\center\boss\boss_mgr.h" />
+    <ClInclude Include="frame\center\cache\offline_role.h" />
+    <ClInclude Include="frame\center\cache\offline_role_mgr.h" />
+    <ClInclude Include="frame\center\cache\online_role.h" />
+    <ClInclude Include="frame\center\cache\online_role_mgr.h" />
+    <ClInclude Include="frame\center\cache\role_smy_mgr.h" />
+    <ClInclude Include="frame\center\chat\ban_user.h" />
+    <ClInclude Include="frame\center\chat\db_log.h" />
+    <ClInclude Include="frame\center\chat\sys_msg.h" />
+    <ClInclude Include="frame\center\city\city_welfare_mgr.h" />
+    <ClInclude Include="frame\center\city\siege_mgr.h" />
+    <ClInclude Include="frame\center\cycle\cycle_mgr.h" />
+    <ClInclude Include="frame\center\cycle\cycle_role_mgr.h" />
+    <ClInclude Include="frame\center\devil\devil_mgr.h" />
+    <ClInclude Include="frame\center\explore\explore_center.h" />
+    <ClInclude Include="frame\center\explore\explore_mgr.h" />
+    <ClInclude Include="frame\center\family\family.h" />
+    <ClInclude Include="frame\center\family\family_diplomacy.h" />
+    <ClInclude Include="frame\center\family\family_diplomacy_mgr.h" />
+    <ClInclude Include="frame\center\family\family_domain.h" />
+    <ClInclude Include="frame\center\family\family_domain_mgr.h" />
+    <ClInclude Include="frame\center\family\family_log.h" />
+    <ClInclude Include="frame\center\family\family_log_mgr.h" />
+    <ClInclude Include="frame\center\family\family_member.h" />
+    <ClInclude Include="frame\center\family\family_member_mgr.h" />
+    <ClInclude Include="frame\center\family\family_mgr.h" />
+    <ClInclude Include="frame\center\family\family_record.h" />
+    <ClInclude Include="frame\center\family\family_record_mgr.h" />
+    <ClInclude Include="frame\center\family\family_skill.h" />
+    <ClInclude Include="frame\center\family\family_skill_mgr.h" />
+    <ClInclude Include="frame\center\friends\friends_mgr.h" />
+    <ClInclude Include="frame\center\friends\friend_parser.h" />
+    <ClInclude Include="frame\center\friends\player_role_friends.h" />
+    <ClInclude Include="frame\center\illegal_word\illegal_word.h" />
+    <ClInclude Include="frame\center\mail\mail_center.h" />
+    <ClInclude Include="frame\center\mail\mail_center_mgr.h" />
+    <ClInclude Include="frame\center\mate\mate.h" />
+    <ClInclude Include="frame\center\mate\mate_mgr.h" />
+    <ClInclude Include="frame\center\notice\notice_mgr.h" />
+    <ClInclude Include="frame\center\poll_activity\activity_promotions.h" />
+    <ClInclude Include="frame\center\poll_activity\activity_promotions_mgr.h" />
+    <ClInclude Include="frame\center\poll_activity\activity_record.h" />
+    <ClInclude Include="frame\center\poll_activity\activity_record_mgr.h" />
+    <ClInclude Include="frame\center\poll_activity\poll_activity.h" />
+    <ClInclude Include="frame\center\poll_activity\poll_activity_mgr.h" />
+    <ClInclude Include="frame\center\poll_activity\record_parser.h" />
+    <ClInclude Include="frame\center\raid\raid_center.h" />
+    <ClInclude Include="frame\center\raid\raid_mgr.h" />
+    <ClInclude Include="frame\center\randnpc\randnpc_mgr.h" />
+    <ClInclude Include="frame\center\rank\promo.h" />
+    <ClInclude Include="frame\center\rank\raid_center_mgr.h" />
+    <ClInclude Include="frame\center\rank\rank.h" />
+    <ClInclude Include="frame\center\rank\rank_center.h" />
+    <ClInclude Include="frame\center\rank\rank_mgr.h" />
+    <ClInclude Include="frame\center\team\team_mgr.h" />
+    <ClInclude Include="frame\chores\farm\farm.h" />
+    <ClInclude Include="frame\chores\farm\farm_mgr.h" />
+    <ClInclude Include="frame\config\cfg_parser.h" />
+    <ClInclude Include="frame\config\config_activity.h" />
+    <ClInclude Include="frame\config\config_activity_item.h" />
+    <ClInclude Include="frame\config\config_base.h" />
+    <ClInclude Include="frame\config\config_basic.h" />
+    <ClInclude Include="frame\config\config_beauty.h" />
+    <ClInclude Include="frame\config\config_bipize.h" />
+    <ClInclude Include="frame\config\config_birth.h" />
+    <ClInclude Include="frame\config\config_bows.h" />
+    <ClInclude Include="frame\config\config_bow_exp.h" />
+    <ClInclude Include="frame\config\config_cast_equip.h" />
+    <ClInclude Include="frame\config\config_cd_time.h" />
+    <ClInclude Include="frame\config\config_cycle.h" />
+    <ClInclude Include="frame\config\config_devil.h" />
+    <ClInclude Include="frame\config\config_edreward.h" />
+    <ClInclude Include="frame\config\config_effect.h" />
+    <ClInclude Include="frame\config\config_equip_upgrade.h" />
+    <ClInclude Include="frame\config\config_fallitem.h" />
+    <ClInclude Include="frame\config\config_flag.h" />
+    <ClInclude Include="frame\config\config_gem.h" />
+    <ClInclude Include="frame\config\config_gem_act.h" />
+    <ClInclude Include="frame\config\config_giant.h" />
+    <ClInclude Include="frame\config\config_giantraid.h" />
+    <ClInclude Include="frame\config\config_gift.h" />
+    <ClInclude Include="frame\config\config_historyReward.h" />
+    <ClInclude Include="frame\config\config_land.h" />
+    <ClInclude Include="frame\config\config_legion.h" />
+    <ClInclude Include="frame\config\config_lottery.h" />
+    <ClInclude Include="frame\config\config_magic.h" />
+    <ClInclude Include="frame\config\config_mail.h" />
+    <ClInclude Include="frame\config\config_mall.h" />
+    <ClInclude Include="frame\config\config_map.h" />
+    <ClInclude Include="frame\config\config_material.h" />
+    <ClInclude Include="frame\config\config_melting_equip.h" />
+    <ClInclude Include="frame\config\config_mgr.h" />
+    <ClInclude Include="frame\config\config_mounts.h" />
+    <ClInclude Include="frame\config\config_mounts_skill.h" />
+    <ClInclude Include="frame\config\config_mount_exp.h" />
+    <ClInclude Include="frame\config\config_name.h" />
+    <ClInclude Include="frame\config\config_npc.h" />
+    <ClInclude Include="frame\config\config_open.h" />
+    <ClInclude Include="frame\config\config_pay.h" />
+    <ClInclude Include="frame\config\config_pet_skill.h" />
+    <ClInclude Include="frame\config\config_potential.h" />
+    <ClInclude Include="frame\config\config_props.h" />
+    <ClInclude Include="frame\config\config_quest.h" />
+    <ClInclude Include="frame\config\config_raid.h" />
+    <ClInclude Include="frame\config\config_recharge.h" />
+    <ClInclude Include="frame\config\config_reward.h" />
+    <ClInclude Include="frame\config\config_robot.h" />
+    <ClInclude Include="frame\config\config_robot_ai.h" />
+    <ClInclude Include="frame\config\config_siege.h" />
+    <ClInclude Include="frame\config\config_sign.h" />
+    <ClInclude Include="frame\config\config_skill.h" />
+    <ClInclude Include="frame\config\config_target.h" />
+    <ClInclude Include="frame\config\config_treasure.h" />
+    <ClInclude Include="frame\config\config_upequip.h" />
+    <ClInclude Include="frame\config\config_upgrade.h" />
+    <ClInclude Include="frame\config\config_vip.h" />
+    <ClInclude Include="frame\config\data_role.h" />
+    <ClInclude Include="frame\navmesh\DetourAlloc.h" />
+    <ClInclude Include="frame\navmesh\DetourAssert.h" />
+    <ClInclude Include="frame\navmesh\DetourCommon.h" />
+    <ClInclude Include="frame\navmesh\DetourNavMesh.h" />
+    <ClInclude Include="frame\navmesh\DetourNavMeshBuilder.h" />
+    <ClInclude Include="frame\navmesh\DetourNavMeshQuery.h" />
+    <ClInclude Include="frame\navmesh\DetourNode.h" />
+    <ClInclude Include="frame\navmesh\DetourStatus.h" />
+    <ClInclude Include="frame\pb\client\client.arena.pb.h" />
+    <ClInclude Include="frame\pb\client\client.attack.pb.h" />
+    <ClInclude Include="frame\pb\client\client.auth.pb.h" />
+    <ClInclude Include="frame\pb\client\client.battle.pb.h" />
+    <ClInclude Include="frame\pb\client\client.big_packet.pb.h" />
+    <ClInclude Include="frame\pb\client\client.chat_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.city.pb.h" />
+    <ClInclude Include="frame\pb\client\client.comm.pb.h" />
+    <ClInclude Include="frame\pb\client\client.create_role.pb.h" />
+    <ClInclude Include="frame\pb\client\client.cycle.pb.h" />
+    <ClInclude Include="frame\pb\client\client.devil.pb.h" />
+    <ClInclude Include="frame\pb\client\client.effect.pb.h" />
+    <ClInclude Include="frame\pb\client\client.family.pb.h" />
+    <ClInclude Include="frame\pb\client\client.farm.pb.h" />
+    <ClInclude Include="frame\pb\client\client.field_score.pb.h" />
+    <ClInclude Include="frame\pb\client\client.flower.pb.h" />
+    <ClInclude Include="frame\pb\client\client.friend.pb.h" />
+    <ClInclude Include="frame\pb\client\client.heart.pb.h" />
+    <ClInclude Include="frame\pb\client\client.invest.pb.h" />
+    <ClInclude Include="frame\pb\client\client.jump_scene.pb.h" />
+    <ClInclude Include="frame\pb\client\client.land_raid.pb.h" />
+    <ClInclude Include="frame\pb\client\client.levels.pb.h" />
+    <ClInclude Include="frame\pb\client\client.lottery.pb.h" />
+    <ClInclude Include="frame\pb\client\client.mate.pb.h" />
+    <ClInclude Include="frame\pb\client\client.miniserver.pb.h" />
+    <ClInclude Include="frame\pb\client\client.mounts.pb.h" />
+    <ClInclude Include="frame\pb\client\client.node.pb.h" />
+    <ClInclude Include="frame\pb\client\client.offline.pb.h" />
+    <ClInclude Include="frame\pb\client\client.open.pb.h" />
+    <ClInclude Include="frame\pb\client\client.operate_mail.pb.h" />
+    <ClInclude Include="frame\pb\client\client.operate_pet.pb.h" />
+    <ClInclude Include="frame\pb\client\client.operate_shop.pb.h" />
+    <ClInclude Include="frame\pb\client\client.pets.pb.h" />
+    <ClInclude Include="frame\pb\client\client.pick.pb.h" />
+    <ClInclude Include="frame\pb\client\client.poll_activity.pb.h" />
+    <ClInclude Include="frame\pb\client\client.practice.pb.h" />
+    <ClInclude Include="frame\pb\client\client.promo.pb.h" />
+    <ClInclude Include="frame\pb\client\client.query.pb.h" />
+    <ClInclude Include="frame\pb\client\client.raid_operate.pb.h" />
+    <ClInclude Include="frame\pb\client\client.randnpc.pb.h" />
+    <ClInclude Include="frame\pb\client\client.rank.pb.h" />
+    <ClInclude Include="frame\pb\client\client.region.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_attr_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_bows.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_cd_cooldown.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_gem.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_label.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_login.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_move_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_name_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_pos_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_potential.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_props.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_remove_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_set.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_skill_msg.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_statis.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_status.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_tower_raid.pb.h" />
+    <ClInclude Include="frame\pb\client\client.role_vip.pb.h" />
+    <ClInclude Include="frame\pb\client\client.saparatism.pb.h" />
+    <ClInclude Include="frame\pb\client\client.saparatism_battle.pb.h" />
+    <ClInclude Include="frame\pb\client\client.scene_ready.pb.h" />
+    <ClInclude Include="frame\pb\client\client.script.pb.h" />
+    <ClInclude Include="frame\pb\client\client.secret_place.pb.h" />
+    <ClInclude Include="frame\pb\client\client.select.pb.h" />
+    <ClInclude Include="frame\pb\client\client.spa.pb.h" />
+    <ClInclude Include="frame\pb\client\client.target.pb.h" />
+    <ClInclude Include="frame\pb\client\client.task.pb.h" />
+    <ClInclude Include="frame\pb\client\client.team.pb.h" />
+    <ClInclude Include="frame\pb\client\client.team_raid.pb.h" />
+    <ClInclude Include="frame\pb\client\client.terrain.pb.h" />
+    <ClInclude Include="frame\pb\client\client.test.pb.h" />
+    <ClInclude Include="frame\pb\client\client.time.pb.h" />
+    <ClInclude Include="frame\pb\client\client.trans_user.pb.h" />
+    <ClInclude Include="frame\pb\client\client.vip.pb.h" />
+    <ClInclude Include="frame\pb\client\client.welfare.pb.h" />
+    <ClInclude Include="frame\pb\client\client.world_boss.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.auth_player.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.sp_get_gdata.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.sp_login_auth.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_activity_open.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_activity_record.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_arena_record.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_arena_robot.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_center_arena.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_center_cycle.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_center_cycle_role.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_center_devil.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_center_notice.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_city_attack.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_city_welfare.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family_diplomacy.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family_domain.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family_log.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family_member.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family_record.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_family_skill.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_gamesvr.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_mail_center.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_mate.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_money_log.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_player.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_player_role.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_promotions.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_raid_center.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_rank.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_auto_raid.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_black_shop.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_bows.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_buffer.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_cd_cooldown.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_center_set.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_cycle.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_devil.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_explore.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_explore_detail.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_ext_attr.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_farm.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_friends.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_gem.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_label.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_levels.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_lottery.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_mail.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_mounts.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_order.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_pet.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_potential.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_props.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_raid.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_recharge.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_set.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_skill.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_statis.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_status.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_target.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_task.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_task_chain.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_treasure.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_role_vip.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_task_log.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.tb_version.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_login.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_moneylog.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_moneylogconfig.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_newtask.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_newtaskconfig.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_offline.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_online.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_recharge.pb.h" />
+    <ClInclude Include="frame\pb\data\mysql.t_upgradelog.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.backpack.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.bulletin.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.card.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.comm.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.delivery.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.email.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.faq.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.log.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.login.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.notice.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.online.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.pay.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.player.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.promotions.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.recharge.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.restict.pb.h" />
+    <ClInclude Include="frame\pb\inner\inner.server.pb.h" />
+    <ClInclude Include="frame\pb\server\server.ai.pb.h" />
+    <ClInclude Include="frame\pb\server\server.broadcast.pb.h" />
+    <ClInclude Include="frame\pb\server\server.close_agent.pb.h" />
+    <ClInclude Include="frame\pb\server\server.goods.pb.h" />
+    <ClInclude Include="frame\pb\server\server.group_operate.pb.h" />
+    <ClInclude Include="frame\pb\server\server.init_data_req.pb.h" />
+    <ClInclude Include="frame\pb\server\server.loader.pb.h" />
+    <ClInclude Include="frame\pb\server\server.log.pb.h" />
+    <ClInclude Include="frame\pb\server\server.node.pb.h" />
+    <ClInclude Include="frame\pb\server\server.record_offline.pb.h" />
+    <ClInclude Include="frame\pb\server\server.register_role.pb.h" />
+    <ClInclude Include="frame\pb\server\server.service_notify.pb.h" />
+    <ClInclude Include="frame\pb\server\server.team_notify.pb.h" />
+    <ClInclude Include="frame\pb\server\server.trans_back_user.pb.h" />
+    <ClInclude Include="frame\player_role\black_shop_parser.h" />
+    <ClInclude Include="frame\player_role\buffer_parser.h" />
+    <ClInclude Include="frame\player_role\cd_cooldown_parser.h" />
+    <ClInclude Include="frame\player_role\center_role.h" />
+    <ClInclude Include="frame\player_role\center_role_set.h" />
+    <ClInclude Include="frame\player_role\comm_define.h" />
+    <ClInclude Include="frame\player_role\gem_parser.h" />
+    <ClInclude Include="frame\player_role\mail_parser.h" />
+    <ClInclude Include="frame\player_role\operate_log.h" />
+    <ClInclude Include="frame\player_role\pet_parser.h" />
+    <ClInclude Include="frame\player_role\player_role_auto_raid.h" />
+    <ClInclude Include="frame\player_role\player_role_black_shop.h" />
+    <ClInclude Include="frame\player_role\player_role_bows.h" />
+    <ClInclude Include="frame\player_role\player_role_buffer.h" />
+    <ClInclude Include="frame\player_role\player_role_cd_cooldown.h" />
+    <ClInclude Include="frame\player_role\player_role_cycle.h" />
+    <ClInclude Include="frame\player_role\player_role_define.h" />
+    <ClInclude Include="frame\player_role\player_role.h" />
+    <ClInclude Include="frame\player_role\player_role_devil.h" />
+    <ClInclude Include="frame\player_role\player_role_explore.h" />
+    <ClInclude Include="frame\player_role\player_role_explore_detail.h" />
+    <ClInclude Include="frame\player_role\player_role_ext_attr.h" />
+    <ClInclude Include="frame\player_role\player_role_ext_attr_family.h" />
+    <ClInclude Include="frame\player_role\player_role_gem.h" />
+    <ClInclude Include="frame\player_role\player_role_label.h" />
+    <ClInclude Include="frame\player_role\player_role_label_mgr.h" />
+    <ClInclude Include="frame\player_role\player_role_levels.h" />
+    <ClInclude Include="frame\player_role\player_role_lottery.h" />
+    <ClInclude Include="frame\player_role\player_role_mail.h" />
+    <ClInclude Include="frame\player_role\player_role_mission.h" />
+    <ClInclude Include="frame\player_role\player_role_mounts.h" />
+    <ClInclude Include="frame\player_role\player_role_order.h" />
+    <ClInclude Include="frame\player_role\player_role_order_mgr.h" />
+    <ClInclude Include="frame\player_role\player_role_pet.h" />
+    <ClInclude Include="frame\player_role\player_role_potential.h" />
+    <ClInclude Include="frame\player_role\player_role_props.h" />
+    <ClInclude Include="frame\player_role\player_role_raid.h" />
+    <ClInclude Include="frame\player_role\player_role_raid_mgr.h" />
+    <ClInclude Include="frame\player_role\player_role_set.h" />
+    <ClInclude Include="frame\player_role\player_role_skill.h" />
+    <ClInclude Include="frame\player_role\player_role_skill_mgr.h" />
+    <ClInclude Include="frame\player_role\player_role_statis.h" />
+    <ClInclude Include="frame\player_role\player_role_statis_mgr.h" />
+    <ClInclude Include="frame\player_role\player_role_status.h" />
+    <ClInclude Include="frame\player_role\player_role_target.h" />
+    <ClInclude Include="frame\player_role\player_role_task.h" />
+    <ClInclude Include="frame\player_role\player_role_treasure.h" />
+    <ClInclude Include="frame\player_role\player_role_vip.h" />
+    <ClInclude Include="frame\player_role\potential_parser.h" />
+    <ClInclude Include="frame\player_role\props_parser.h" />
+    <ClInclude Include="frame\player_role\set_parser.h" />
+    <ClInclude Include="frame\player_role\task_parser.h" />
+    <ClInclude Include="frame\player_role\treasure_parser.h" />
+    <ClInclude Include="frame\scene\arena_scene_inst.h" />
+    <ClInclude Include="frame\scene\battle_scene.h" />
+    <ClInclude Include="frame\scene\battle_scene_inst.h" />
+    <ClInclude Include="frame\scene\battle_user_score.h" />
+    <ClInclude Include="frame\scene\boss_scene.h" />
+    <ClInclude Include="frame\scene\boss_scene_inst.h" />
+    <ClInclude Include="frame\scene\camp_mgr.h" />
+    <ClInclude Include="frame\scene\cell.h" />
+    <ClInclude Include="frame\scene\cell_pos.h" />
+    <ClInclude Include="frame\scene\create_npc_rule.h" />
+    <ClInclude Include="frame\scene\cycle_scene_inst.h" />
+    <ClInclude Include="frame\scene\effect_result.h" />
+    <ClInclude Include="frame\scene\family_scene_inst.h" />
+    <ClInclude Include="frame\scene\farm_npc_mgr.h" />
+    <ClInclude Include="frame\scene\farm_scene_inst.h" />
+    <ClInclude Include="frame\scene\farm_scene_npc.h" />
+    <ClInclude Include="frame\scene\filter_target.h" />
+    <ClInclude Include="frame\scene\game_map.h" />
+    <ClInclude Include="frame\scene\game_map_mgr.h" />
+    <ClInclude Include="frame\scene\halo.h" />
+    <ClInclude Include="frame\scene\hate_man.h" />
+    <ClInclude Include="frame\scene\levels_scene_inst.h" />
+    <ClInclude Include="frame\scene\navmesh.h" />
+    <ClInclude Include="frame\scene\npc.h" />
+    <ClInclude Include="frame\scene\origin_npc.h" />
+    <ClInclude Include="frame\scene\pet.h" />
+    <ClInclude Include="frame\scene\raid_scene.h" />
+    <ClInclude Include="frame\scene\raid_scene_inst.h" />
+    <ClInclude Include="frame\scene\region_over.h" />
+    <ClInclude Include="frame\scene\role.h" />
+    <ClInclude Include="frame\scene\role_buffer.h" />
+    <ClInclude Include="frame\scene\role_effect.h" />
+    <ClInclude Include="frame\scene\role_skill.h" />
+    <ClInclude Include="frame\scene\sa_camp_mgr.h" />
+    <ClInclude Include="frame\scene\scene.h" />
+    <ClInclude Include="frame\scene\scene_attack.h" />
+    <ClInclude Include="frame\scene\scene_define.h" />
+    <ClInclude Include="frame\scene\scene_inst.h" />
+    <ClInclude Include="frame\scene\scene_inst_mgr.h" />
+    <ClInclude Include="frame\scene\scene_lose_mgr.h" />
+    <ClInclude Include="frame\scene\scene_npc.h" />
+    <ClInclude Include="frame\scene\scene_pet.h" />
+    <ClInclude Include="frame\scene\scene_robot.h" />
+    <ClInclude Include="frame\scene\scene_role.h" />
+    <ClInclude Include="frame\scene\scene_role_ai.h" />
+    <ClInclude Include="frame\scene\scene_role_attr.h" />
+    <ClInclude Include="frame\scene\scene_role_status.h" />
+    <ClInclude Include="frame\scene\scene_role_task.h" />
+    <ClInclude Include="frame\scene\scene_user.h" />
+    <ClInclude Include="frame\scene\shmap.h" />
+    <ClInclude Include="frame\scene\siege_scene_inst.h" />
+    <ClInclude Include="frame\scene\skill_effect.h" />
+    <ClInclude Include="frame\scene\style_box.h" />
+    <ClInclude Include="frame\scene\team_scene_inst.h" />
+    <ClInclude Include="frame\scene\terrain.h" />
+    <ClInclude Include="frame\scene\tower_scene_inst.h" />
+    <ClInclude Include="frame\scene\user.h" />
+    <ClInclude Include="frame\scene\raid_over.h" />
+    <ClInclude Include="frame\script\link\link_lua.h" />
+    <ClInclude Include="LZSGConfig.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="service\agent_service\agent_interface.h" />
+    <ClInclude Include="service\agent_service\agent_service.h" />
+    <ClInclude Include="service\agent_service\inner_interface.h" />
+    <ClInclude Include="service\agent_service\pb_agent.h" />
+    <ClInclude Include="service\center_service\center_define.h" />
+    <ClInclude Include="service\center_service\center_family_mgr.h" />
+    <ClInclude Include="service\center_service\center_interface.h" />
+    <ClInclude Include="service\center_service\center_map_mgr.h" />
+    <ClInclude Include="service\center_service\center_mgr.h" />
+    <ClInclude Include="service\center_service\center_service.h" />
+    <ClInclude Include="service\center_service\role_key.h" />
+    <ClInclude Include="service\chores_service\chores_interface.h" />
+    <ClInclude Include="service\chores_service\chores_service.h" />
+    <ClInclude Include="service\data_service\loader\loader.h" />
+    <ClInclude Include="service\data_service\loader\loader_interface.h" />
+    <ClInclude Include="service\data_service\loader\loader_role.h" />
+    <ClInclude Include="service\data_service\loader\loader_role_mgr.h" />
+    <ClInclude Include="service\data_service\sqlmgr\sql_mgr.h" />
+    <ClInclude Include="service\data_service\writer\cache_dwriter.h" />
+    <ClInclude Include="service\data_service\writer\writer.h" />
+    <ClInclude Include="service\data_service\writer\writer_role_mgr.h" />
+    <ClInclude Include="service\game_service\game_interface.h" />
+    <ClInclude Include="service\game_service\game_service.h" />
+    <ClInclude Include="service\gate_service\event.h" />
+    <ClInclude Include="service\gate_service\gate_service.h" />
+    <ClInclude Include="service\gate_service\mread.h" />
+    <ClInclude Include="service\gate_service\ringbuffer.h" />
+    <ClInclude Include="service\logger_service\logger_service.h" />
+    <ClInclude Include="service\node_service\node_interface.h" />
+    <ClInclude Include="service\node_service\node_service.h" />
+    <ClInclude Include="service\role_service\role_define.h" />
+    <ClInclude Include="service\role_service\role_interface.h" />
+    <ClInclude Include="service\role_service\role_login_mgr.h" />
+    <ClInclude Include="service\role_service\role_service.h" />
+    <ClInclude Include="service\sender_service\sender_service.h" />
+    <ClInclude Include="service\watchdog_service\watchdog_interface.h" />
+    <ClInclude Include="service\watchdog_service\watchdog_service.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="server.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,14 @@
+
+package mysql;
+
+message tb_target{
+    required uint32 id = 1;
+    required uint32 lvl = 2;
+    required uint32 type = 3;
+    required string desc = 4;
+    required uint32 count = 5;
+    required string tip = 6;
+    required uint32 reward_id = 7;
+    required uint32 lvl_reward_id = 8;
+    required uint32 status = 9;
+}

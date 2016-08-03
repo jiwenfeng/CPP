@@ -1,0 +1,2 @@
+/usr/bin/ar cr libsender_service.a  CMakeFiles/sender_service.dir/sender_service.cc.o
+/usr/bin/ranlib libsender_service.a

@@ -1,0 +1,9 @@
+
+package mysql;
+
+message tb_gamesvr{
+    required uint32 svr_id = 1;
+    required string svr_name = 2;
+    required uint32 player_port = 3;
+    required uint32 inner_port = 4;
+}

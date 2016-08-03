@@ -1,0 +1,35 @@
+
+package mysql;
+
+message tb_cmpst{
+    required uint32 id = 1;
+    required uint32 cmpst_code = 2;
+    required string name = 3;
+    required string desciption = 4;
+    required uint32 material_goods_id_1 = 5;
+    required uint32 material_goods_num_1 = 6;
+    required uint32 material_goods_qlty_1 = 7;
+    required uint32 material_goods_id_2 = 8;
+    required uint32 material_goods_num_2 = 9;
+    required uint32 material_goods_qlty_2 = 10;
+    required uint32 material_goods_id_3 = 11;
+    required uint32 material_goods_num_3 = 12;
+    required uint32 material_goods_qlty_3 = 13;
+    required uint32 material_goods_id_4 = 14;
+    required uint32 material_goods_num_4 = 15;
+    required uint32 material_goods_qlty_4 = 16;
+    required uint32 material_goods_id_5 = 17;
+    required uint32 material_goods_num_5 = 18;
+    required uint32 material_goods_qlty_5 = 19;
+    required uint32 material_goods_id_6 = 20;
+    required uint32 material_goods_num_6 = 21;
+    required uint32 material_goods_qlty_6 = 22;
+    required uint32 expent_currency_code = 23;
+    required uint32 expent_amount = 24;
+    required uint32 max_odds = 25;
+    required uint32 min_odds = 26;
+    required uint32 succ_ratio = 27;
+    required string created_date = 28;
+    required string last_modified_date = 29;
+    required uint32 status = 30;
+}

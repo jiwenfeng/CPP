@@ -1,0 +1,2 @@
+/usr/bin/ar cr libwatch_dog_service.a  CMakeFiles/watch_dog_service.dir/watchdog_interface.cc.o CMakeFiles/watch_dog_service.dir/watchdog_service.cc.o
+/usr/bin/ranlib libwatch_dog_service.a

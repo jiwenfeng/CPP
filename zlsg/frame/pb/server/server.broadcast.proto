@@ -1,0 +1,11 @@
+package server; 
+
+message broadcast {
+   enum TYPE {
+       broadcast_all = 0; // 全部发送
+       broadcast_mut = 1; // 组播发送
+   }
+   required TYPE type = 1;
+}
+
+

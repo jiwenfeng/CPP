@@ -1,0 +1,64 @@
+package server;
+
+message role_goods
+{ 
+	required uint32 grid_index           = 1 [default=0];    // 格子序号
+	required uint32 goods_id             = 2 [default=0];    // 玩家所拥有的物品Id
+	required uint32 quality              = 3 [default=0];    // 品质 1白、2绿、3蓝、4紫、5橙、6红
+	required uint32 overlaped_num        = 4 [default=0];    // 已叠加的数量
+	optional uint32 five_elem_attr       = 5 [default=0];    // 五行 0无、1金、2木、3水、4火、5土
+	optional uint32 authed               = 6 [default=1];    // 是否已鉴定 0未鉴定、1已鉴定
+	optional uint32 binding              = 7 [default=1];    // 绑定的状态：0－未绑定；1－已绑定
+	optional uint32 score                = 8 [default=0];    // 评分，只有装备有值
+	optional uint32 active_second        = 9 [default=0];    // 获得后计算时间失效，精确到秒
+	optional uint32 end_date             = 10[default=0];    // 固定日期失效
+	optional uint32 practice_level       = 11[default=0];    // 炼化等级(注入真气炼化装备的等级)：0—无炼化等级;大于0为最高修炼等级上限
+	optional uint32 enhance_level        = 12[default=0];    // 强化等级：0—无强化属性;大于0为强化等级上限
+	optional uint32 genuine_qi_val       = 13[default=0];    // 已注入真气
+	optional uint32 max_durable_val      = 14[default=0];    // 耐久上限
+	optional uint32 curr_durable_val     = 15[default=0];    // 当前耐久度
+	optional uint32 curr_bless_val       = 16[default=0];    // 当前祝福值
+	optional uint32 curr_hole_num        = 17[default=0];    // 当前已打孔数量，0代表无打孔
+	optional uint32 temper_val           = 18[default=0];    // 淬炼值
+	optional uint32 base_attr_code_1     = 19[default=0];    // 基本属性类型1，对应tb_attr_code，增加人物的属性
+	optional uint32 base_attr_val_1      = 20[default=0];    // 所增加的属性值，写入前*100，百分比先转成小数再*100
+	optional uint32 base_attr_code_2     = 21[default=0];
+	optional uint32 base_attr_val_2      = 22[default=0];
+	optional uint32 addition_attr_code_1 = 23[default=0];    // 附加属性类型1，对应tb_attr_code，增加人物的属性
+	optional uint32 addition_attr_val_1  = 24[default=0];    // 所增加的属性值，写入前*100，百分比先转成小数再*100
+	optional uint32 addition_attr_code_2 = 25[default=0];
+	optional uint32 addition_attr_val_2  = 26[default=0];
+	optional uint32 addition_attr_code_3 = 27[default=0];
+	optional uint32 addition_attr_val_3  = 28[default=0];
+	optional uint32 addition_attr_code_4 = 29[default=0];
+	optional uint32 addition_attr_val_4  = 30[default=0];
+	optional uint32 addition_attr_code_5 = 31[default=0];
+	optional uint32 addition_attr_val_5  = 32[default=0];
+	optional uint32 addition_attr_code_6 = 33[default=0];
+	optional uint32 addition_attr_val_6  = 34[default=0];
+	optional uint32 addition_skill_id    = 35[default=0];    // 附加技能ID
+	optional uint32 embed_goods_id_1     = 36[default=0];    // 镶嵌道具的ID，一般为宝石
+	optional uint32 embed_binding_1      = 37[default=0];    // 绑定属性: 0—未绑定; 1为已绑定
+	optional uint32 embed_goods_id_2     = 38[default=0];
+	optional uint32 embed_binding_2      = 39[default=0];
+	optional uint32 embed_goods_id_3     = 40[default=0];
+	optional uint32 embed_binding_3      = 41[default=0];
+	optional uint32 embed_goods_id_4     = 42[default=0];
+	optional uint32 embed_binding_4      = 43[default=0];
+	optional uint32 embed_goods_id_5     = 44[default=0];
+	optional uint32 embed_binding_5      = 45[default=0];
+	optional uint32 r_qlty               = 46[default=0];
+	optional uint32 r_lv                 = 47[default=0];
+	optional uint32 r_prof               = 48[default=0];
+	optional uint32 r_prof_1             = 49[default=0];
+	optional uint32 r_prof_2             = 50[default=0];
+	optional uint32 r_prof_3             = 51[default=0];
+	optional uint32 r_status             = 52[default=0];
+	optional float  r_para               = 53[default=0];
+	optional uint32 r_goods_code         = 54[default=0];
+	optional uint32 r_sub_code           = 55[default=0];
+	optional uint32 r_attr_sub_code      = 56[default=0];
+	optional uint32 train                = 57[default=0];     // 翅膀温养值
+    optional uint32 train_num            = 58[default=0];     // 翅膀可用铜币温养的次数
+    optional uint32 lvl                  = 59[default=0];     // 装备等级
+}                                       

@@ -1,0 +1,28 @@
+import "inner.comm.proto";
+package inner;
+
+message pay_req {
+    required uint32     amt         = 1; // 金额
+    required inner_user user        = 2; // 用户
+    optional string     pay_id      = 3; // 支付ID
+	optional string     currency    = 4; // 货币类型
+	optional string     inpour_type = 5; // 支付类型
+	optional uint32     addcoin     = 6; // 套餐类型
+	optional uint32     ex_type     = 7; // 充值类型
+	optional double     depay       = 8; // 手续费
+	optional double     g_depay     = 9; // 游戏手续费
+    optional inner_head head        = 1000;
+}
+
+message pay_rsp {
+    required uint32     amt         = 1;
+    required inner_user user        = 2;
+    optional string     pay_id      = 3;
+	optional string     currency    = 4; // 货币类型
+	optional string     inpour_type = 5; // 支付类型
+	optional uint32     addcoin     = 6; // 套餐类型
+	optional uint32     ex_type     = 7; // 充值类型
+	optional double     depay       = 8; // 手续费
+	optional double     g_depay     = 9; // 游戏手续费
+    required inner_tail tail        = 1000;
+}

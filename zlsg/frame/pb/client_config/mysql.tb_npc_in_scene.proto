@@ -1,0 +1,19 @@
+
+package mysql;
+
+message tb_npc_in_scene{
+    required uint32 id = 1;
+    required uint32 npc_id = 2;
+    required uint32 scene_id = 3;
+    required uint32 position_code = 4;
+    required uint32 serial = 5;
+    required uint32 coord_x = 6;
+    required uint32 coord_y = 7;
+    required uint32 coord_z = 8;
+    required uint32 range = 9;
+    required uint32 patrol_rules = 10;
+    required string created_date = 11;
+    required string last_modified_date = 12;
+    required uint32 status = 13;
+    required string remark = 14;
+}

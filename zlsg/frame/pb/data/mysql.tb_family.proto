@@ -1,0 +1,35 @@
+
+package mysql;
+
+message tb_family{
+    required uint32 id = 1;
+    required string name = 2;
+    required uint32 flag_id = 3;
+    required string flag_name = 4;
+    required uint32 lvl = 5;
+    required uint32 chief_id = 6;
+    required string chief_name = 7;
+    required uint32 deputy_id = 8;
+    required string post = 9;
+    required uint32 money = 10;
+    required uint32 power = 11;
+    required uint32 domain = 12;
+    required int32 king = 13;
+    required int32 emperor = 14;
+    required uint32 cur_member_num = 15;
+    required int32 approval = 16;
+    required uint32 activity = 17;
+    required uint32 qq = 18;
+    required uint32 yy = 19;
+    required uint32 boss_time = 20;
+    required uint32 call_boss_time = 21;
+    required uint32 op_tag = 22;
+    required uint32 op_tag_time = 23;
+    required uint32 status = 24;
+    required uint32 belong_sect = 25;
+    required uint32 create_time = 26;
+    required uint32 dragon_count = 27;
+    required uint32 tiger_count = 28;
+    required uint32 rosefinch_count = 29;
+    required uint32 tortoise_count = 30;
+}

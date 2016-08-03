@@ -1,0 +1,14 @@
+
+package mysql;
+
+message tb_role_mounts{
+    required uint32 role_id = 1;
+    required uint32 mount_id = 2;
+    required uint32 advance_num = 3;
+    required uint32 advance_time = 4;
+    required uint32 advance_bless = 5;
+    required uint32 skill_upgrade_num = 6;
+    required uint32 mount_level = 7;
+    required uint32 mount_exp = 8;
+    required uint32 mount_power = 9;
+}

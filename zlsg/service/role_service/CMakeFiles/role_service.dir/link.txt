@@ -1,0 +1,2 @@
+/usr/bin/ar cr librole_service.a  CMakeFiles/role_service.dir/role_service.cc.o CMakeFiles/role_service.dir/role_login_mgr.cc.o CMakeFiles/role_service.dir/pb_create_role.cc.o CMakeFiles/role_service.dir/pb_auth.cc.o CMakeFiles/role_service.dir/role_interface.cc.o
+/usr/bin/ranlib librole_service.a

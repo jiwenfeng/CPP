@@ -1,0 +1,21 @@
+package server; 
+
+message group_operate {
+    required int32 	 id = 1;
+	required uint32  service_id =2;
+	
+	enum TYPE {
+	    create = 0;
+		enter  = 1;
+		leave  = 2;
+		clear  = 3;
+		broadcast = 4;
+	}
+	required TYPE opt_type = 3;
+}
+
+message scene_ready {
+	required uint32 time_now = 1; // 客户端上报自己持有的unixtime时钟
+}
+
+
