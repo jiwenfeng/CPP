@@ -3,8 +3,7 @@
 using namespace std;
 
 /*
- * input [2, 7, 11, 15, 19] 9
- * output [1, 2]
+ * Link : https://leetcode.com/problems/two-sum/ 
  * */
 
 class Solution

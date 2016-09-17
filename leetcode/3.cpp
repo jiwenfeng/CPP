@@ -4,11 +4,7 @@
 using namespace std;
 
 /*
- * Given a string, find the length of the longest substring without repeating characters
- *
- * Given "abcabcbb" ==> "abc", length is 3
- * Given "bbbbbbbb" ==> "b", length is 1
- *
+ * Link : https://leetcode.com/problems/longest-substring-without-repeating-characters/
  * */
 
 class Solution

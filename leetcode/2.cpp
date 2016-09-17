@@ -4,10 +4,7 @@
 using namespace std;
 
 /*
- *
- * input 2->4->3 5->6->4
- * output 7->0->8
- *
+ *Link : https://leetcode.com/problems/add-two-numbers/
  * */
 
 struct ListNode
