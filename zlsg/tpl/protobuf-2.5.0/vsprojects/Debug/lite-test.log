@@ -1,8 +1,0 @@
-﻿  unittest_lite.pb.cc
-  unittest_import_public_lite.pb.cc
-  unittest_import_lite.pb.cc
-  test_util_lite.cc
-  lite_unittest.cc
-  Generating Code...
-lite_unittest.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  lite-test.vcxproj -> E:\zlsg\code\zproj\server\tpl\protobuf-2.5.0\vsprojects\Debug\lite-test.exe
