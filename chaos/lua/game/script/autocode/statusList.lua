@@ -1,0 +1,91 @@
+--仙印列表
+ local autoTable = {
+	[0] = {
+		name = "无仙职",
+		needLv = 10,
+		needNimbus = 1000,
+		needMissionId = "400017",
+		describe = "千难万险，辗转求道。",
+		maxGemLv = 0,
+	},
+	[1] = {
+		name = "仙童",
+		needLv = 20,
+		needNimbus = 12000,
+		needMissionId = "422001",
+		describe = "初入仙道，锋芒初显。",
+		maxGemLv = 1,
+	},
+	[2] = {
+		name = "仙官",
+		needLv = 30,
+		needNimbus = 80000,
+		needMissionId = "422002",
+		describe = "艰苦修炼，得到成仙。",
+		maxGemLv = 2,
+	},
+	[3] = {
+		name = "天将",
+		needLv = 40,
+		needNimbus = 240000,
+		needMissionId = "422003",
+		describe = "斩魔除恶，荣升天将。",
+		maxGemLv = 3,
+	},
+	[4] = {
+		name = "星君",
+		needLv = 50,
+		needNimbus = 500000,
+		needMissionId = "422004",
+		describe = "修炼大成，威名初显。",
+		maxGemLv = 4,
+	},
+	[5] = {
+		name = "正神",
+		needLv = 60,
+		needNimbus = 800000,
+		needMissionId = "422005",
+		describe = "苦修圆满，得窥正道。",
+		maxGemLv = 5,
+	},
+	[6] = {
+		name = "天君",
+		needLv = 70,
+		needNimbus = 1600000,
+		needMissionId = "422006",
+		describe = "悟道渐进，一方君主。",
+		maxGemLv = 6,
+	},
+	[7] = {
+		name = "天王",
+		needLv = 80,
+		needNimbus = 3200000,
+		needMissionId = "422007",
+		describe = "道法大成，成就天王。",
+		maxGemLv = 7,
+	},
+	[8] = {
+		name = "大帝",
+		needLv = 90,
+		needNimbus = 6400000,
+		needMissionId = "422008",
+		describe = "初窥法则，借法证道。",
+		maxGemLv = 8,
+	},
+	[9] = {
+		name = "天帝",
+		needLv = 100,
+		needNimbus = 12800000,
+		needMissionId = "422009",
+		describe = "用法自由，逆天改命。",
+		maxGemLv = 9,
+	},
+	[10] = {
+		name = "天尊",
+		describe = "天地同寿，日月同辉。",
+		maxGemLv = 10,
+	},
+}
+function GetTable()
+	return autoTable
+end

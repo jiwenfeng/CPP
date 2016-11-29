@@ -1,0 +1,35 @@
+--本命意外之喜表
+ local autoTable = {
+	{id = 101001, num = 1},
+	{id = 101002, num = 1},
+	{id = 101006, num = 1},
+	{id = 101007, num = 1},
+	{id = 101009, num = 1},
+	{id = 101010, num = 1},
+	{id = 101012, num = 1},
+	{id = 101013, num = 1},
+	{id = 101015, num = 1},
+	{id = 101016, num = 1},
+	{id = 101018, num = 1},
+	{id = 101019, num = 1},
+	{id = 101021, num = 1},
+	{id = 101022, num = 1},
+	{id = 101029, num = 1},
+	{id = 101033, num = 1},
+	{id = 101035, num = 1},
+	{id = 101036, num = 1},
+	{id = 101037, num = 1},
+	{id = 101042, num = 1},
+	{id = 102001, num = 1},
+	{id = 102003, num = 1},
+	{id = 102004, num = 1},
+	{id = 102006, num = 1},
+	{id = 102012, num = 1},
+	{id = 101095, num = 1},
+	{id = 101096, num = 1},
+	{id = 101097, num = 1},
+	{id = 101098, num = 1},
+}
+function GetTable()
+	return autoTable
+end
