@@ -2,6 +2,10 @@
  * Link : https://leetcode.com/problems/string-to-integer-atoi/
  */
 
+#include <iostream>
+#include <string>
+
+using namespace std;
 class Solution
 {
 public:
