@@ -34,3 +34,8 @@ public:
 		return len;
 	}
 };
+
+int main()
+{
+	return 0;
+}

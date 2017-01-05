@@ -97,7 +97,7 @@ struct cmp
 {
 public:
 	cmp(CPoint *cp) : _cp(cp) { }
-	bool operator() (const CPoint *cp) { *_cp == *cp; }
+	bool operator() (const CPoint *cp) { return *_cp == *cp; }
 private:
 	CPoint *_cp;
 };
@@ -205,7 +205,7 @@ protected:
 			}
 			sort(openList.begin(), openList.end());
 		}
-		std::cout<<"没有路可走了"<<std::endl;
+		std::cout<<"no way"<<std::endl;
 	}
 
 	void generate_path(const CPoint *cp)
