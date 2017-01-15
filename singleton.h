@@ -2,8 +2,6 @@
 #define __SINGLETON_H__
 
 #include <mutex>
-#include <iostream>
-#include <chrono>
 
 using namespace std;
 
